@@ -1,0 +1,8 @@
+*.bib.sav
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.pdf
+*.gz
