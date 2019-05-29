@@ -23,7 +23,7 @@
 %\usepackage{caption}
 \usepackage[toc,page]{appendix}
 \usepackage{xspace}
-
+\usepackage{MnSymbol,wasysym}
 % SHORCUTS
 \newcommand{\ud}{\ensuremath{\mathrm{d}}}
 \newcommand{\tpb}{\ensuremath{t_{\text{pb}}}}
@@ -34,7 +34,7 @@
 \newcommand{\cobalt}{$\mathrm{Co^{56}}$\xspace}
 \newcommand{\solr}{\ensuremath{\rm{R_{\odot}}}\xspace}
 \newcommand{\solm}{\xspace\ensuremath{\rm{M_{\odot}}}\xspace}
-\newcommand{\kms}{\ensuremath{\mathrm{km/s}}\xspace}
+\newcommand{\kms}{\ensuremath{\mathrm{km\, s^{-1}}}\xspace}
 \newcommand{\km}{\ensuremath{\mathrm{km}}\xspace}
 \renewcommand{\sec}{\xspace\ensuremath{\text{s}}}
 \newcommand{\ms}{\xspace\ensuremath{\text{ms}}}
@@ -252,7 +252,7 @@ where $a$, $\mathrm{k_b}$, $\rho$, $T$,$\mathrm{m_{H}}$, $\mu$ are the radiation
 %\subsubsection{Parametrization in Prometheus-HotB}
 \subsubsection{Proto-Neutron Star (PNS) Contraction}\label{subsec:pnscontr}
 
-After core bounce, the inner $0.5\, \solm$ of the core is excised, and replaced by a fixed boundary with hydrostatic boundary condition. We impose constant neutrino luminosity until the forward shock reaches $1.25\, \solm$ in mass coordinates. This phase lasts for a few milliseconds after bounce. Thereafter, the PNS, which is the region inside $1.1\, \solm$ is  excised and replaced by a moving inner boundary. We impose hydrostatic boundary condition with respect to the moving inner boundary, and use a time dependent Lagrangian formulation on the computational grid outside $1.1\, \solm$. The kinematic evolution of the inner boundary radius is given by
+After core bounce, the inner $0.5\, \solm$ of the core is excised, and replaced by a fixed boundary with hydrostatic boundary condition as in \citet{Ertl2016}. We impose constant neutrino luminosity until the forward shock reaches $1.25\, \solm$ in mass coordinates. This phase lasts for a few milliseconds after bounce. Thereafter, the PNS, which is the region inside $1.1\, \solm$ is  excised and replaced by a moving inner boundary. We impose hydrostatic boundary condition with respect to the moving inner boundary, and use a time dependent Lagrangian formulation on the computational grid outside $1.1\, \solm$. The kinematic evolution of the inner boundary radius is given by
 \begin{equation}
     R_{\text{ib}}(t) = R_{\text{ib,f}} + (R_{\text{ib,i}} - R_{\text{ib,f}})\, \exp\left(-\frac{t}{t_0}\right),
 \end{equation}
@@ -324,40 +324,43 @@ We use four calibrations for the central engine as detailed in Table ~\ref{table
 We found that our explosion model of the ESCN progenitor resembles the old models described in previous studies by \citet{Kitaura2006,Janka2008} and the latest models described by \citet{Gessner2018}. Here, we will focus on the new results from our study.
 
 \subsubsection{Convection: 2D vs. 3D}
-Figure~\ref{fig:e8 2d sto times} shows entropy (in units of $\kbpnuc$) in the 2D model at various times after core-bounce, where each successive panel shows larger physical scale. The panel at $0.14\, \sec$ shows that shortly after core-bounce, convection induced  by $\nu$-heating close to the PNS leads to formation of buoyant Rayleigh-Taylor bubbles. These initial bubbles merge just $50\,\ms$ later, as can be seen in the second panels from the top in Figure~\ref{fig:e8 2d sto times}. At $\tpb=0.38\,\sec$ the tips of the bubbles already extend beyond $2000\,\km$, thus leaving the influence of the neutrino-engine. Consequently the bubbles basically freeze and begin to expand self-similarly (see panels at $\tpb=0.38\,\sec$ and $\tpb=0.98\,\sec$). The neutrino-driven wind, that accelerates the core material, is visible as the smooth orange to red region in the panels at $\tpb=0.98\,\sec$.
-In short, the axisymmetric simulations are dominated by large $\ell$-mode pattern, which may be attributed partially to the ``inverse cascade'' which plagues the 2D models \cite{Kraichnan1967,Mueller2015}.
+Figure~\ref{fig:e8 2d sto times} shows entropy (in units of $\kbpnuc$) in the 2D model at various times after core-bounce, where each successive panel shows larger physical scale. The top four panels show the $e8.8_{3}$ model and the bottom four panels show the $e8.8_{10}$ model.
+The panel at $0.14\, \sec$ shows that shortly after core-bounce, convection induced  by $\nu$-heating close to the PNS leads to formation of buoyant Rayleigh-Taylor bubbles. These initial bubbles merge just $50\,\ms$ later, as can be seen in the second panels from the top in Figure~\ref{fig:e8 2d sto times}. At $\tpb=0.38\,\sec$ the tips of the bubbles already extend beyond $2000\,\km$, thus leaving the influence of the neutrino-engine. Consequently the bubbles basically freeze and begin to expand self-similarly (see panels at $\tpb=0.38\,\sec$ and $\tpb=0.98\,\sec$). The neutrino-driven wind, that accelerates the core material, is visible as the smooth orange to red region in the panels at $\tpb=0.98\,\sec$.
+The radial and angular sizes of the high entropy plumes are very similar between these two models, despite a factor of three difference in their explosion energy. In short, the axisymmetric simulations are dominated by large $\ell$-mode pattern, which may be attributed partially to the ``inverse cascade'' which plagues the 2D models \cite{Kraichnan1967,Mueller2015}.
 
-In Figure~\ref{fig:eexp kick 3D}, we show 2D slices of entropy in the 3D simulation at various times. in contrast, the 3D simulation shows development of numerous small scale plumes. These plumes are, however, unable to influence the propagation of the forward shock as their outermost heads only grow to a few $100 \,\mathrm{km}$, when the shock has already reached some $10^3\,\mathrm{km}$.
+In Figure~\ref{fig:eexp kick 3D}, we show 2D slices of entropy in the 3D simulation at various times. In contrast to the 2D models, the 3D simulation shows development of numerous small scale plumes. These plumes are, however, unable to influence the propagation of the forward shock as they extend only up to a few $100 \,\mathrm{km}$, whereas the shock has already expanded to $1000\,\mathrm{km}$ in the same time. 
 
-Note that the evolution of the first few $100\,\text{ms}$ is basically independent of the chosen dimension or calibration as it is generic for ECSNe \cite{Gessner2018}. We show in Figure ~\ref{fig:e8 2d sto times} slices of the entropy of the axis-symmetric $e8.8_{3}$ and $e8.8_{10}$ simulations. Radial and angular sizes of the high entropy plumes are very similar between these two models despite their difference in explosion energy with a factor of three.
+We assert that the evolution during the first few $100\,\text{ms}$ is basically independent of the dimensionality or central engine calibration as it is generic for ECSNe \cite{Gessner2018}.
 
 \subsubsection{Shock Propagation and Explosion Properties}
 \label{sec:explosion ecsn}
 % shock trajectories and energetics 
-In case of the ESCN progenitors, their atypical density structure enables a fast and almost spherical expansion of the forward shock shortly after explosion ($\mathord{\sim}\, 0.1 \sec$ post-bounce), which also manifests in an early rise in the diagnostic explosion energies \citep{Kitaura2006,Janka2008,Gessner2018}. 
-
-The diagnostic explosion energy is defined as the integral over volume elements where the binding energy $e_\mathrm{b}$, which is the sum of the specific internal energy density $e_{\mathrm{int}}$, the specific kinetic energy $e_{\mathrm{kin}}$ and the gravitational potential $\Phi$, is positive\footnote{Note that the given definition of the explosion energy neglects the binding energy of the envelope which is justified as it is a few orders of magnitude less than the energy in the region of interest.}
+In case of the ESCN progenitors, their atypical density structure enables a fast and almost spherical expansion of the forward shock shortly after explosion ($\mathord{\sim}\, 0.1 \sec$ post-bounce), which also manifests in an early rise in the diagnostic explosion energies \citep{Kitaura2006,Janka2008,Gessner2018}.
+The binding energy $e_{\text{b}}$ (per unit mass) is defined as
 \begin{equation}
-    \mathrm{E}_{\mathrm{exp}} = \int_{e_{\mathrm{b}} > 0} e_{\mathrm{b}} \, \mathrm{dM} =
-    \int_{e_{\mathrm{b}} > 0}\, e_{\mathrm{int}} + e_{\mathrm{kin}} + \Phi \, \mathrm{dM}.
+    e_{\text{b}} = e_{\mathrm{int}} + e_{\mathrm{kin}} + \Phi_{\text{g}},
+\end{equation}
+where $e_{\mathrm{int}}$ is the internal energy, $e_{\mathrm{kin}}$ is the kinetic energy, and $\Phi_{\text{g}}$ is the gravitational potential energy per unit mass.
+The diagnostic explosion energy at any time is defined as an integral of binding energy over volume elements where it has a positive value 
+\begin{equation}
+    \mathrm{E}_{\mathrm{exp}} = \int_{M} e_{\mathrm{b}} \, \mathrm{dm'},\quad e_{\mathrm{b}} > 0
     \label{equ:ene exp}
 \end{equation}
-We show in Figure~\ref{fig:e8pzkick} the shock radii (top left) and diagnostic explosion energies (lower left) of our ECSN simulations. Also shown are the neutron star kicks (top right) and neutron star angular momentum (lower right), which will be discussed in detail in Section~\ref{sec:Neutron Star Properties}.
-The sharp drop in density outside the ONeMg-core leads to an early drop in the accretion rate. This consequently leads to a sharp decline in the ram pressure, which is in sharp contrast to the typical core-collapse supernova where the high ram pressure inhibits shock expansion significantly for several $100\,\text{ms}$. The forward shock reaches the core/envelope boundary ($R_{\mathrm{He/H}}\,\mathord{\approx}\,10^3\,\text{km}$), somewhere between $0.17\,\mathord{-}\,0.20\,\sec$ after core-bounce, depending on the energy of the central engine.
+In this summation, we neglect the binding energy of matter with radii greater than the respective outer boundary, as it is a few orders of magnitude smaller than the binding energy of the core. Figure~\ref{fig:e8pzkick} shows the time evolution of shock radii (top left panel) and diagnostic explosion energies (lower left panel) in our ECSN simulations. \NY{Also shown are the neutron star kicks (top right) and neutron star angular momentum (lower right), which will be discussed in detail in Section~\ref{sec:Neutron Star Properties}}{MENTION IN THE SECTION OF NS PROPERTIES DIRECTLY}. The sharp drop in density outside the ONeMg-core leads to an early drop in the accretion rate. The reduced accretion rate leads to a sharp decline in the ram pressure, which is in sharp contrast to the typical core-collapse supernova where the high ram pressure inhibits shock expansion significantly for several $100\,\text{ms}$. This allows for a rapid expansion of forward shock, which reaches the core/envelope boundary ($R_{\mathrm{He/H}}\,\mathord{\approx}\,1000\,\text{km}$), somewhere between $0.17\,\mathord{-}\,0.20\,\sec$ after core-bounce, depending on the energy of the central engine. Explosion energies start rising steeply as soon as the forward shock leaves the ONeMg core.
 
-Explosion energies start to rise steeply when the forward shock leaves the ONeMg core. Terminal explosion energies are reached within $t_{\mathrm{pb}}\approx  0.6\,\text{s}$ for the $e8.8_{3}$ model and  $t_{\mathrm{pb}}\approx 1.25\,\text{s}$ in our highest energy case. 
+The acceleration of the shock at the core/envelope boundary is followed by a huge deceleration at the lower boundary of the H-envelope. This is caused by a sudden change of the density gradient at the core/envelope transition.  
+Consequently, strong pressure waves are sent upstream into the ejecta, compressing and decelerating the neutrino-heated material. This has important consequences for the long-term evolution of the ECNS models, which will be described in Section~\ref{sec:Multi-dimensional long-term evolution of the e8.8}.
+
+The diagnostic explosion energies reach a saturation value within $\mathord{\approx}\,  0.6\,\sec$ and $\mathord{\approx}\, 1.25\,\sec$ after core-bounce for the $e8.8_{3}$ model (smallest explosion energy case) and $e8.8_{15}$ model (largest explosion energy case) respectively.
 
 \begin{figure*} % e8.8 2d _3, _10 sto  
- \includegraphics[scale =0.8 ]{pic/e8_sto_cuts_2d_1e50_3e49.pdf}
- \caption{Entropy slices of the axis-symmetric $e8.8_{3}$ and  $e8.8_{10}$ simulations at the indicated post-bounce times. Note the similar number and size of the convective plumes. \NY{}{WRITE THE LABELS IN UPPER PANELS IN BLACK, THEY ARE HARD TO SEE (THINK OF THOMAS\! SAVE SPACE BY TAKING X-AXIS LABELS OF THE UPPER PANELS OF EACH SET)}}\label{fig:e8 2d sto times}
+ \includegraphics[trim=0cm 2.3cm 0cm 2.2cm,clip]{pic/e8_sto_cuts_2d_1e50_3e49_paper.pdf}
+ \caption{Entropy slices of the axis-symmetric $e8.8_{3}$ and  $e8.8_{10}$ simulations at the indicated post-bounce times. Note the similar number and size of the convective plumes. \NY{}{WRITE THE LABELS IN UPPER PANELS IN BLACK, THEY ARE HARD TO SEE (SAVE SPACE BY TAKING X-AXIS LABELS OF THE UPPER PANELS OF EACH SET, TIME MAY BE BETTER MENTIONES IN MS as IN GESSNER AND JANKA PAPER)}}\label{fig:e8 2d sto times}
 \end{figure*}
 
-
-As the $\rho r^3$-profile suddenly flattens outside the core, the forward shock experiences a massive deceleration. Consequently, strong pressure waves are sent back into the ejecta. This early deceleration of the forward shock and with it the inner ejecta will have important consequences for the long term evolution of this model which will be described later.
-
 \begin{figure*}
- \includegraphics[width=\textwidth]{pic/e8_10_2d3d_sto_cuts_4times.pdf}
- \caption{Entropy slices of the $e8.8_{10}$ model in 3D and 2D at the indicated post-bounce times. \COM{ADD KICK VECTOR, Move time indicators outside the plot into a box} }
+ \includegraphics[width=\textwidth,trim=0.5cm 2.0cm 1cm 1cm,clip]{pic/e8_10_2d3d_sto_cuts_4times_TNSE_paper.pdf}
+ \caption{Entropy slices of the $e8.8_{10}$ model in 3D and 2D at the indicated post-bounce times. In the panels showing the 3D model, the arrow indicates the kick direction. \COM{Plot Larger?} \NY{}{DONT USE BRACKETS ON TIME AND USE KM AS LENGTH UNIT, STAY CONSISTENT WITH THE PREVIOUS FIGURES} \smiley{}}
  \label{fig:e8 sto 4 times}
 \end{figure*}
 
@@ -379,37 +382,26 @@ As the $\rho r^3$-profile suddenly flattens outside the core, the forward shock 
 
 \subsubsection{Neutron Star Properties}
 \label{sec:Neutron Star Properties}
-Asphericities that develop during the explosion may exert gravitational forces on the nascent neutron star inducing a ``kick''. In neutrino-driven explosions the acceleration of the NS has shown to be caused mainly by the gravitational attraction of anisotropically expelled ejecta. The gravitational force exerted by the ejecta has significant influence over several seconds and therefore is by far the most dominant effect, whereas neutrino emission associated with asymmetric accretion contributes only on a low level  \cite{Janka2017}.
-Hence \citet{Wongwathanarat2013} coined the term ``gravitational tug-boat mechanism'' for the most dominant process that is responsible for the natal kicks of neutron stars. 
-As discussed by \citet{Janka2017}, a low compactness value (see Equation ~\ref{equ:compactness}) implies a fast acceleration of the explosion and high ejecta velocities. This leaves asymmetries in the postshock layer little time to develop significant dipole amplitudes. 
-For ECSN and ECSN-like progenitors this leads to small natal kick velocities $v_{\mathrm{NS}}\leq 10\mathrm{30}\,\kms$.
-For low-mass progenitors ($M_{\mathrm{ZAMS}}=9-12$) with higher compactness values, the kick velocities can reach several $\sim 100 \,\kms$ with considerable spread among the models \cite{Scheck2006,Mueller2019,Nakamura2019}.
-
-In the following we will provide the kick velocities resulting from our two- and three-dimensional model set. We shortly discuss the theory of the ``gravitational tug-boat mechanism'' before presenting the results. We refer the reader to recent studies as e.g. \citealt{Scheck2006,Wongwathanarat2013,Janka2017,Gessner2018,Mueller2019} for a deeper introduction into the theory.
-
-Using momentum conservation one can estimate the neutron-star kick via
+Asphericities developing during the explosion exert gravitational forces on the nascent neutron star inducing a ``kick''.This mechanism is also known as the ``gravitational tug-boat mechanism'' \citep{Wongwathanarat2013}. For sake of completeness, we briefly describe the mechanism here. The interested reader should to the recent and more complete studies by \citet{Scheck2006,Wongwathanarat2013,Janka2017,Gessner2018,Mueller2019}. It has been shown that the acceleration of the NS in the neutrino-driven explosions is caused mainly by the gravitational attraction from the asymmetrically exapnding ejecta, while the asymmetric neutrino emission associated with the aspherical accretion plays a minor role  \cite{Janka2017}. Using the momentum conservation equation the neutron-star kick can be simply estimated as
 \begin{equation}
-  \pmb{\mathrm{P}}_{\mathrm{gas}} = - \pmb{\mathrm{P}}_{\mathrm{NS}} = - \pmb{\mathrm{v}}_{\mathrm{NS}}\mathrm{M_{NS}},
+  \pmb{\mathrm{P}}_{\mathrm{NS}} = \pmb{\mathrm{v}}_{\mathrm{NS}}\mathrm{M_{NS}} -\pmb{\mathrm{P}}_{\mathrm{gas}},
 \end{equation}
-where $\mathrm{M_{NS}}$ is the baryonic (neutron star -) mass contained within a radius where the angle-averaged density drops below $\rho = 10^{11} \mathrm{g/cm^3}$. This yields the velocity of the NS
+where $\mathrm{M_{NS}}$ is the baryonic (NS) mass contained inside the radius where the angle-averaged density drops below $10^{11}\, \gcc$. This gives the velocity of the NS as
 \begin{equation}
   \pmb{\mathrm{v}}_{\mathrm{NS}}(t) = - \frac{\pmb{\mathrm{P}}_{\mathrm{gas}}}{ \mathrm{M_{NS}}}.
   \label{equ:momentum_kick}
-\end{equation}
-The gas momentum is calculated by integrating the total momentum of the matter outside the neutron star via
-\begin{equation}
-    \label{equ:pz}
-  \pmb{\mathrm{P}}_{\mathrm{gas}} (t) = \int_{\mathrm{R_{NS}}}^{\mathrm{R_{ob}}} \rho \pmb{\mathrm{v}} \ud V
-\end{equation}
+\end{equation}.
 
+\citet{Janka2017} have shown that a low compactness value (see their Equation~\ref{equ:compactness}) leads to faster shock expansion and higher ejecta velocities.  Consequently, the asymmetries in the postshock  region get lesser time to develop, resulting in smaller amplitudes of the low $\ell$ modes.  This leads to smaller NS kick velocities $v_{\mathrm{NS}}\, \mathord{\lesssim}\, 10\,\kms$ n case of explosion resulting from ECSN and ECSN-like progenitors, which are known to have lower compactness \citep[Figure~9]{Gessner2018}.
+On the other hand, in case of low-mass progenitors ($M_{\mathrm{ZAMS}}=9\, \mathord{-}\, 12\, \solm$) with higher compactness values, the kick velocities can reach several $\mathord{\sim}\, 100 \,\kms$\NY{}{,} with \NY{}{a} considerable spread among the published explosion models \citep{Scheck2006,Mueller2019,Nakamura2019}.
 \begin{figure*}
  \centering
- \includegraphics[width=0.95\textwidth]{pic/eexp_kick_all_1d2d3d.pdf}
- \caption{Various diagnostics for our electron capture models in all dimensions during the first 2 seconds post bounce. Upper Left: Shock radii. Upper right: Neutron star kicks. Lower Left: Explosion energies. Lower Right: Neutron star angular momentum. Note the very minor dependencies of the shock radii and explosion energies on dimension. }
+ \includegraphics[width=0.95\textwidth]{pic/eexp_kick_all_1d2d3d_paper.pdf}
+ \caption{Various diagnostics for our electron capture models in all dimensions during the first 2 seconds post bounce. Upper Left: Shock radii. Upper right: Neutron star kicks. Lower Left: Explosion energies. Lower Right: Neutron star angular momentum. Note the very minor dependencies of the shock radii and explosion energies on dimension. \COM{Explosion energy and other quantities of 3D run will be added} }
  \label{fig:e8pzkick}
 \end{figure*}
 
-In the upper right panel of Figure ~\ref{fig:e8pzkick} we show the neutron star kick velocities of all our ECSN models. In agreement with the simulations of \citet{Gessner2018} the terminal kick velocities are of the order of a few $\mathrm{km/s}$ only. Explosions of ECSN progenitors do not develop large asymmetries in the ejecta, which are needed for large neutron star kicks \cite{Scheck2006,Janka2017}. Ascertaining this, we add the evaluation of the asymmetry parameter to our analysis which is defined as 
+\NY{In the}{ The} upper right panel of Figure ~\ref{fig:e8pzkick} \NY{we show}{ shows} the \NY{neutron star}{ NS} kick velocities of all our ECSN models \NY{}{ calculated using Equation~\eqref{equ:momentum_kick} at TIME BLAH BLAH BLAH}. In agreement with the \NY{simulations}{ results} of \citet{Gessner2018}\NY{}{,} the terminal kick velocities \NY{}{we obtain} are of the order of a few $\kms$ only. \NY{Explosions}{ As mentioned above, the neutrino-driven explosions} of ECSN progenitors do not develop large asymmetries in the ejecta, which are needed for large \NY{neutron star}{ NS} kicks \cite{Scheck2006,Janka2017,Gessner2018}. Ascertaining this, we add the evaluation of the asymmetry parameter to our analysis which is defined as 
 \begin{equation}
     \alpha_{\mathrm{NS}} = \frac{|\mathbf{P}|_{\mathrm{gas}}}{P_{\mathrm{ej}}}
 \end{equation}
@@ -418,6 +410,7 @@ where
 P_{\mathrm{ej}}=\int_{R_{\mathrm{NS}}}^{R_{\mathrm{sh}}}\rho |\mathbf{v}| \ud V
 \end{equation}
 and thus connects the net momentum of the gas with the scalar quantity $P_{\mathrm{ej}}$. Following the argumentation of \cite{Gessner2018} the asymmetry parameter, that can vary between 0 for completely spherical explosions to 1 which would imply a fully one sided explosion, suits as a proxy describing the ejecta asymmetry. Results, summarized in Table ~\ref{tab:neutron star}, reveal the small values of $\alpha_{\mathrm{ns}}$ for our ECSN model.
+
 In addition we compute the neutron star spin by integrating the flux of angular momentum through a sphere of radius $r_{0}=500\,\mathrm{km}$ around the origin,
 \begin{equation}
 \label{equ:jns}
@@ -477,8 +470,8 @@ Multidimensional effects however enable a successful explosion in 3D.  Due to th
 Figure~\ref{fig:eexp kick 3D} compares the shock dynamics, explosion energy, and neutron star kicks for the ONeMg progenitor and the iron-core progenitors.
 \begin{figure*}
  \centering
- \includegraphics[width=\textwidth]{pic/eexp_shk_kick_all_1d2d3d.pdf}
- \caption{Left panel shows the forward shock trajectory, middle panel shows the diagnostic explosion energy and the right panel shows the hydrodynamic kick experienced by the neutron star in the 3D models. \NY{}{IT WILL BE GOOD TO USE SLIGHTLY DIFFERENT SET OF COLORS IN THIS PLOT.}}
+ \includegraphics[width=\textwidth,trim=0.5cm 0.2cm 0.5cm 0cm,clip]{pic/eexp_shk_kick_all_1d2d3d_paper.pdf}
+ \caption{Left panel shows the forward shock trajectory, middle panel shows the diagnostic explosion energy and the right panel shows the hydrodynamic kick experienced by the neutron star in the 3D models. }
 \label{fig:eexp kick 3D} 
 \end{figure*}
 The similar structure of the $z9.6$ is reflected in the evolution of the forward shock and growth of the diagnostic explosion energy. Shock radii remain almost perfectly spherical in the ECSN-like models. Deceleration of the forward shock outside the respective cores is somewhat stronger in the $z9.6$ model due to the more massive He-layer in this progenitor. Explosion energies start to rise at similar post bounce times, where the $z9.6$ shows higher values of $E_{\mathrm{exp}}$. This is caused by the more massive gain region in this model. 
@@ -512,7 +505,7 @@ Additionally, the passage of the Si/O interface did not produce a pronounced den
 \begin{figure*}
  \centering
  \includegraphics[width=0.9\textwidth]{pic/z96_s9_e8_3d_massDis_mvr_and_masstime_0.pdf}
- \caption{Mass distribution in mass and velocity space for all our models after we excised the inner region from our simulations. The exact post bounce times are $0.425 \,\text{s}$ for the $e8.8_{10}$, $1.466 \,\text{s}$ for the $z9.6$ and $1.054 \,\text{s}$ for the $s9.0$ }
+ \caption{Mass distribution in mass and velocity space for all our models after we excised the inner region from our simulations. The exact post bounce times are $0.425 \,\text{s}$ for the $e8.8_{10}$, $1.466 \,\text{s}$ for the $z9.6$ and $1.054 \,\text{s}$ for the $s9.0$ \COM{Long-term shock radii and explosion energies will be added.} }
  \label{fig:mdp first mapping}
 \end{figure*}
 
@@ -751,7 +744,7 @@ At 200 days after core bounce the velocity distributions are, besides the maximu
  \label{fig:e8_massDis_32d}
  \centering
  \includegraphics[width=0.49\textwidth]{pic/massDis_mvr_all_time_200d.pdf}
- \caption{Mass distributions of elements in velocity space at 200 days p.b. for the two dimensional models. We used 200 bins evenly distributed from  $0-4\times 10^3\,\mathrm{km/s}$. Due to the almost spherical explosion heavy elements are just slightly mixed into lighter material, as visible for \tracer in the region between $0.5-1\times 10^3\,\mathrm{km/s}$. The vertical black line denotes the position in velocity space where $(\Delta M_{\mathrm{i}}/M_{\mathrm{i}})/\Delta v_{\mathrm{r}}$ first exceeds $1\times 10^{-3}\,\mathrm{100\,s/km}$ in our 1D simulations.}
+ \caption{Mass distributions of elements in velocity space at 200 days p.b. for the two dimensional models. We used 200 bins evenly distributed from  $0-4\times 10^3\,\mathrm{km/s}$. Due to the almost spherical explosion heavy elements are just slightly mixed into lighter material, as visible for \tracer in the region between $0.5-1\times 10^3\,\mathrm{km/s}$. The vertical black line denotes the position in velocity space where $(\Delta M_{\mathrm{i}}/M_{\mathrm{i}})/\Delta v_{\mathrm{r}}$ first exceeds $1\times 10^{-3}\,\mathrm{100\,s/km}$ in our 1D simulations. \COM{LABELS}}
 \end{figure}
 
 % iron cores
