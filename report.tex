@@ -50,7 +50,7 @@
 
 %keeping track of changes
 \newcommand{\NY}[2]{{\color{blue}\sout{#1}#2}}
-\newcommand{\GEO}[2]{{\color{red}\sout{#1}#2}}
+\newcommand{\GEO}[1]{{\color{red}#1}}
 \newcommand{\COM}[1]{{\color{orange}#1}}
 
 \title{Three-dimensional Models of Core-collapse Supernovae from Low-mass Progenitors}
@@ -61,17 +61,20 @@
  T.~Ertl$^1$,
  D.~Kresse$^1$,
  K.~Nomoto$^3$,
- A.~Heger$^{4,5,6}$,\and
- A.~Gessner$^7$
+ A.~Tolstov$^3$,\and
+ S.~Leung$^4$,
+ A.~Heger$^{5,6,7}$,
+ A.~Gessner$^8$
  \\
 % Institutions
 $^1$Max Planck Institute for Astrophysics, Karl-Schwarzschild-Str.1 , D-85748 Garching, Germany\\
 $^2$Physik Department, Technische Universit\"at M\"unchen, James-Franck-Stra{\ss}e 1, D-85748 Garching, Germany\\
 $^3$Kavli Institute for the Physics and Mathematics of the Universe (WPI), The University of Tokyo Institutes for Advanced Study,\\  \hspace{0.08cm} The University of Tokyo, Kashiwa, Chiba 277-8583, Japan\\
-$^4$School of Physics \& Astronomy, University of Minnesota, Minneapolis, MN-55455, USA \\
-$^5$Center for Nuclear Astrophysics, Department of Physics \& Astronomy, Shanghai Jiao-Tong University, Shanghai-200240, P. R. China \\
-$^6$Joint Institute for Nuclear Astrophysics, 1 Cyclotron Laboratory, National Superconducting Cyclotron Laboratory, Michigan State University,\\ \hspace{0.08cm} East Lansing, MI-48824-1321, USA \\
-$^7$Max Planck Institute for Intelligent Systems, Max-Planck-Ring 4, D-72076 T\"ubingen, Germany \\
+$^4$Department of Physics, the Chinese University of Hong Kong, Hong Kong S. A. R., China \\
+$^5$School of Physics \& Astronomy, University of Minnesota, Minneapolis, MN-55455, USA \\
+$^6$Center for Nuclear Astrophysics, Department of Physics \& Astronomy, Shanghai Jiao-Tong University, Shanghai-200240, P. R. China \\
+$^7$Joint Institute for Nuclear Astrophysics, 1 Cyclotron Laboratory, National Superconducting Cyclotron Laboratory, Michigan State University,\\ \hspace{0.08cm} East Lansing, MI-48824-1321, USA \\
+$^8$Max Planck Institute for Intelligent Systems, Max-Planck-Ring 4, D-72076 T\"ubingen, Germany \\
 }
 
 \date{Released 2019 Xxxxx XX}
@@ -86,7 +89,7 @@ $^7$Max Planck Institute for Intelligent Systems, Max-Planck-Ring 4, D-72076 T\"
 \pubyear{2019}
 
 \begin{abstract}
-We present the results of full $4\pi\mathord{-}$3D, long term simulations of core-collapse supernova (CCSN) resulting from low-mass progenitors, covering the evolution from bounce through shock revival until shock breakout. We consider two low-mass iron-core progenitors with zero metallicity and solar metallicity which explode as CCSNe, and one progenitor with an oxygen-neon-magnesium core which explodes as an electron-capture supernova (ECSN). In the ECSN case, mixing of nickel inefficient because of a relatively spherical beginning of the explosion triggered by a steep density gradient outside of the degenerate core concomitant with the absence of secondary non-radial instabilities at composition-shell interfaces of the progenitor. The similarity between the core structure of the zero-metallicity progenitor and the ONeMg progenitor leads to similarities in their explosion properties. In both these cases, we observe roughly equal amount of nickel mixing and qualitatively similar ejecta morphology at late times characterized by small deviations from spherical symmetry. In contrast, the solar-metallicity iron-core progenitor shows strong growth of Rayleigh-Taylor plumes in the entire helium core. The large initial asymmetries lead to more pronounced mixing. In this case the final morphology is remarkably similar to the remnant morphology seen in long term simulations of massive progenitors.
+We present the results of full $4\pi\mathord{-}$3D, long-term simulations of core-collapse supernova (CCSN) resulting from low-mass progenitors, covering the evolution from bounce through shock revival until shock breakout. We consider two low-mass iron-core progenitors with zero metallicity and solar metallicity which explode as CCSNe, and one progenitor with an oxygen-neon-magnesium core which explodes as an electron-capture supernova (ECSN). In the ECSN case, mixing of nickel inefficient because of a relatively spherical beginning of the explosion triggered by a steep density gradient outside of the degenerate core concomitant with the absence of secondary non-radial instabilities at composition-shell interfaces of the progenitor. The similarity between the core structure of the zero-metallicity progenitor and the ONeMg progenitor leads to similarities in their explosion properties. In both these cases, we observe roughly equal amount of nickel mixing and qualitatively similar ejecta morphology at late times characterized by small deviations from spherical symmetry. In contrast, the solar-metallicity iron-core progenitor shows strong growth of Rayleigh-Taylor plumes in the entire helium core. The large initial asymmetries lead to more pronounced mixing. In this case the final morphology is remarkably similar to the remnant morphology seen in long-term simulations of massive progenitors.
 \end{abstract}
 
 \begin{keywords}
@@ -133,27 +136,27 @@ In this work we attempt to investigate the following questions with the help of 
 
 \section{Progenitors}
 % pre collapse 
-\textbf{In this paper, we study an ECSN of a non-rotating 8.8 \solm progenitor ($e8.8$) \citetext{Nomoto, 2017, private communication} and two non-rotating CCSNe resulting from low-mass iron-core progenitors ($z9.6$, $s9.0$), provided by A. Heger \citetext{2015, private communication} \citep{Woosley2015} and \cite{Sukhbold2016}, respectively. The considered ECSN progenitor is explored here for the first time whereas the explosion of iron-core progenitors was simulated in 3D with the \vertexprom code and are published in \cite{Melson2015a} and \cite{Melson2019}. }
+\GEO{In this paper, we study an ECSN of a non-rotating 8.8 \solm progenitor ($e8.8$) \citetext{Nomoto, 2017, private communication} and two non-rotating CCSNe resulting from low-mass iron-core progenitors ($z9.6$, $s9.0$), provided by A. Heger \citetext{2015, private communication} \citep{Woosley2015} and \cite{Sukhbold2016}, respectively. The considered ECSN progenitor is explored here for the first time whereas the explosion of iron-core progenitors was simulated in 3D with the \vertexprom code and are published in \cite{Melson2015a} and \cite{Melson2019}. }
 
 \subsection{ESCN progenitor}
 The $e8.8$ model is a solar metallicity progenitor with a ZAMS mass of $M_{\rm ZAMS}\mathord{=}8.8\,\solm$ and was provided by Nomoto \citetext{2017, private communication}. This progenitor has an ONeMg core, which explodes as an ECSN. 
 It has the typical very sharp density gradient outside of its $1.33\, \solm$ ONeMg core ($\xi_{2.5}\mathord{=}5.7\times10^{-6}$, $\xi_{1.5}\mathord{=}8.0\times10^{-6}$)\footnote{Because of its relevance for higher-mass progenitors we provide the compactness parameter \citep{OConnor2011} {$\xi_{M}\equiv \frac{M/\solm}{R(M_{\rm bary}\mathord{=}M)/10^{3}\, \rm km}$}. Due to the steep density gradient outside of the core of the considered progenitors, its significance in the present context is, however, questionable.} which can be seen from the density ($\rho$) profile in Figure~\ref{fig:prog_tem_rho_ye_rhor}, where we also show the $\rho r^3$-profiles, besides the electron fraction $Y_{\mathrm{e}}$ and temperature $T$ as functions of enclosed mass and radius. The dash-dotted, dashed and dotted lines indicate the positions of the composition interfaces, degenerate core/CO, CO/He and He/H, respectively. 
-\textbf{We define the locations of the composition interfaces, similar to \cite{Wongwathanarat2015}, as those positions at the bottom of the respective layers of the star where the mass fractions $X_{i}$ drop below half of their maximum values in the layer. The radial positions of the composition interfaces are summarized in Table~\ref{tab:progenitors}.}
+\GEO{We define the locations of the composition interfaces, similar to \cite{Wongwathanarat2015}, as those positions at the bottom of the respective layers of the star where the mass fractions $X_{i}$ drop below half of their maximum values in the layer. The radial positions of the composition interfaces are summarized in Table~\ref{tab:progenitors}.}
 In the top panel of Figure~\ref{fig:composition_all} we present the composition of model $e8.8$, where we combine all elements with mass number greater than 28 into the ``iron-group'' (IG).
 The ONeMg-core is surrounded by very thin carbon and helium shells ($M_{\rm C}\,\mathord{\approx}\, 8.1\mathord{\times}10^{-3}\, \solm$, $M_{\rm He}\,\mathord{\sim}2.1\mathord{\times}\,10^{-6}\, \solm$) and a hydrogen envelope ($M_{\rm H}\,\mathord{\approx}\, 4.49\, \solm$).  
 
-A previous version of the progenitor \citep{Nomoto1984,Nomoto1987,Nomoto2008}, commonly termed $e8.8$ in the literature and $e8.8_{\mathrm{n}}$ in this publication, has been used in various studies, including nucleosynthesis \citep{Wanajo2018} and PNS kicks \citep{Gessner2018} and is a reference case for supernova simulations of ECSNe. \textbf{The previously used progenitor $e8.8_{\mathrm{n}}$ has a more massive helium core with a mass of $\mathord{\sim} 1.375 \,\solm$, but a smaller hydrogen envelope (see Figure~\ref{fig:prog_tem_rho_ye_rhor}).} The collapse and post-bounce evolution of the new progenitor are computed with \prom as detailed in Section~\ref{sec:Collapse and post-bounce setup in prom}.
+A previous version of the progenitor \citep{Nomoto1984,Nomoto1987,Nomoto2008}, commonly termed $e8.8$ in the literature and $e8.8_{\mathrm{n}}$ in this publication, has been used in various studies, including nucleosynthesis \citep{Wanajo2018} and PNS kicks \citep{Gessner2018} and is a reference case for supernova simulations of ECSNe. \GEO{The previously used progenitor $e8.8_{\mathrm{n}}$ has a more massive helium core with a mass of $\mathord{\sim} 1.375 \,\solm$, but a smaller hydrogen envelope (see Figure~\ref{fig:prog_tem_rho_ye_rhor}).} The collapse and post-bounce evolution of the new progenitor are computed with \prom as detailed in Section~\ref{sec:Collapse and post-bounce setup in prom}.
 
 \subsection{Progenitors for CCSNe}
 As a second progenitor we employ a zero-metallicity $M_{\text{ZAMS}}\mathord{=}9.6\,\solm$ star, termed $z9.6$. It was first used by \citet{Janka2012} and is also considered in other studies such as \citet{Mueller2013,Mueller2018}. This iron-core progenitor is structurally similar to the ECSN model. It also shows a sharp decline of the density at the edge of its iron-core enabling low-energy explosions in 1D \citep{Melson2015}. 
-Evolved as an extension to \cite{Heger2010}, the pre-SN model develops an iron-core of about 1.30 \solm. The iron-core is surrounded by a $0.061\,\solm$ Si layer, a $0.016\,\solm$ layer and has a helium layer of about \textbf{0.33} \solm below a massive hydrogen envelope of $\mathord{\sim}8$ \solm ($\xi_{2.5}\mathord{=}7.65 \times 10^{-5}$, $\xi_{1.5}\mathord{=}2.37 \times 10^{-4}$). As the envelope is not enriched by metals, mass loss played only a negligible role during the star's evolution. This leaves the total mass of the star almost unchanged (see Table~\ref{tab:progenitors}). 
+Evolved as an extension to \cite{Heger2010}, the pre-SN model develops an iron-core of about 1.30 \solm. The iron-core is surrounded by a $0.061\,\solm$ Si layer, a $0.016\,\solm$ layer and has a helium layer of about \GEO{0.33} \solm below a massive hydrogen envelope of $\mathord{\sim}8$ \solm ($\xi_{2.5}\mathord{=}7.65 \times 10^{-5}$, $\xi_{1.5}\mathord{=}2.37 \times 10^{-4}$). As the envelope is not enriched by metals, mass loss played only a negligible role during the star's evolution. This leaves the total mass of the star almost unchanged (see Table~\ref{tab:progenitors}). 
 Due to its structure it was one of the first iron-core progenitors that exploded in fully self-consistent 3D simulations by \cite{Melson2015a} with \vertexprom. This result provides the initial state for our investigation. 
 
-Moreover, we investigate a solar-metallicity $M_{\text{ZAMS}} \mathord{=} 9.0 \,\solm$ star, termed $s9.0$, of \citet{Sukhbold2016}. \textbf{Its 1.30 \solm iron-core is surrounded by a silicon shell of 0.016 \solm, a carbon-oxygen layer of 0.068 \solm and a helium shell of 0.169 \solm (see Table~\ref{tab:progenitors})}. The hydrogen envelope extends from 1.57 \solm up to 8.75 \solm ($\xi_{2.5}\mathord{=}3.83 \times 10^{-5}$, $\xi_{1.5}\mathord{=}5.25 \times 10^{-3}$).
+Moreover, we investigate a solar-metallicity $M_{\text{ZAMS}} \mathord{=} 9.0 \,\solm$ star, termed $s9.0$, of \citet{Sukhbold2016}. \GEO{Its 1.30 \solm iron-core is surrounded by a silicon shell of 0.016 \solm, a carbon-oxygen layer of 0.068 \solm and a helium shell of 0.169 \solm (see Table~\ref{tab:progenitors})}. The hydrogen envelope extends from 1.57 \solm up to 8.75 \solm ($\xi_{2.5}\mathord{=}3.83 \times 10^{-5}$, $\xi_{1.5}\mathord{=}5.25 \times 10^{-3}$).
 This progenitor was chosen to be representative for low-mass CCSNe by \cite{Jerkstrand2018}, who focused on the late-time nebular spectra of the supernova, and by \cite{Glas2019} focusing on the neutrino emission during the explosion. The three-dimensional exploding model for our investigation is provided by \citet{Melson2019} and has also been modeled with \vertexprom. 
 
 Although the progenitors considered in this study have very similar ZAMS masses, their pre-collapse core structures differ strongly (see Figure~\ref{fig:prog_tem_rho_ye_rhor}).
-We stress the importance of the $\rho r^3$-profiles of the progenitors as they are decisive for the overall evolution of the explosion \citep{Kifonidis2003,Wongwathanarat2015}. The behavior of the $\rho r^3$-profile yields important information of the propagation of the shock through the stellar structure because, according to \cite{Sedov1961}, positive gradients of $\rho r^3$ cause shock deceleration, whereas negative gradients cause the opposite. \textbf{Additionally, variations of the shock velocity produce crossing pressure and density gradients behind the shock front near the composition-shell interfaces. Such conditions are essential for Rayleigh-Taylor instabilities as detailed in Section~\ref{sec:Linear stability analysis}, assigning them a crucial role for explaining the high-velocity metal-rich ejecta and the radial mixing of heavy elements \citep{Wongwathanarat2015}.}
+We stress the importance of the $\rho r^3$-profiles of the progenitors as they are decisive for the overall evolution of the explosion \citep{Kifonidis2003,Wongwathanarat2015}. The behavior of the $\rho r^3$-profile yields important information of the propagation of the shock through the stellar structure because, according to \cite{Sedov1961}, positive gradients of $\rho r^3$ cause shock deceleration, whereas negative gradients cause the opposite. \GEO{Additionally, variations of the shock velocity produce crossing pressure and density gradients behind the shock front near the composition-shell interfaces. Such conditions are essential for Rayleigh-Taylor instabilities as detailed in Section~\ref{sec:Linear stability analysis}, assigning them a crucial role for explaining the high-velocity metal-rich ejecta and the radial mixing of heavy elements \citep{Wongwathanarat2015}.}
 
 The ECSN progenitor exhibits an extremely sharp drop of the $\rho r^3$-profile just outside of the ONeMg core. It is this drop in density that enables fast explosions due to an early, rapid drop of the mass accretion rate and of the corresponding ram pressure at the SN shock \citep{Kitaura2006}. Outside the core, the $\rho r^3$-profile grows monotonically as no other composition interfaces are encountered.
 The $z9.6$ progenitor falls into the class of ECSN-like progenitors also in this respect: Similar to the electron-capture progenitor, the $z9.6$ model shows a monotonic growth of the $\rho r^3$-profile outside the CO core, where only a small step in the density profile can be seen at the He/H interface.
@@ -186,24 +189,24 @@ For this paper we performed spherically symmetric (1D), axisymmetric (2D) and fu
                            & ONeMg/C    & $8.48\mathord{\times} 10^{7}$  & 1.33 & 0.15 \\
                            & C/He       & $1.09\mathord{\times} 10^{8}$  & 1.34 & 0.17 \\
                            & He/H       & $1.21\mathord{\times} 10^{8}$  & 1.34 & 0.18\\
-                           & Surface    & $8.43\mathord{\times} 10^{13}$ & 5.83 & $4.3\mathord{\times}10^5$\\
+                           & Surface    & $8.43\mathord{\times} 10^{13}$ & 5.83 & $4.1\mathord{\times}10^5$\\
    \hline
    \multirow{5}{*}{$z9.6$} & IG/Si    & $1.10\mathord{\times} 10^{7}$  & 1.30 & 0.09 \\ 
-                           & Si/CO       & $1.45\mathord{\times} 10^{7}$  & 1.36 & 0.46\\ 
-                           & CO/He      & $6.73\mathord{\times} 10^{8}$  & 1.37 & 2.05\\
+                           & Si/CO       & $1.45\mathord{\times} 10^{7}$  & 1.36 & 0.11\\ 
+                           & CO/He      & $6.73\mathord{\times} 10^{8}$  & 1.37 & 0.40\\
                            & He/H       & $1.40\mathord{\times} 10^{12}$ & 1.70 & $1.7\mathord{\times}10^{3}$\\
                            & Surface    & $1.50\mathord{\times} 10^{13}$ & 9.60 & $1.2\mathord{\times}10^5$  \\
    \hline
    \multirow{5}{*}{$s9.0$} & IG/Si    & $1.24\mathord{\times} 10^{7}$   & 1.30 & 0.08 \\ 
                            & Si/CO       & $1.55\mathord{\times} 10^{7}$   & 1.33 & 0.30 \\ 
-                           & CO/He      & $1.34\mathord{\times} 10^{10}$  & 1.40 & 15.0 \\
-                           & He/H       & $1.21\mathord{\times} 10^{11}$  & 1.57 & 206.0 \\
+                           & CO/He      & $1.34\mathord{\times} 10^{9}$  & 1.40 & 1.30\\
+                           & He/H       & $1.21\mathord{\times} 10^{11}$  & 1.57 & 124.0 \\
                            & Surface    & $2.86\mathord{\times} 10^{13}$  & 8.75 & $3.2\mathord{\times} 10^5$ \\
   \hline
    \end{tabular}
 
 \flushleft
-\textit{Notes}: \textbf{The radii of the composition interfaces $\mathrm{R}_{\mathrm{shell}}$ are defined as those positions at the bottom of the layers of the star (e.g. CO) where the mass fractions (e.g. C+O) drop below half of their maximum values in the respective layer. We also show the mass $\mathrm{M}_{\mathrm{shell}}$ contained within the corresponding radius and the post-bounce time when the forward shock of our three-dimensional models reaches the interface.}
+\textit{Notes}: \GEO{The radii of the composition interfaces $\mathrm{R}_{\mathrm{shell}}$ are defined as those positions at the bottom of the layers of the star (e.g. CO) where the mass fractions (e.g. C+O) drop below half of their maximum values in the respective layer. We also show the mass $\mathrm{M}_{\mathrm{shell}}$ contained within the corresponding radius and the post-bounce time when the forward shock of our three-dimensional models reaches the interface.}
 \end{table*}
 
 
@@ -218,24 +221,24 @@ In the following sections we describe the numerical and physical features of the
 \subsection{\vertexprom code}
 \vertexprom is a hydrodynamics code based on an implementation of the Piecewise Parabolic Method (PPM) of \cite{Colella1984}, coupled with a three-flavor, energy-dependent, ray-by-ray-plus (RbR+) 
 neutrino transport scheme. It uses the full set of neutrino reactions and microphysics presented in \cite{Buras2006} and the high-density equation of state (EoS) of \cite{Lattimer1991} with a nuclear incompressibility of $\mathrm{K}\mathord{=} 220\,\mathord{MeV}$.
-\textbf{At low densities \vertexprom uses the EoS of \cite{Janka1999} with 23 nuclear species for nuclear statistical equilibrium (NSE) in regions with temperatures above $T_{\mathrm{NSE}}$. Below $T_{\mathrm{NSE}}$ a flashing scheme is used to approximately treat nuclear burning (see \citealt{Rampp2002}). }
+\GEO{At low densities \vertexprom uses the EoS of \cite{Janka1999} with 23 nuclear species for nuclear statistical equilibrium (NSE) in regions with temperatures above $T_{\mathrm{NSE}}$. Below $T_{\mathrm{NSE}}$ a flashing scheme is used to approximately treat nuclear burning (see \citealt{Rampp2002}). }
 The simulations presented here were conducted with a 1D gravity potential including general relativistic corrections \citep{Marek2006}. \vertexprom makes use of the axis-free Yin-Yang grid \citep{Kageyama2004} based on the implementation of \cite{Melson2016}.
 
 \subsection{\prom code}
-\prom is based on the same hydrodynamics module as \vertexprom and uses the implementation of the Yin-Yang grid presented in \cite{Wongwathanarat2010}.\textbf{ It employs the EoS of \cite{Lattimer1991} for high densities above a threshold value $\rho_{\mathrm{HD}}$ (usually $10^{11}\,\mathrm{g/cm^3}$) and the ``Helmholtz'' EoS of \cite{Timmes1999} for densities below $\rho_{\mathrm{HD}}$, which takes into account arbitrarily degenerate and relativistic electrons and positrons, photons, and a set of nondegenerate, nonrelativistic nuclei.
+\prom is based on the same hydrodynamics module as \vertexprom and uses the implementation of the Yin-Yang grid presented in \cite{Wongwathanarat2010}.\GEO{ It employs the EoS of \cite{Lattimer1991} for high densities above a threshold value $\rho_{\mathrm{HD}}$ (usually $10^{11}\,\mathrm{g/cm^3}$) and the ``Helmholtz'' EoS of \cite{Timmes1999} for densities below $\rho_{\mathrm{HD}}$, which takes into account arbitrarily degenerate and relativistic electrons and positrons, photons, and a set of nondegenerate, nonrelativistic nuclei.
 The set of nuclei, consistent of neutrons $n$, protons $p$, 13 $\alpha$-nuclei ($^4{\mathrm{He}}$, $^{12}\mathrm{C}$, $^{16}\mathrm{O}$, $^{20}\mathrm{Ne}$, $^{24}\mathrm{Mg}$, $^{28}\mathrm{Si}$, $^{32}\mathrm{S}$, $^{36}\mathrm{Ar}$, $^{40}\mathrm{Ca}$, $^{44}\mathrm{Ti}$, $^{48}\mathrm{Cr}$, $^{52}\mathrm{Fe}$, $^{56}\mathrm{Ni}$) and an additional tracer nucleus \tracer, which traces the production of neutron rich nuclei in an environment with low electron fraction $Y_{e}\mathord{<}0.49$, are treated as nonrelativistic Boltzmann gases. The advection of the species is treated with the Consistent Multi-Fluid Advection (CMA) scheme of \cite{Plewa1999}.
 NSE is assumed above $T_{\mathrm{NSE}}$ \COM{Value is given in setup section} and treated by NSE table including the nuclei listed above \citetext{Kifonidis 2004, private communication}.
 Nuclear burning is considered in temperatures below $T_{\mathrm{NSE}}$ with a 13-species $\alpha$-network which is consistently coupled to the hydrodynamic modeling. At the boundary between network and NSE we assume that all free neutrons and protons recombine to yield \helium. We thus add the mass fractions of $p$ and $n$ onto the mass fraction of \helium, accounting for the energy release\footnote{In a newer version of the code we allow free neutrons and protons and only recombine $n$ and $p$ unto \helium under the condition of charge conservation.}. }
 The \prom code uses a 3D gravitational potential with the general relativistic monopole correction of \cite{Marek2006}, while higher multipoles are obtained from a solution of Poisson's equation as described in \cite{Mueller1995}.
-\textbf{Different from \vertexprom, \prom uses a three-flavor grey neutrino transport scheme as presented in \cite{Scheck2006}\footnote{Some improvements and extensions to the neutrino transport module are provided in Appendix~\ref{Appendix:Neutrino}}, which is valid at low optical depths. Therefore, the central high-density core of the PNS of 1.1 \solm is replaced by an analytical one-zone model, providing boundary conditions for the neutrino luminosities as a function of time. Details are given in Section~\ref{sec:Collapse and post-bounce setup in prom}.}
+\GEO{Different from \vertexprom, \prom uses a three-flavor grey neutrino transport scheme as presented in \cite{Scheck2006}\footnote{Some improvements and extensions to the neutrino transport module are provided in Appendix~\ref{Appendix:Neutrino}}, which is valid at low optical depths. Therefore, the central high-density core of the PNS of 1.1 \solm is replaced by an analytical one-zone model, providing boundary conditions for the neutrino luminosities as a function of time. Details are given in Section~\ref{sec:Collapse and post-bounce setup in prom}.}
 
 \subsection{Collapse and post-bounce setup in \vertexprom}
 \label{sec:Collapse and post-bounce setup in vertexprom}
 The collapse of the pre-SN state is computed in 1D using the full set of neutrino interactions until 15 ms after bounce. Thereafter, the simulations are mapped onto the three-dimensional Yin-Yang grid and random cell-to-cell density perturbations are imposed with an amplitude of 0.1\%. 
 The simulations of the iron-core progenitors were computed using a non-equidistant radial grid with initially 400 zones extending to $10^9\,\text{cm}$ which was refined in steps to more than 600 zones. This guarantees a resolution $\Delta r/r$ of better than $1\%$ at the gain radius. The innermost 1.6 km are calculated in spherical symmetry to avoid time stepping constraints at the grid center.
 The angular resolution for the $z9.6$ model was set to $2^{\circ}$. 
-The collapse and post-bounce evolution of model $s9.0$ was computed with a newly implemented static mesh refinement (SMR) scheme presented in \cite{Melson2019} which increased the resolution up to $0.5^{\circ}$ \textbf{outside radii larger than 160 km}.
-\textbf{The simulations with full neutrino transport were too expensive to continue them to late post-bounce times. At $\tpb \mathord{\ge} 0.5\,\s$ the neutrino transport is therefore switched off and replaced by a simple scheme for neutrino heating and cooling, which ensures a seamless continuation with a minimum of transient artifacts. Details of this scheme are given in Appendix \COM{DO APPENDIX}.}
+The collapse and post-bounce evolution of model $s9.0$ was computed with a newly implemented static mesh refinement (SMR) scheme presented in \cite{Melson2019} which increased the resolution up to $0.5^{\circ}$ \GEO{outside radii larger than 160 km}.
+\GEO{The simulations with full neutrino transport were too expensive to continue them to late post-bounce times. At $\tpb \mathord{\ge} 0.5\,\s$ the neutrino transport is therefore switched off and replaced by a simple scheme for neutrino heating and cooling, which ensures a seamless continuation with a minimum of transient artifacts. Details of this scheme are given in Appendix \COM{DO APPENDIX}.}
 
 \subsection{Collapse and post-bounce setup in \prom}
 \label{sec:Collapse and post-bounce setup in prom}
@@ -245,7 +248,7 @@ For the simulation of the ECSNe progenitor we take $\rho_{\mathrm{HD}}\mathord{=
 After bounce \prom uses the grey neutrino transport scheme and modeling approach as presented in \cite{Scheck2006}, where we excise the central neutrino-opaque core of the PNS. For the treatment of this innermost region we follow the work of \cite{Ugliano2012} and \cite{Sukhbold2016}. 
 The inner core of the PNS with a mass of $M_{\mathrm{c}}\mathord{=}1.1\,\solm$ and densities well above those of the neutrinospheric layer is replaced by a point mass and inner grid boundary at $R_{\mathrm{ib}}$. The contraction of the PNS is mimicked by a retraction of the closed inner boundary at $R_{\mathrm{ib}}$ and thus, of the grid on the whole computational domain. We use the contraction of $R_{\mathrm{ib}}$ as prescribed in \cite{Ertl2016}.
 Neutrino luminosities at $R_{\mathrm{ib}}$ are given by a one-zone cooling model as detailed in \cite{Ugliano2012}.
-\textbf{The time-dependent treatment of the innermost region employs five parameters ($p$, $a$, $R_{\mathrm{ib,f}}$, $R_{\mathrm{c,f}}$, $t_{0}$) which can be calibrated to yield explosions that fulfill the constraints by observations or 3D simulations of CCSNe.
+\GEO{The time-dependent treatment of the innermost region employs five parameters ($p$, $a$, $R_{\mathrm{ib,f}}$, $R_{\mathrm{c,f}}$, $t_{0}$) which can be calibrated to yield explosions that fulfill the constraints by observations or 3D simulations of CCSNe.
 In Table~\ref{table:e8param} we list the parameters used for our set of simulations of model $e8.8$. The reader is referred to Appendix~\ref{Appendix:prom inner boundary} for a more detailed detailed description of the parametric approach.}
 We performed 1D and 2D simulations for all four sets of parameters and chose the $e8.8_{10}$ calibration as our reference case for a three-dimensional simulation. The 1D and 2D simulations use a non-equidistant radial grid with 2000 zones up to a radius of $R_{\mathrm{ob}}\mathord{=}2\times 10^{10}\,\text{cm}$. 
 The 3D run uses 1400 radial zones for computational efficiency. 
@@ -288,9 +291,9 @@ For this we map the final state of a post-bounce simulation onto a new computati
 
 All long-term simulations are computed with an angular resolution of $2^{\circ}$. We use a non-equidistant (geometrically increasing) radial grid from the inner to the outer boundary. In order to guarantee sufficient resolution where needed, the radial grid is allowed to move with the ejecta starting from $\tpb\mathord{\sim}10\,\s$. 
 Gravity is accounted for by a 1D potential and nuclear reactions are still considered. 
-\textbf{
+\GEO{
 When mapping the iron-core models into \prom, we recombine free $n$ and $p$ from the freeze-out of NSE into \helium under the condition of charge conservation and account for the energy release. } 
-\textbf{
+\GEO{
 Additionally, we include the decay of radioactive nickel which becomes a relevant source of energy during late phases of the explosion.
 Radioactive \nickel (half-life $t_{1/2}\,\mathord{=}\,  6.077\, \mathrm{days}$) decays to \cobalt via electron capture (EC) decay. The resulting \cobalt nucleus is unstable ($t_{1/2}\,\mathord{=}\, 77.27\, \mathrm{days}$) and decays to \iron by the means of electron capture decay and via positron decay ($\beta^+$). We thus add \cobalt and \iron to our set of nuclei.
 The respective decay reactions are given by
@@ -317,7 +320,7 @@ Therefore, the energy per mass $\Delta E_{\mathrm{i}}/\Delta\mathrm{M}$ deposite
 where $t_{0,\mathrm{i}}$ is the life-time of species $i$. The energy is deposited locally and thermodynamic quantities are self-consistently updated.}
  
 
-\textbf{
+\GEO{
 When mapping from the simulations of the onset of explosion to the follow-up simulation, the central region interior to $R_{\mathrm{ib}}$ of Table~\ref{tab:long term boundaries} is removed from the computational domain. Similar to \cite{Wongwathanarat2015} we prescribe an inflow boundary condition at $R_{\mathrm{ib}}$, which corresponds to the neutrino-driven baryonic outflow (``neutrino-wind''; e.g \citealt{Qian1996}) generated by ongoing neutrino-energy deposition in the surface layers of the cooling PNS. In contrast to \cite{Wongwathanarat2015}, we employ neutrino-wind results adopted from 1D simulations of the explosions, seamlessly connected to the full multi-dimensional explosion simulation with $R_{\mathrm{ib}}$ bein in the supersonic wind region (ensuring that perturbations cannot propagate back to the inner boundary creating artifacts) and at a time where  the outflow properties math between the 1D and multi-dimensional models. This is possible because the PNS's in all 1D and multi-dimensional models are extremely similar and the neutrino-emission and thus the neutrino-driven winds also have very similar quantities. 
 For both iron-core progenitors we employ neutrino wind conditions of a 1D simulation of model $z9.6$ with the \vertexprom code. It includes PNS convection by a mixing length treatment, for which reason the neutrino-emission is essentially identical to the multi-dimensional calculation \citep{Mirizzi2016}. The time-dependence of the radial velocity $v_{\mathrm{r}}$, density $\rho$ and total (i.e. kinetic + internal) energy density $e$, which are needed for setting the boundary condition, are shown in Figure~\ref{fig:wind} as extracted from the 1D explosion simulation of the $z9.6$ at a radius of 600 km (in the supersonic wind domain).
 For the 3D simulation of model $e8.8$ we use the neutrino-wind results from the corresponding 1D runs with the same explosion energies. Using time-dependences of the boundary conditions normalized by the initial value at the mapping time $t_{\mathrm{map}}$  guarantees as smooth, seamless transition from the earlier evolution to the long-time evolution of the explosion. Transient artifacts are thus kept minimal.
@@ -338,7 +341,7 @@ For the 3D simulation of model $e8.8$ we use the neutrino-wind results from the 
  $e8.8^{\mathrm{2D}}_{15}$ & 1000 & $8.1\times10^{8}$ & 1.309 & 2.515 \\
  $e8.8^{\mathrm{3D}}$      & 500  & $8.1\times10^{8}$ & 1.326 & 0.470 \\
  $z9.6^{\mathrm{3D}}$      & 600  & $1.3\times10^{8}$ & 1.340 & 1.440 \\
- $s9.0^{\mathrm{3D}}$      & 600  & $2.7\times10^{8}$ & -     & 3.140 \\
+ $s9.0^{\mathrm{3D}}$      & 1000  & $2.8\times10^{8}$ & 1.352 & 3.140 \\
   \hline
 \end{tabular}
 \end{table} %  END TABLE SUMMARY LONG TERM
@@ -346,14 +349,14 @@ For the 3D simulation of model $e8.8$ we use the neutrino-wind results from the 
 \label{fig:wind}
  \centering
  \includegraphics[width=0.50\textwidth,trim=0.2cm 1.2cm 0.2cm 0.2cm,clip]{./pic/wind_paper.pdf}
- \caption{\textbf{Time-dependent behavior of neutrino wind density $\rho$, radial velocity $v_{\mathrm{r}}$ and the total energy density $e$, normalized to their initial values at $t_{\mathrm{map}}\mathord{=}1.44\,\s$, which defines the start of the long-time simulation of the $z9.6$. The data are extracted from a 1D simulation of the explosion of the $9.6\,\solm$ progenitor with \vertexprom \citep{Mirizzi2016}, evaluated at a radius of 600 km.} }
+ \caption{\GEO{Time-dependent behavior of neutrino wind density $\rho$, radial velocity $v_{\mathrm{r}}$ and the total energy density $e$, normalized to their initial values at $t_{\mathrm{map}}\mathord{=}1.44\,\s$, which defines the start of the long-time simulation of the $z9.6$. The data are extracted from a 1D simulation of the explosion of the $9.6\,\solm$ progenitor with \vertexprom \citep{Mirizzi2016}, evaluated at a radius of 600 km.} }
 \end{figure}% END FIGURE WIND
 
 
 \section{Evolution during the first second}
 \label{sec:Evolution during the first second}
 \subsection{Shock propagation, energetics and neutron star properties}
-In the following we provide a short overview of the post-bounce phase. The reader is referred to \cite{Melson2015a} and \cite{Melson2019} for a detailed analysis of the post-bounce phase of the iron-core progenitors. Generic features of the explosion of ECSNe are given in \cite{Kitaura2006,Janka2008,Gessner2018}. Since our results closely resemble these previous findings, we \textbf{summarize} the most important features in the following.
+In the following we provide a short overview of the post-bounce phase. The reader is referred to \cite{Melson2015a} and \cite{Melson2019} for a detailed analysis of the post-bounce phase of the iron-core progenitors. Generic features of the explosion of ECSNe are given in \cite{Kitaura2006,Janka2008,Gessner2018}. Since our results closely resemble these previous findings, we \GEO{summarize} the most important features in the following.
 In Figure~\ref{fig:eexp all} we show the evolution of the angle-averaged supernova shock and the diagnostic explosion energy of our three-dimensional simulations during the post-bounce phase. 
 The angle-averaged supernova shock is calculated as
 \begin{equation}
@@ -374,7 +377,7 @@ This is in sharp contrast to the typical core-collapse supernova, where the high
 \begin{figure*}
  \centering
  \includegraphics[width=\textwidth,trim=0.1cm 2.1cm 0cm 2.3cm,clip]{./pic/eexp_shk_kick_all_paper.pdf}
- \caption{Shock radius (upper left panel), shock velocity (upper right panel) and diagnostic explosion energy (lower left panel) versus post-bounce time for all of our 3D models. We also show the total PNS kick velocities (thick lines) and hydrodynamic induced PNS kick velocities (thin lines) in the lower right panel. \textbf{The difference is associated with the PNS kicks caused by asymmetric neutrino emission due to the LESA phenomenon (see text for details). For the iron-core progenitors we can track only hydrodynamic contributions to the kick as soon as the transport module of \vertexprom is switched off, while for the ONeMg case our simplified neutrino treatment with the excised core of the PNS does not allow us to monitor the LESA induced kick.}The kick of model $e8.8$ is scaled by a factor of 5 for better visibility. }
+ \caption{Shock radius (upper left panel), shock velocity (upper right panel) and diagnostic explosion energy (lower left panel) versus post-bounce time for all of our 3D models. We also show the total PNS kick velocities (thick lines) and hydrodynamic induced PNS kick velocities (thin lines) in the lower right panel. \GEO{The difference is associated with the PNS kicks caused by asymmetric neutrino emission due to the LESA phenomenon (see text for details). For the iron-core progenitors we can track only hydrodynamic contributions to the kick as soon as the transport module of \vertexprom is switched off, while for the ONeMg case our simplified neutrino treatment with the excised core of the PNS does not allow us to monitor the LESA induced kick.}The kick of model $e8.8$ is scaled by a factor of 5 for better visibility. }
 \label{fig:eexp all}
 \end{figure*}
 
@@ -425,17 +428,17 @@ Consequently, strong pressure waves are sent upstream into the ejecta, compressi
     \hline
 \end{tabular}
 \flushleft
-\textit{Notes}: \textbf{All values are given at the end of our explosion simulation ($t_{\mathrm{map}}$). $v_{\mathrm{NS}}^{\mathrm{tot}}$ is the total NS kick resulting from the hydrodynamic ($v_{\mathrm{NS}}^{\mathrm{hyd}}$) plus the neutrino-induced ($v_{\mathrm{NS}}^{\mathrm{\nu}}$) contribution. $J_{\mathrm{NS}}$ is the total angular momentum transported to the PNS through a radius of 100 km \COM{I include inward and outward flux of angular-momentum}. $\alpha_{\mathrm{ej}}$ and $\alpha_{\mathrm{ej}}^{\nu}$ are the hydrodynamic and neutrino anisotropy-parameter, respectively (see Appendix~\ref{Appendix:neutron star}). For the iron-core progenitors we average $\alpha_{\mathrm{ej}}^{\nu}$ over the time the emission dipole is the largest until the end of the simulation. $M_{\mathrm{b}}$ is the baryonic PNS mass. $P_{\mathrm{NS}}$ is the PNS spin period at the end of our post-bounce simulations assuming a final PNS radius $R_{\mathrm{NS}}$ of 12 km, angular momentum conservation and a gravitational mass of $M_{\mathrm{g}}$. $M_{\mathrm{fin}}$ (see also Table~\ref{tab:long term boundaries}) is the mass contained within the excised region from which we calculate and gravitational mass $M_{\mathrm{g}}$ of the PNS. }
+\textit{Notes}: \GEO{All values are given at the end of our explosion simulation ($t_{\mathrm{map}}$). $v_{\mathrm{NS}}^{\mathrm{tot}}$ is the total NS kick resulting from the hydrodynamic ($v_{\mathrm{NS}}^{\mathrm{hyd}}$) plus the neutrino-induced ($v_{\mathrm{NS}}^{\mathrm{\nu}}$) contribution. $J_{\mathrm{NS}}$ is the total angular momentum transported to the PNS through a radius of 100 km \COM{I include inward and outward flux of angular-momentum}. $\alpha_{\mathrm{ej}}$ and $\alpha_{\mathrm{ej}}^{\nu}$ are the hydrodynamic and neutrino anisotropy-parameter, respectively (see Appendix~\ref{Appendix:Neutron Star Properties}). For the iron-core progenitors we average $\alpha_{\mathrm{ej}}^{\nu}$ over the time the emission dipole is the largest until the end of the simulation. $M_{\mathrm{b}}$ is the baryonic PNS mass. $P_{\mathrm{NS}}$ is the PNS spin period at the end of our post-bounce simulations assuming a final PNS radius $R_{\mathrm{NS}}$ of 12 km, angular momentum conservation and a gravitational mass of $M_{\mathrm{g}}$. $M_{\mathrm{fin}}$ (see also Table~\ref{tab:long term boundaries}) is the mass contained within the excised region from which we calculate and gravitational mass $M_{\mathrm{g}}$ of the PNS. }
 \end{table*}
 
 %z9.6
-The ECSNe-like structure of model $z9.6$ is reflected in the evolution of the forward shock and growth of the diagnostic explosion energy. Shock radii remain almost perfectly spherical \textbf{in both the $e8.8$ and $z9.6$}. Acceleration of the forward shock outside the iron-core, however, is weaker in the $z9.6$ model than in model $e8.8$, due to the more gradual change in the density profile. Explosion energies also start to rise early and saturate just after $\tpb\mathord{\sim}1\,\s$.
+The ECSNe-like structure of model $z9.6$ is reflected in the evolution of the forward shock and growth of the diagnostic explosion energy. Shock radii remain almost perfectly spherical \GEO{in both the $e8.8$ and $z9.6$}. Acceleration of the forward shock outside the iron-core, however, is weaker in the $z9.6$ model than in model $e8.8$, due to the more gradual change in the density profile. Explosion energies also start to rise early and saturate just after $\tpb\mathord{\sim}1\,\s$.
 
 %s9.0
 In contrast to the $z9.6$ and $e8.8$ models, the $s9.0$ is lacking the very steep density gradient outside the Fe-core, as can be seen in Figure~\ref{fig:prog_tem_rho_ye_rhor}
-The shock can expand initially up to $180\,\km$ at $\tpb\mathord{\sim}130\,\ms$ but then \textbf{enters a phase of recession}. The \textbf{arrival} of the Si/O interface at the shock and \textbf{the decreasing mass-accretion rate} within the oxygen shell, eventually lead to shock expansion at $\mathord{\sim}0.3\,\s$ after bounce. Shock expansion is aided by strong convection behind the shock front. Similar to the results presented in \cite{Glas2019}, who used the same progenitor, the model remains convection-dominated and does not indicate any signs of the standing-accretion shock instability (SASI) \citep{Blondin2003,Foglizzo2007}.
-However, although SASI does not develop in the simulation, the forward shock experiences \textbf{large-scale deformations with a dipole amplitude of $10\mathord{-}10\%$ (compared to the angle-averaged shock radius)}. These deformations are driven by large scale plumes that form in the post-shock layer. 
-Contrary to the ECSN-like models, strong non-radial motions persist \textbf{around the PNS} over several seconds after bounce. Continuous mass accretion on the PNS through small funnels delay the emergence of the spherical neutrino-driven wind, which is why we needed to continue the simulations over three seconds after bounce.
+The shock can expand initially up to $180\,\km$ at $\tpb\mathord{\sim}130\,\ms$ but then \GEO{enters a phase of recession}. The \GEO{arrival} of the Si/O interface at the shock and \GEO{the decreasing mass-accretion rate} within the oxygen shell, eventually lead to shock expansion at $\mathord{\sim}0.3\,\s$ after bounce. Shock expansion is aided by strong convection behind the shock front. Similar to the results presented in \cite{Glas2019}, who used the same progenitor, the model remains convection-dominated and does not indicate any signs of the standing-accretion shock instability (SASI) \citep{Blondin2003,Foglizzo2007}.
+However, although SASI does not develop in the simulation, the forward shock experiences \GEO{large-scale deformations with a dipole amplitude of $10\mathord{-}10\%$ (compared to the angle-averaged shock radius)}. These deformations are driven by large scale plumes that form in the post-shock layer. 
+Contrary to the ECSN-like models, strong non-radial motions persist \GEO{around the PNS} over several seconds after bounce. Continuous mass accretion on the PNS through small funnels delay the emergence of the spherical neutrino-driven wind, which is why we needed to continue the simulations over three seconds after bounce.
 
 %% FIGURE Initial Ni+X all Progenitors
 \begin{figure*}
@@ -444,14 +447,14 @@ Contrary to the ECSN-like models, strong non-radial motions persist \textbf{arou
  \caption{Planar cuts of our 3D models showing the entropy color-coded at $t_{\mathrm{map}}$. The left panels display cuts which are aligned such that the point of largest shock deformation is included in the plane. Therefore the coordinate directions of the plots have no association with the computational-grid coordinates. The right panels include the smallest shock expansion in the plane. Note the largely spherical morphology of model $e8.8$ and the deformed ejecta morphology of model $s9.0$. For better visibility of the small scale structures of model $s9.0$ we chose a different color representation in this case.}
  \label{fig:slices first mapping}
 \end{figure*}
-In order to compare the final state of the post-bounce simulations of our model set, we \textbf{present} in Figure~\ref{fig:slices first mapping} planar cuts showing the entropy at the times ($t_{\mathrm{map}}$) we start our long-term simulation. The left panels are chosen such that they include the plane of the largest shock deformation. The right panels include the plane of the smallest shock deformation.
-Note the \textbf{basically spherical shape of the shock and the mild post-shock asymmetries} in both the $e8.8$ and $z9.6$ models.
+In order to compare the final state of the post-bounce simulations of our model set, we \GEO{present} in Figure~\ref{fig:slices first mapping} planar cuts showing the entropy at the times ($t_{\mathrm{map}}$) we start our long-term simulation. The left panels are chosen such that they include the plane of the largest shock deformation. The right panels include the plane of the smallest shock deformation.
+Note the \GEO{basically spherical shape of the shock and the mild post-shock asymmetries} in both the $e8.8$ and $z9.6$ models.
 In strong contrast to the ECSNe-like models, the $s9.0$ shows a clear dipolar shock deformation and ejecta morphology. 
 
 The asymmetries that develop during the explosion also affect the kick of the PNS.
 In Table~\ref{tab:neutron star} we provide properties of the PNS resulting from our post-bounce simulations\footnote{We refer the reader to Appendix~\ref{sec:Neutron Star Properties} for the equations involved in the analysis presented in Table~\ref{tab:neutron star}.}. We list the PNS kick velocity ($v_{\mathrm{NS}}$), anisotropy parameter ($\alpha_{\mathrm{ej}}$), angular momentum ($J_{\mathrm{NS}}$) and spin period ($P_{\mathrm{NS}}$) along with the PNS radii (\rns) and baryonic PNS masses ($M_{\mathrm{b}}$) at the point in time we terminate the post-bounce simulations. The PNS radius $\rns$ is defined as the angle-dependent radius where the density drops below $10^{11}\,\mathrm{g/cm^3}$. The PNS mass $M_{\mathrm{b}}$ is the mass contained within $\rns$. $M_{\mathrm{fin}}$ is the mass contained within our inner boundary for the long-term simulations (see Table~\ref{tab:long term boundaries}) and $M_{\mathrm{g}}$ the respective gravitational mass.
 The acceleration of the PNS is caused by two different mechanisms.
-\textbf{Firstly, aspherical ejection of matter leads to a gravitational ``tug'' which accelerates the PNS in the opposite hemisphere of maximum shock expansion and fastest ejecta. Second, anisotropic neutrino emission, due to the ``lepton-emission self-sustained asymmetry'' (LESA) \citep{Tamborra2014}, can accelerate the PNS opposite to the direction of the largest total neutrino-energy flux.
+\GEO{Firstly, aspherical ejection of matter leads to a gravitational ``tug'' which accelerates the PNS in the opposite hemisphere of maximum shock expansion and fastest ejecta. Second, anisotropic neutrino emission, due to the ``lepton-emission self-sustained asymmetry'' (LESA) \citep{Tamborra2014}, can accelerate the PNS opposite to the direction of the largest total neutrino-energy flux.
 The almost spherical explosions of the ECSNe-like progenitors yield low hydrodynamic kick velocities. Anisotropic neutrino emission does not play a role in the simulation of model $e8.8$, because of the spherical treatment of the central region. The contribution of anisotropic neutrino emission in models $z9.6$ and $s9.0$, however, even exceeds the contribution due to aspherical ejection of matter. LESA manifests itself in a dominant and stable $\ell\mathord{=}1$ mode of the lepton-number emission and a corresponding energy-emission dipole of several percent amplitude compared to the monopole (see \citealt{Tamborra2014}). LESA is observed in both simulations conducted with \vertexprom. }
 
 We show in Figure~\ref{fig:sto ye s9 z9 kick} planar slices of the electron fraction (left panels) and entropy (right panels) of the iron-core progenitors. The black, blue and green arrows indicate the total, hydrodynamic and neutrino-induced directions of the PNS kick. In case of the $z9.6$ the hydrodynamic and neutrino-induced kicks are clearly aligned. This stems from the feedback mechanism which is associated with LESA. Increased heating in the direction opposite to the LESA dipole pushes the supernova shock to larger radii. The induced asymmetry of the post-shock ejecta feeds back into the hydrodynamic acceleration of the PNS. Due to the weak convection in the $z9.6$ model, the emission asymmetry is the dominant contribution to drive the PNS kick. 
@@ -463,7 +466,7 @@ The hydrodynamically induced dipolar shock expansion of model $s9.0$ and contrib
 \begin{figure*}
  \centering
  \includegraphics[width=\textwidth,trim=0cm 1.3cm 0cm 2cm,clip]{pic/z9_s9_3d_ye_sto_kick_slices_paper.pdf}
- \caption{\textbf{Planar slices of the electron fraction $Y_{e}$ (left panels) and entropy (right panels) of models $z9.6$ and $s9.0$. The planes are chosen such that the LESA dipole direction (white arrow) is pointing to the north and are not aligned with the global coordinate system. The arrows indicate the direction of the total kick (black), the hydrodynamic and neutrino kick (blue and green).}}
+ \caption{\GEO{Planar slices of the electron fraction $Y_{e}$ (left panels) and entropy (right panels) of models $z9.6$ and $s9.0$. The planes are chosen such that the LESA dipole direction (white arrow) is pointing to the north and are not aligned with the global coordinate system. The arrows indicate the direction of the total kick (black), the hydrodynamic and neutrino kick (blue and green).}}
  \label{fig:sto ye s9 z9 kick}
 \end{figure*}
 
@@ -525,8 +528,8 @@ The fastest neutrino-heated ejecta are caused by a large high entropy plume indu
 \label{sec:Evolution until Shock-Breakout}
 \subsection{Linear stability analysis}
 \label{sec:Linear stability analysis}
-As already mentioned, the velocity of the forward shock depends on the progenitor structure, in particular the $\rho r^3$-profile. According to \cite{Sedov1961} one expects a \textbf{increase/decrease} in the shock velocity when the gradient of the $\rho r^3$-profile is positive/negative. 
-\textbf{This acceleration and deceleration leads to crossing of the density and pressure gradients in the post-shock region, or stated otherwise, the gradients of the pressure and density have opposite signs.} Thus, perturbations in the matter become unstable to the Rayleigh-Taylor instability \citep{Rayleigh1882,Chevalier1978}. As the $\rho r^3 $-profiles, and hence the shock speed, vary significantly between the progenitors, growth of Rayleigh-Taylor instabilities will affect the long-term evolution of our models in different ways.
+As already mentioned, the velocity of the forward shock depends on the progenitor structure, in particular the $\rho r^3$-profile. According to \cite{Sedov1961} one expects a \GEO{increase/decrease} in the shock velocity when the gradient of the $\rho r^3$-profile is positive/negative. 
+\GEO{This acceleration and deceleration leads to crossing of the density and pressure gradients in the post-shock region, or stated otherwise, the gradients of the pressure and density have opposite signs.} Thus, perturbations in the matter become unstable to the Rayleigh-Taylor instability \citep{Rayleigh1882,Chevalier1978}. As the $\rho r^3 $-profiles, and hence the shock speed, vary significantly between the progenitors, growth of Rayleigh-Taylor instabilities will affect the long-term evolution of our models in different ways.
 
 In order to aid us with the interpretation of our three-dimensional simulations, we appeal to 1D simulations which are started from angle-averaged initial states of the 3D data. The numerical and physical setup for the spherically symmetric simulations remains unchanged. 
 They can teach us about the behavior of the shock, while it propagates through the envelope. 
@@ -546,7 +549,7 @@ For the time-dependent amplification factor we integrate Equation~\ref{equ:growt
 \begin{equation}
   \Sigma_{\rm RT}(t) = \frac{\xi}{\xi_0}(t) = \exp \left(\int_0^t \sigma_{RT} (t') dt' \right).\label{equ:growth rates int}
 \end{equation}
-This analysis enables us to estimate the time and locations in mass coordinate, where the fluid becomes unstable to the RTi and thus helps us to understand the origin of outward/inward mixing of \textbf{different layers with their chemical elements}.
+This analysis enables us to estimate the time and locations in mass coordinate, where the fluid becomes unstable to the RTi and thus helps us to understand the origin of outward/inward mixing of \GEO{different layers with their chemical elements}.
 
 We show in Figure~\ref{fig:growth rates} the amplification factors in the incompressible (colored lines) and compressible (gray line) cases for our spherically symmetric simulations. Significant differences between the models are evident.
 \begin{figure*}
@@ -562,33 +565,103 @@ The ECSN-like structure of model $z9.6$ is reflected in the amplification factor
 Strong deceleration of the forward shock at the core/hydrogen interface created the necessary condition for the RTi to grow. As can be seen in Figure~\ref{fig:growth rates}, amplification factors at $\mathord{\sim}1.36\,\solm$ between the C/He and He/H interfaces of model $z9.6$ (see Table~\ref{tab:progenitors}) almost reach values as high as observed in the ECSN case. Interestingly, no growth is expected at the He/H interface, which stems from the very small step in the $\rho r^3$ profile at this interface (see Figure~\ref{fig:prog_tem_rho_ye_rhor}).
 Model $s9.0$ shows striking differences to the models described above. 
 Due to its more shallow $\rho r^3$-profile in the core region and the consequently weaker episodes of de- and acceleration, the peak amplitudes of the growth factors are smaller. They are, however, of the same strength as in the more massive models investigated by \cite{Wongwathanarat2015}. 
-\textbf{
+\GEO{
 Three distinct regions of instability can be discerned at the Si/CO, CO/He and He/H interfaces. 
 Similar to the red supergiants presented in \citet{Wongwathanarat2015}, the strongest contribution arises from the He/H interface followed by the CO/He interface where amplification factors  reach values of $5-10$, respectively. 
 While the compressible and incompressible analysis gives similar results for models $e8.8$ and $z9.6$, the compressible evaluation of the growth factors in model $s9.0$ predicts additional growth within the He-core of the star. This is caused by the passage of the reverse shock at later times ($\tpb\mathord{>}3\mathord{\times}10^3\,\s$). Note that, at this stage, the instability is already in a strongly non-linear phase, where Equation~\ref{equ:growth rates cmp} losses its validity.
 }
 %% NEW STUFF
-\subsection{Propagation of forward shock and neutrino-heated ejecta }
+\subsection{Propagation of the forward shock}
 
-We show in Figure~\ref{fig:radii all times} the angle-averaged shock radii and shock velocities of our 3D simulations.
-When the 3D simulation of model $e8.8$ \textbf{is continued from the neutrino-powered initial phase and mapped to the long-term evolution at $\tpb=0.470$, the forward shock has long passed the He/H interface and is traveling through the H-envelope (see lower left panel of Figure~\ref{fig:radii all times})}. It had left the ONeMg core with some $7.5\times 10^{3}\,\kms$ and is continuously decelerated due to the monotonic increase of the $\rho r^3$-profile.
-Interestingly, the neutrino-heated ejecta, which can be traced by the \nickel+\tracer=0.1\% iso-surface, catch up with the forward shock at $\tpb\mathord{\sim}130\,\s$ and push it to slightly higher velocities. 
-As mention in Section~\ref{sec:Linear stability analysis}, deceleration of the forward shock leads to a positive pressure gradient behind the shock which decelerates the post-shock material. Matter thus piles up behind the shockwave creating a high density shell. In case of the ECSN progenitor the early and strong deceleration of the forward shock at the He/H interface lead to an early formation of a dense helium-rich shell in the post-shock region. At the inner boundary of this dense shell or ``wall'' \citep{Kifonidis2006} a reverse shock forms as the faster inner ejecta are pushed against this obstacle. To illustrate this we show in Figure~\ref{fig:density profiles all times} radial profiles of the density of our 1D long-term simulations\footnote{We show the results of the 1D long-term simulations because the formation and propagation of the dense shell and reverse shock is basically independent of the chosen dimensionality but provides an easier ground for our analysis. }. In the left panel of Figure~\ref{fig:density profiles all times} the dense shell is visible as the peak-like feature at $3\times\mathord{\sim}10^{5}\,\mathrm{km}$ in the first profile. Note that the region between the dense shell and forward shock has a negative density but positive pressure gradient and is thus unstable to the RTI.
-Continuous deceleration of the forward shock eventually causes the reverse shock to travel back in mass coordinate, starting at  $\tpb\mathord{\approx}\,1\text{h}$. It takes, however, additional $7\,\text{h}$ for the reverse shock to reach the inner boundary of our computational domain. Shock breakout is observed at $\tpb\mathord{\sim}5\,\text{d}$.
-%z9.6
-The shock trajectory of model $z9.6$ is quite similar to the trajectory observed in model $e8.8$. However, the initial velocity of the forward shock is smaller by a factor of two, which stems from the less steep density gradient at the core/envelope transition. Moreover, the deceleration of the forward shock is less severe (see Figure~\ref{fig:radii all times}) in model $z9.6$. Interestingly, the bulk of the neutrino-heated ejecta are not able to catch up with the forward shock as the $rho r^3$ profile is less steep in model $z9.6$. 
-As can be seen in the first density-profile of model $z9.6$ shown in the middle panel of Figure~\ref{fig:density profiles all times} the deceleration of the forward shock at the CO/He interface lead to the formation of a high-density shell. 
-Further deceleration of the forward shock in the helium shell cause the formation of a reverse shock fairly early at the lower boundary of this shell at around $\tpb\mathord{\sim} 10\mathord{-}50\,\s$. Until $\tpb\mathord{\sim}\, 300\,\s$ forward and reverse shock travel with roughly equal velocity through the He core. 
-After $300\,\s$ after bounce, the reverse shock begins to fall back until and reaches the inner boundary at $t_{\mathrm{pb}}\sim 1.14\,\text{h}$. This is more than 6 hours earlier than in the $e8.8$ case. We observe shock breakout at $\tpb\mathord{\sim}\, 29\,\mathrm{h})$.
-%s9.0
-As expected from the $\rho r^3$-profile of model $s9.0$ the forward shock experiences phases of strong de- and acceleration while passing through the star. In contrast to the ECSNe-like models, the forward shock accelerates shortly before the He/H interface. The subsequent strong deceleration in the hydrogen envelope is the reason for the large growth rates observed at the He/H interface (see Figures~\ref{fig:prog_tem_rho_ye_rhor} and~\ref{fig:radii all times}). 
-\COM{STILL MISSING DATA}
-\COM{COMMENT ON NICKEL VELOCITIES FOR iron-coreS}
+We show in Figure~\ref{fig:radii all times} the angle-averaged shock radii $R_{\mathrm{sh}}$, reverse shock radii $R_{\mathrm{rsh}}$ and shock velocities $v_{\mathrm{sh}}$ of our 3D long-term simulations.
+The forward shock of model $e8.8$ has long passed the He/H interface and is traveling through the H-envelope.
+It left the core with some $75,000\,\kms$ and is progressively decelerated 
+due to the monotonically increasing $\rho r^3$ within the H-envelope. 
+Since the innermost neutrino-heated ejecta are not in sonic contact with the 
+supernova shock, they do not feeld the deceleration and thus travel with constant velocity of $\mathord{\approx}3,000\,\kms$ until they catch up with the immediate post-shock matter $\tpb\mathord{\approx}130\,\s$.
+The interaction of the dense neutrino-heated ejecta with the post-shock material pushes the shock to higher velocities (see Figure~\ref{fig:radii all times}).
+Thereafter, the forward shock decelerates continuously (without any phases
+of acceleration) until it reaches the surface of the star. Note the large deceleration of the shock from its 
+initial very large velocities of $75,000\,\kms$
+down to $\mathord{<}1000\,\kms$ as it leaves the star. Most of the kinetic energy of the shockwave is used in
+heating the hydrogen in the outer layers of the envelope.
+
+The early strong deceleration of the forward shock at the edge of the core at $\tpb\mathord{=}0.19\,\text{s}$ has
+lead to the compression of the CO and He layer into a high density shell. Less than $1\,\s$ later, a strong
+reverse shock forms at its inside as the forward shock is progressively slowed down.
+The dense shell separates the post shock material from the innermost ejecta as can be seen
+in the density profile shown in Figure~\ref{fig:density profiles all times}. The formation of the dense shell or ``wall'' 
+\cite{Kifonidis2006} has important consequences for the evolution of the metal-rich ejecta as well as for the growth
+of Rayleigh-Taylor instabilities.
+
+After $\tpb\mathord{\approx}\,1\text{h}$, continuous deceleration of the forward
+shock causes the reverse shock to travel back in mass coordinate.
+(see Figure~\ref{fig:density profiles all times}). It takes, however, approximately
+$7\,\text{h}$ for the reverse shock to reach the inner boundary of our computational domain. 
+
+% z9.6 1D
+The forward shock of model $z9.6$ has already crossed the CO/He interface at $t_{\mathrm{map}}$
+and is traveling at roughly $27,000\,\kms$. 
+Behind the shock, a dense shell has formed due to the deceleration
+and acceleration at the CO/He interface.
+Above the interface and similar to model $e8.8$, 
+a featureless density profile in the He-core and hydrogen envelope leads to an 
+untroubled expansion of the forward shock which reaches 
+the stellar surface at around $\tpb\mathord{\approx}\,1.12\,\mathrm{d})$. 
+At the time of shock breakout the forward shock only travels at $<1000\,\kms$ due to
+the large deceleration in the hydrogen envelope of the star. 
+Different to the ECSN progenitor the reverse shock forms within the He-core of the star
+(see Figure~\ref{fig:density profiles all times}) but also fairly early at some $\tpb \mathord{\approx} 15\,\s$.
+
+Within the next $1000\,\s$, the reverse shock propagates back in radius and reaches the inner boundary
+at $\tpb \mathord{\approx} 1.14\,\text{h}$, which is more than 4 hours earlier than in model $e8.8$. 
+
+% s9.0 1D
+The trajectories of the forward and reverse shock in the 1D simulation of model $s9.0$ 
+are shown in the bottom left panel of Figure~\ref{fig:radii all times}. 
+The simulation is initiated at $\tpb\mathord{=}3.1\,\s$, when the forward shock has just crossed the CO/He interface
+and is traveling at $v_{\mathrm{sh}}\mathord{\approx} 9,000\,\kms$, just a fraction of the shock
+velocity found in the ECSNe-like models. De- and accelerations of the supernova shock at the Si/O and 
+C/O interfaces caused the formation of dense shells in the 
+post-shock region (see Figure~\ref{fig:density profiles all times}).
+The density contrast between the shells and the ejecta is,
+however, around one magnitude smaller than found for the dense shells which formed at the core/envelope
+boundary in model $e8.8$ and at the CO/He interface in model $z9.6$. 
+In the following, the shock slows down rapidly within the He-core of the star down to 
+$v_{\mathrm{sh}}\mathord{\approx}10,000\,\kms$ before it accelerates again at the outer
+boundary of the He-shell reaching almost its initial velocity (at $\tpb\mathord{=}200\,\s$).
+This is due to 
+the steep density gradient just below the He/H interface in the progenitor. 
+Thereafter, the forward shock encounters the increasing $\rho r^3$ in the hydrogen envelope and is 
+thereby strongly decelerated, causing a compression of the post-shock material into a dense shell. 
+At the bottom of the shell a strong reverse shock forms shortly afterwards (see also the density profiles 
+in Figure~\ref{fig:density profiles all times}). Note that the formation of the reverse shock transpires 
+well after than observed in the ECSN-like progenitors. 
+Eventually the reverse shock reaches the inner boundary of our numerical grid at 
+$\tpb\mathord{\approx}25\,\mathrm{h}$. Shock breakout occurs at $\tpb\mathord{\approx}1.2\,\mathrm{d}$.
+
 
 \begin{figure*}
  \centering
- \includegraphics[width=\textwidth, trim=0cm 1.0cm 0cm 1.0cm,clip]{pic/radii_velocity_shock_nickel.pdf}
- \caption{Left Panels: Angle-averaged shock radius (black lines) and averaged radius of the $\nickel+\tracer\mathord{=}0.1\,\%$ surface (blue lines) of our long-term simulations. Right Panels: Shock velocity (black lines) and velocity of the $\nickel+\tracer\mathord{=}0.1\,\%$ surface (blue lines) as a function of radius. The dash-dotted, dashed and dotted lines indicate the CO/He, He/H interfaces and the surface of the progenitor, respectively. \COM{Add reverse shock radii.}}
+ \includegraphics[width=\textwidth]{pic/radii_velocity_shock_nickel_paper.pdf}
+ \caption{   
+  \textit{Upper~panels}: Angle-averaged shock radius $R_{\mathrm{sh}}$ (black),
+ angle-averaged reverse shock radius $R_{\mathrm{rsh}}$ (red) and maximum radius of the 
+ $\nickel\mathord{+}\tracer\mathord{=}0.03$ iso-surface (blue). 
+ \textit{Lower~panels}:
+ Shock velocity $v_{\mathrm{sh}}$ (black) and velocity of the 
+ $\nickel\mathord{+}\tracer\mathord{=}0.03$ iso-surface (blue) 
+ of our 3D long-term simulations. 
+ The expansion of the forward shock in the ECSNe-like progenitors proceeds without
+ any phases of deceleration and acceleration. 
+ In contrast, the forward shock in model $s9.0$ accelerates strongly before the He/H interface.
+ The reverse shocks in models $e8.8$ and $z9.6$ form within $\mathord{\approx}1\,\s$ and 
+ $\mathord{\approx}10\,\s$, respectively, 
+ whereas we observe the formation of a reverse shock in model $s9.0$ at
+ $\mathord{\approx} 2,500\,\s$.
+ Note that, in model $s9.0$, the velocity of the $\nickel \mathord{+} \tracer$ 
+ surface is higher than the average shock velocity within the hydrogen envelope of the star.
+ }
  \label{fig:radii all times}
 \end{figure*}
 
@@ -599,313 +672,501 @@ As expected from the $\rho r^3$-profile of model $s9.0$ the forward shock experi
  \label{fig:density profiles all times}
 \end{figure*}
 
+\subsection{Morphology of neutrino-heated ejecta}
+In the following we focus on the long-term development of the early time asymmetries which we trace by the propagation of the neutrino-heated ejecta or more specifically the $\nickel\mathord{+}\tracer$-rich material. \cite{Kifonidis2003} already noted that \nickel is produced between the high-entropy bubbles that expand due to strong neutrino-heating from below. Thus the distribution of \nickel traces the asymmetries that developed during the onset of the explosion. 
 
-\subsection{Ejecta morphology}
-In the following we focus on the long-term development of the early time asymmetries which we trace by the propagation of the neutrino-heated ejecta or more specifically the nickel plus tracer rich material. \cite{Kifonidis2003} already noted that \nickel is produced between the high-entropy bubbles that expand due to strong neutrino-heating from below. Thus the distribution of \nickel traces the asymmetries that developed during the onset of the explosion. 
 % e8.8
-In Figure~\ref{fig:e8 3d 4times} we show planar cuts of the $\nickel\mathord{+}\tracer$ mass fraction of the ECSN model at representative epochs. The dashed white line indicates the shock radius.
-The structure of the neutrino-heated ejecta at $\tpb\mathord{=}0.5\,\s$ and $\tpb\mathord{=}150\,\s$ is remarkable similar, indicating a roughly self-similar expansion of the innermost matter.
+In Figure~\ref{fig:e8 nix cuts} we show slices of the $\nickel\mathord{+}\tracer$ mass fraction of the 3D simulation of model $e8.8$. The dashed white line indicates the shock radius, whereas the thin dotted white line indicates the position of the mass shell of the He/H interface.
 
-\begin{figure*}% Figure e8.8 rho cuts
+\begin{figure*}% Figure e8.8 NiX cuts
  \centering
  \includegraphics[width=\textwidth,trim=0.2cm 0cm 0cm 0cm,clip]{pic/e8_3d_3x3_NiX.pdf} 
- \caption{Planar cuts through model $e8.8$ at the indicated times showing the \nickel+\tracer mass fraction. Note that the shock radius is outside the shown domain. Until $\tpb\mathord{\sim} 300\,\s$ the initial high entropy plumes expand essentially self-similar. At $\tpb\mathord{\sim} 300\,\s$ the plumes catch up with the dense shell that formed due to the deceleration of the shockwave in the hydrogen envelope and are thereby compressed. The growth of small scale perturbations at the He/H interface leads to some outward mixing of \nickel in small cusps. The cusps grow to considerable size until $\mathord{\sim}14.4\,\mathrm{h}$ while the reverse shock (which resides at the bottom the the RT fingers) compresses the inner ejecta. At 21 h the initial structure is completely obliterated.}
- \label{fig:e8 3d 4times}
+ \caption{Slices
+    showing the $\nickel\mathord{+}\tracer$ mass fraction in the 3D simulation of model $e8.8$. The dashed white curve indicates 
+    the position of the supernova shock. Until $\mathord{\approx}150\,\s$ the neutrino-heated 
+    ejecta essentially expand self-similarly. This untroubled expansion stops at
+    $300\,\s$, when the material is decelerated at the dense shell 
+    (see Figure~\ref{fig:density profiles all times}). At $\mathord{\approx}2100\,\s$
+    the growing RTI at the He/H interface clearly begin to affect the outer 
+    layers of the neutrino-heated ejecta. Until $2.5\,\text{h}$ the plumes 
+    grow in size, while the reverse shock (visible at the base of the plumes)
+    begins propagate back in radius. $9.8\,\text{h}$ after bounce the reverse
+    shock reaches the central object and compresses the metal
+    rich ejecta. Note that the plumes are evenly distributed in angular direction and radial extent. }
+ \label{fig:e8 nix cuts}
 \end{figure*}
 
-Exactly as in the 1D simulation, outside the neutrino-heated ejecta material of the He layer piles up into a dense shell driven by the positive pressure gradient in the post-shock region. At around $\tpb\mathord{=}300\,\s$ the neutrino-heated ejecta catch up with the dense shell, are compressed to flat structures and induce high $\ell$-mode density perturbations onto the RT unstable layer at the dense shell. 
+\begin{figure*}% --------------- FIGURE rho cuts 3d
+\includegraphics[width=\textwidth]{pic/e8_3d_3x3_den.pdf}
+    \caption{Slices showing the density distribution
+    in the 3D simulation of model $e8.8$. The dense shell at which the reverse shock 
+    forms is visible as the light yellow ring with a radius of $\mathord{\approx} 2\mathord{\times}10^4\,\rm km$
+    (see first panel).
+    The panel at $\tpb\mathord{=}150\,\s$ show the formation of small RT fingers.
+    These Fingers grow with time and affect the neutrino-heated material (see panel at
+    $\tpb\mathord{\approx}1400 \, \s$).
+    At $\tpb\mathord{\approx}3.4\,\rm d$ the innermost ejecta are characterized by an overall
+    spherical shape, superimposed with the remains of the RT fingers.}
+\label{fig:e8 rho cuts}
+\end{figure*}% ---------------
 
-From these, the first Rayleigh-Taylor plumes start grow around the He/H interface (see $\tpb\mathord{\sim}2100\,\s$ in Figure~\ref{fig:e8 3d 4times}) mixing clumps of the outer \nickel-rich layer outward into the carbon and helium rich layers.
-At $\tpb\mathord{\sim}2.3\,\text{h}$ the initial structure of the neutrino-heated material has completely been replaced by the RT fingers. Additionally, the reverse shock, which resides at the outer boundary of the dark red central region at $\tpb\mathord{\sim}2.3\,\text{h}$ in Figure~\ref{fig:e8 3d 4times}, begins to travel backward in radius compressing and decelerating the innermost material. As it falls back to the center of the computational domain the fingers grow to their typical mushroom shape, which is caused by the Kevin-Helmholtz instability (see $\tpb\mathord{\sim}9.8\,\text{h}$ in Figure~\ref{fig:e8 3d 4times}).
-The reflection of the reverse shock induces secondary instabilities at the bottom of the fingers which fully eradicate the plume like structure of the RT fingers. 
-At $\tpb\mathord{\sim}21\,\text{h}$ mixing due to hydrodynamic instabilities has basically come to an end. Some small \nickel-rich clumps are mixed into the bottom of the hydrogen envelope while the carbon and helium layers are mixed down in the regions between the RT plumes in tongue-like structures. 
+
+\begin{figure*}% --------------- FIGURE e8.8 3d rendering
+\includegraphics[width=\textwidth]{pic/e8_tile_1_3.png}
+    \caption{3D renderings of the $\nickel\mathord{+}\tracer\mathord{=}0.03$ 
+             iso-surface of model $e8.8$ at the indicated times. Color-coding represents the radial velocity of the material. From the initially spherical distribution of the neutrino-heated ejecta we observe the growth of small scale RT plumes. Due to the early formation of the reverse shock and spherical initial conditions of the explosion (see text for details) the final configuration of the neutrino-heated ejecta is basically spherical. }
+\label{fig:e8 3d rendering}
+\end{figure*}% ---------------
+
+
+Exactly as in the 1D simulation, the CO and He layers are compressed into a dense shell,
+just behind the supernova shock. The dense shell is located at a radius of 
+$\mathord{\approx}2\times 10^4\,\rm km$ at $\tpb\mathord{=}0.5\,\s$ (
+see Figure~\ref{fig:density profiles all times} and Figure~\ref{fig:e8 rho cuts}).
+Already at $\tpb\mathord{\approx}1.5\,\s$, a reverse shock forms at the bottom 
+of the dense shell (see thin yellow shell in Figure~\ref{fig:e8 rho cuts} at $10\,\s$) .
+By this time the bulk of the neutrino-heated ejecta has expanded in the region
+inside $\approx 1.5\times 10^5\,\rm km$.
+While this innermost metal-rich material seems to expand in a basically self-similar fashion
+(see similarity of the snapshots until $\tpb=150\,\s$ in Figure~\ref{fig:e8 nix cuts}),
+the growth of the RTI in small cusps in the unstable layer around the He/H interface 
+(located between the dense shell and the forward shock) begin to fragment the top of 
+the dense shell (compare panel at $\tpb\mathord{\approx} 150\,\s $ in Figure~\ref{fig:e8 rho cuts}). At $\tpb=300\,\s$,
+the metal-rich ejecta catch up with the expanding dense shell and are strongly decelerated.
+
+In consequence, the higher entropy/lower density plumes are compressed to flat
+structures while the (higher density) regions in between the plumes are able 
+to penetrate the dense shell, thereby inducing small perturbations at this interface. 
+Superimposed on these perturbations, RT plumes grow over the following $\approx 1100\,\s$ 
+around the mass shell of the He/H interface, mixing clumps of the outermost 
+\nickel-rich layer outward into the carbon and helium rich layers.
+
+The reverse shock, which is visible at $\tpb=2.3\,\text{h}$ in 
+Figure~\ref{fig:e8 nix cuts} as the yellow to red discontinuity, 
+begins to propagate back in radius, thereby 
+compressing the innermost ejecta.
+At $\tpb\mathrm{\approx }10\,\text{h}$ the passage of the reverse shock and 
+the growth of the RTI has fully erased any trace of the initial structures 
+present at the onset of the explosion. 
+However, the overall morphology of the neutrino-heated ejecta is still essentially spherical.
 
 % z9.6
-\begin{figure*}% Figure z9.6 slices
+\begin{figure*}% Figure z9.6 NiX
  \centering
  \includegraphics[width=\textwidth,trim=0cm 0.0cm 0cm 0cm,clip]{pic/z9_3d_3x3_NiX.pdf}
- \caption{Same as Figure~\ref{fig:e8 3d 4times} but for model $z9.6$. The dashed line indicates the shock radius. During the first $\tpb\mathord{\sim} 10\,\s$ the initial neutrino-heated high entropy plumes are compressed in a similar fashion as found in model $e8.8$. At $\tpb\mathord{\sim}40\,\s$ the initial structures have completely vanished and the first RT-plumes begin to grow from seed perturbations at the CO/He interface. While the finger grow, the reverse shock (visible at the bottom of the fingers) travels back into the innermost ejecta. Interestingly, the fastest RT plumes, which almost reach the supernova shock, seem the stem from the initially largest high entropy plumes (see panels at time $\tpb\mathord{=}1.5\,\s$ and $\tpb\mathord{=}829\,\s$).
+ \caption{Slices of the $\nickel+ \tracer$ distribution of the 3D simulation of model
+        $z9.6$ at the indicated times.
+   The initial asymmetries that developed during the onset of explosion are still visible at $\tpb\mathord{=}1.5\,\s$,
+   but are soon compressed to flat structures as they encounter the RT unstable dense shell behind the CO/He interface
+   (see times from $\tpb\mathord{=}9\,\s$ to $\tpb\mathord{=}39\,s$). 
+   Over the next, roughly, one hour, the growing RTI mixes the outer \nickel rich layers outwards in mass coordinate in numerous 
+   small fingers.
+   $1.7\,\rm h$ after bounce the RTI has basically saturated. The final morphology of the \nickel-rich ejecta has lost every
+   resemblance with the state at $t_{\mathrm{map}}$ and is dominated by small scale structures. However, the overall 
+   distribution of \nickel and \tracer remains basically spherical.
  }
- \label{fig:z9 3d 4times}
+ \label{fig:z9 nix cuts}
 \end{figure*}% Figure z9.6 slices
 
-Similar as for model $e8.8$ we show in Figure~\ref{fig:z9 3d 4times} planar cuts of the density distribution and $\nickel+\tracer$ mass fraction of model $z9.6$ where the complementary evolution of these models can be inferred.
-Within the first $\mathord{\sim}40\,\s$ after we start the long-term simulation the tips of the plumes of the neutrino-heated ejecta already encounter the dense CO-rich shell and are compressed (see first row in Figure~\ref{fig:z9 3d 4times}).
-As can be seen in the upper right panel of Figure~\ref{fig:z9 3d 4times}, the high-entropy bubbles induce large scale perturbation at the bottom of the dense shell. Different to the ECSN model, where a correlation between the initial plumes and the rising RT fingers was hard to draw, the largest plumes in model $z9.6$ seem to cause the largest and fastest RT plumes (see panels at $\tpb\mathord{\sim}39\,\s$ and $\tpb\mathord{\sim}187\,\s$ in Figure~\ref{fig:z9 3d 4times}). 
-The subsequent phase of the evolution of model $z9.6$, however, is very similar to the one presented for model $e8.8$.
-The reverse shock, which is located at the outer boundary of the central blue region at $\tpb\mathord{\sim}187\,\s$ in Figure~\ref{fig:z9 3d 4times}, travels back in radius while the RT fingers suffer from secondary instabilities. 
-At around $\tpb=1500\,\s$ the reverse shock reaches our inner boundary and is reflected back into the core material where it eradicates the typical plume structure of the RTI.
-Comparing the states of model $e8.8$ at $\tpb\mathord{=}21\,\text{h}$ and model $z9.6$ at $\tpb\mathord{=}22\,\text{h}$ only small differences can be spotted. While both models leave behind a fairly symmetrical distribution of neutrino-heated matter, the structures in model $z9.6$ seem to be more clumpy as in model $e8.8$. This is caused by the somewhat later formation of the dense shell in the helium layer of model $z9.6$ and larger initial plume size which enables earlier mixing of \nickel-rich clumps into the outer layers. 
 
+\begin{figure*}% --------------- z9.6 FIGURE rho cuts 3d
+\includegraphics[width=\textwidth]{pic/z9_3d_3x3_den.pdf}
+    \caption{Slices showing the density in the 3D simulation of model $z9.6$ 
+        at the indicated times. 
+    The dashed white line indicates the shock radius while the dotted white 
+    lines indicate the mass-shell CO/He and He/H interfaces.
+    Passage of the CO/He interface lead to the formation of a dense shell 
+    and a reverse shock
+    visible as the orange discontinuity at $\tpb\mathord{\approx}2.3\,\s$. Over the 
+    next $\mathord{\approx}40\,\s$ RT plumes
+    start to grow within the unstable region between the shocks thereby fragmenting
+    the dense shell.
+    As the reverse shock propagates back in radius, similar to the 
+    results presented for model $e8.8$, the plumes
+    grow to their maximal radial extent 
+    (see panels at $\tpb\mathord{=}187\,\s-829\,\s$).
+    The final morphology of the ejecta at $\tpb\mathord{\approx}22\,\mathrm{h}$ resembles 
+    the late time morphology in model $e8.8$}
+\label{fig:z9 rho cuts}
+\end{figure*}% ---------------
+
+In Figure~\ref{fig:z9 nix cuts}, we show slices of the $\nickel\mathord{+}\tracer\,$  mass-fraction in the 3D simulation of model $z9.6$. 
+The dashed white dashed line indicates the shock radius while the dotted lines indicate the positions of 
+the mass-shells of the CO/He and He/H interfaces.
+The dense shell which forms after the forward shock crossed 
+the CO/He interface (see Figure~\ref{fig:density profiles all times}) 
+is visible as the round light red region with a radius of $r\mathrm{\approx} 4\times 10^4\,\mathrm{km}$ 
+in Figure \ref{fig:z9 rho cuts}.  
+
+Within the first $\mathord{\approx}10\,\s$ the fastest of the 
+neutrino-heated ejecta encounter this dense CO-rich shell (see Figure~\ref{fig:z9 nix cuts})
+and are compressed and squeezed to flat structures around $30\,\s$ later.
+Similar to the results presented for the $e8.8$ model, the slightly over-dense regions between the high 
+entropy plumes induce long wavelength perturbations as they deform and 
+try to penetrate the RT unstable dense shell. 
+Over the next few minutes, RT fingers grow on top of these deformations and fragment the 
+dense shell into numerous \nickel-rich shrapnels.
+
+\begin{figure*}% --------------- FIGURE z9.6 3d rendering
+\includegraphics[width=\textwidth]{pic/z9_tile_1_3.png}
+    \caption{3D renderings of the $\nickel\mathord{+}\tracer\mathord{=}0.03$ 
+             iso-surface of model $z9.6$ at the indicated times.  Color-coding represents the radial velocity of the material. We find the growth of small scale (high $\ell$ number) RT plumes on top of the initial asymmetries of the explosion. Early formation of the reverse shock already in the He-core, the small scale initial asymmetries and the small size of the RT unstable layer prevent efficient growth of the RTI, leaving the final state basically spherical. }
+\label{fig:z9 3d rendering}
+\end{figure*}% ---------------
+While the fingers grow progressively, the reverse shock (visible as the green to blue discontinuity 
+at $\tpb=187\,\s$ in Figure~\ref{fig:z9 nix cuts}) begins to propagate back in radius. 
+At $\tpb=829\,\s$ the reverse shock reaches the center of our numerical grid having 
+compressed and decelerated the innermost material. 
+At $\tpb=1.7\,\rm h$, the forward shock has crossed the He/H interface and the inner 
+material has been fully shredded by the instability.
+
+As the shock does not show any significant change in velocity at the interface, we observe 
+no additional growth of the RTI nor the formation of a reverse shock.
+Thus, the morphology of the innermost ejecta seems to be determined early on, already 
+before the shock crosses the He/H interface.
+
+Comparing the distribution of \nickel and \tracer of model $e8.8$ 
+(Figure~\ref{fig:e8 nix cuts}) model $z9.6$ (Figure~\ref{fig:z9 nix cuts}) 
+shortly before shock breakout we find a slightly more clumped morphology in the 
+$9.6\,\solm$ progenitor. However, the morphology of the neutrino-heated ejecta in 
+model $z9.6$ also remains basically spherical.
+
+% s9.0
+The evolution of the neutrino-heated ejecta of model $s9.0$ proceeds drastically different to the ECSNe-like progenitors. 
+As discussed in Section~\ref{sec:Evolution during the first second}, 
+the initial asymmetries and shock deformation seen in model $s9.0$ are 
+considerably larger than found in the ECSNe-like models. Strong convection leads to the formation of a large metal-rich plume which travels about two times 
+faster than the surrounding material at the time of shock-revival ($\tpb\mathord{\approx} 0.5\,\s$).  
+It crosses the CO/He interface of the star at $\tpb\mathord{\approx}1.3\,\s$, 
+shortly after the forward shock. In comparison, the slowest 
+moving material reaches the interface around $ 0.65\,\s$ later. 
+
+\begin{figure*}% --------------- s9.0 FIGURE species cuts 3d
+\centering
+\includegraphics[width=\textwidth]{pic/s9_3d_3x3_NiX.pdf}
+    \caption{Slices of the $\nickel+ \tracer$ distribution of model $s9.0$ at the indicated times.
+    The $\nickel\mathord{+}\tracer$ distribution underlines the connection between the initial asymmetries and the 
+    large clump shortly before shock breakout. 
+    At $\tpb\mathord{=}3\,\s$ most of the \nickel-rich material is ejected in the 10 o'clock direction. While
+    the innermost ejecta are compressed and decelerated by the dense shells and reverse shocks that 
+    form at the CO/He and He/H interface, the large clump escapes strong deceleration and even deforms the 
+    otherwise spherical shockwave shortly before breakout.
+    }
+\label{fig:s9 nix cuts}
+\end{figure*}% ---------------
+
+The crossing of the CO/He interface by the shockwave has several dynamical consequences. 
+Due to the increasing $\rho r^3$ behind the interface, the shock is 
+decelerated and sends a pressure wave back into the ejecta. Consequently, 
+the post-shock matter is compressed into a
+dense shell. This high-density region is aspherical,
+in contrast to the shells found in the ECSNe-like progenitors, which is due to the still  
+deformed supernova shock (see first two panels in Figure~\ref{fig:s9 rho cuts} 
+from  $\tpb\mathord{=}3\,\s-124\,\s$).
+
+Around the dense shell we observe the growth of large plumes which stem from the initial 
+asymmetries of the explosion. These can be seen in 10 o'clock direction in
+Figure~\ref{fig:s9 nix cuts} at $\tpb\mathord{\approx} 124\,\s$ and Figure~\ref{fig:s9 3d rendering}.
+At the top of these plumes small RTI fingers grow, in line with the analysis of the amplification factors presented in Section~\ref{sec:Linear stability analysis}. 
+Note that at this point in time the still deformed supernova shock crosses the He/H interface.
+
+Due to the varying $\rho r^3$ around this composition interface, the shock decelerates and accelerates, thereby forming a dense shell (see yellow shell in Figure~\ref{fig:s9 rho cuts} at $\tpb\mathord{\approx}740\,\s$). 
+
+\begin{figure*}% --------------- s9.0 FIGURE rho cuts 3d
+\includegraphics[width=\textwidth]{pic/s9_3d_3x3_den.pdf}
+    \caption{Slices of the density of model $s9.0$ at the indicated times. 
+        The dashed white line indicates the shock radius while the 
+        dotted white lines indicate the CO/He and He/H interfaces.
+        Different to the ECSNe-like progenitors we observe the growth of large 
+        scale RT plumes caused by the large asymmetries at the onset of explosion.
+        The seed for the largest plume seems to be set already at around $3\,s$ 
+        after bounce when the shock passes the CO/He interface. We first observe
+        the growth of the RTI at the top of the largest and fastest initial convective plume 
+        (see e.g. $\tpb\mathord{=}124\,\s$ in 10 o'clock direction) 
+        and only moderate deceleration of the same.
+        Shortly afterwards the plume arrives at the unstable He/H interface 
+        inducing a large scale perturbation.
+        While the slower RTI plumes are decelerated by the reverse shock that formed 
+        at the He/H interface, the large
+        clump drives the shock to larger radii, thereby transporting a 
+        significant amount of neutrino-heated ejecta to large velocities.
+    }
+\label{fig:s9 rho cuts}
+\end{figure*}% ---------------
+
+When the fast and dense metal-rich plume encounters the shell, it induces a high amplitude perturbation at this RT unstable layer. 
+From this perturbation, aided by the large initial momentum of the metal-rich plume, we observe the growth of a large RT plume. As matter is accelerated by the instability to higher velocities than the speed of the shock, the plume is able to deform the forward shock in its trajectory (compare Figure~\ref{fig:s9 rho cuts} at $\tpb\mathord{\geq}2.4\,\rm h$).
+
+Concurrently, the reverse shock, which forms at the bottom of the He/H interface, 
+propagates back into the ejecta and strongly decelerates and compresses the 
+$\nickel\mathord{+}\tracer$ rich material close to the center 
+(see Figure~\ref{fig:s9 rho cuts} at $\tpb\mathord{\approx}7.8\rm h$). 
+The growing RTI around the CO/He interface (clearly visible in Figure~\ref{fig:s9 rho cuts} at
+$\tpb\mathord{\approx}7.8\rm h$)
+seems to only slightly affect the outer boundary of the inner $\nickel\mathord{+}\tracer$-rich
+material, as can be seen in Figure~\ref{fig:s9 nix cuts} at $\tpb\mathord{\geq}7.8\rm h$ (in
+line with the small amplification factors found in this region).
+
+\begin{figure*}% --------------- FIGURE s9.0 3d rendering
+\includegraphics[width=\textwidth]{pic/s9_tile_2_3.png}
+    \caption{3D renderings of the $\nickel\mathord{+}\tracer\mathord{=}0.03$ 
+             iso-surface of model $s9.0$ at the indicated times. Color-coding represents the radial velocity of the material. During the first roughly $800\,\s$ the largest initial asymmetries grow to large metal rich plumes, while the innermost matter is compressed by the dense shell around the CO/He interface. In the following, these fastest plumes encounter the dense shell behind the He/H and induce large amplitude perturbations at the RT unstable layer. Consequently, large metal rich RT fingers begin to grow from the interface. At $\tpb\mathord{=}2.8\,\rm d$ we find one very large and two smaller metal-rich plumes which penetrate the surface of the star even ahead of the average shock radius.}
+\label{fig:s9 3d rendering}
+\end{figure*}% ---------------
+
+Due to the strong compression of the innermost material, the fast plume almost fully detaches from the core material as it propagates through the hydrogen envelope of the star (see last two panels in Figure~\ref{fig:s9 3d rendering}).
+It encounters the surface of the star at around $\tpb \mathord{\approx} 1.6\, d$, so almost $1\,\rm d$ earlier than the angle-averaged shock.
+Why is the large plume able to travel with such high velocities, even deforming the forward shock, while the bulk of material travels at considerable slower speed?
+Firstly, the fastest $\nickel\mathord{+}\tracer$ material is, at all times, in close vicinity of the immediate post-shock matter (see Figure~\ref{fig:radii all times}). 
+Further, after the forward shock has crossed the He/H interface, this material is decelerated less than the average shock, since the material encounters a less steep density profile.
+Additionally, large growth rates at the He/H interface lead to an efficient acceleration of material within the unstable layers, which also escape the strong deceleration by the reverse shock.
+In consequence, the $\nickel\mathord{+}\tracer$-rich plume catches up with the forward shock in the hydrogen envelope. Due to its large momentum it deforms the outgoing forward shock in its trajectory. \COM{Buoancy forces ?}
+This is similar as observed in model $e8.8$, where the basically spherically distributed neutrino-heated ejecta catch up with the strongly decelerated immediate post-shock material, thereby accelerating the forward shock (see Figure~\ref{fig:radii all times}).
 
 \subsection{Extent of mixing}
-%e8.8
-In Figure~\ref{fig:e8 massDis 4times} we show the distribution of elements in mass and velocity space at four representative times during our long-term simulation of the $e8.8$. The upper two rows represent the evolution until $300\,\text{s}$ when the nickel rich ejecta encounter the dense shell.
-The bulk of the \nickel/\iron surpasses the carbon and oxygen rich layers in velocity space at $t_{\mathrm{pb}}=300\,\text{s}$, when the inner ejecta are pushed against the dense shell and the first cusps mix \nickel outward in velocity space. The dense shell, however, hampers mixing in mass coordinate.
-The encounter of the neutrino-heated ejecta with the reverse shock causes an enormous deceleration. This is shown in the lower two rows in Figure~\ref{fig:e8 massDis 4times}. Where most of the iron rich material has velocities of $v_{\mathrm{Ni,X}}\mathord{\approx} 30\times10^3 \,\mathrm{km/s}$ at $t_{\mathrm{pb}}\mathord{=}300\,\text{s}$ these layers are decelerated to $v_{\mathrm{Ni,X}}\mathord{\approx} 2.5\times 10^3\,\mathrm{km/s}$ within some $5 \,\mathrm{h}$. The lower velocity tail of the iron group elements even has negative velocities. 
-Compression of the innermost ejecta by the reverse shock is also evident in the distribution over mass coordinate. Where a small fraction of the neutrino heated ejecta is mixed to $M(r)\mathord{=}1.4\,\mathrm{M_{\odot}}$ until $t_{\mathrm{pb}}=21.800\,\s$, the bulk resides still at  $M(r)=1.35\,\mathrm{M_{\odot}}$ clearly separated from the carbon and oxygen that extends to $M(r)=1.47\,\mathrm{M_{\odot}}$ and is evenly distributed over the whole post-shock region.
 
-% Figure e8.8 mass distribution
-\begin{figure*}
+\begin{figure*}% Figure mass distribution at sbo
  \centering
- \includegraphics[width=\textwidth,trim=0cm 0.6cm 0cm 1cm, clip]{pic/e8_2d_10_massDis_mvr_mas_4times_paper.pdf}
- \caption{Mass distributions of elements in velocity and mass space  of the $e8.8^{\mathrm{2D}}_{10}$ model at the indicated post-bounce times. We cover the initial state as we start our long term simulation in the uppermost panel, over the time the reverse shock passes the ejecta (second and third panels) and the distribution at late times.}
- \label{fig:e8 massDis 4times}
-\end{figure*}
-As has been stated before, the early formation of the dense shell has important consequences for the velocities the metal rich ejecta can achieve and how far they can be mixed into the envelope.
-In Figure~\ref{fig:z9 massDis} we show the distribution of elements over mass and velocity space for the $z9.6$ model at the same snapshots as shown in Figure~\ref{fig:z9 3d  4times}, to illustrate the influence of the reverse shock and the dense shell onto the ejecta.
-
-Compression of the ejecta in velocity space and some mixing over mass coordinate can be observed during $t_{\mathrm{pb}}\mathord{=}0.65\,\s$ and $t_{\mathrm{pb}}\mathord{=}78\,\s$. The compression is caused by the strong deceleration of the forward shock in the stellar material, reducing the initial maximal velocities from $v\mathord{\sim} 25\mathord{\times}10^3\,\mathrm{km/s}$ down to $v\mathord{\sim} 12.3\mathord{\times}10^3\,\mathrm{km/s}$, whereas the first plumes that rise from the CO/He interface mix a tiny amount of iron rich ejecta into the He-core. Note however that the reverse shock travels with $v_{\mathrm{rev}}\mathord{\sim} 7\mathord{\times}10^3\,\mathrm{km/s}$ at $t_{\mathrm{pb}}\mathord{=}400\s$ and the bulk of $\nickel$ and $\tracer$ travels with smaller velocities of $v\mathord{\sim} 4\mathord{\times}10^3\,\mathrm{km/s}$. The behaviour of the model is again similar but less extreme as found in the ECSN model.
-
-As the RT-plumes grow over the course of the following minutes, they continuously mix $\nickel$ and $\tracer$ into the He-core. This is shown in the third row left column of Figure~\ref{fig:z9 3d 4times}. At the same time the reverse shock forces the bulk of the metal rich ejecta to even lower velocities of  $v\mathord{\sim} 0.5\mathord{\times}10^3\,\mathrm{km/s}$. The passage of the reverse shock also marked the point in time where the integrates growth rates of the $z9.6$ saturate. As can be seen in the lowest panels of Figure~\ref{fig:z9 3d 4times}, during the time between  $7.7\mathord{\times} 10^3\;\s$ and $6.4 \mathord{\times} 10^4\,\s$ neutrino-heated material experiences almost no additional upwards mixing in mass and is only further compressed in velocity space.
-\begin{figure*}% Figure Z9.6 mass distribution
- \centering
- \includegraphics[width=\textwidth,trim=0cm 0.6cm 0cm 1cm,clip]{pic/z93_3d_massDis_mvr_mas_4times_paper.pdf}
- \caption{Same as Figure~\ref{fig:e8 massDis 4times} but for the $z9.6$ model. We cover the initial state as we start our long term simulation in the uppermost panel, over the time the reverse shock passes the ejecta (second and third panels) and the distribution in the hydrogen envelope as the ejecta expand self similarly.}
- \label{fig:z9 massDis}
+ \includegraphics[width=\textwidth,trim=0cm 0.0cm 0cm 0cm, clip]{pic/z96_s9_e8_3d_massDis_mvr_and_masstime_sbo_paper.pdf}
+ \caption{Mass distributions of elements versus radial velocity (top row) and enclosed mass (bottom row) for all our models at the time of shock breakout. We use 50 bins in velocity space covering and 30 bins in mass space, where we restrict the analysis of models $e8.8$ and $z9.6$ to $1.8\,\solm$ and $2.3\,\solm$ respectively, since mixing of the neutrino-heated ejecta beyond these mass-shells is insignificant. For model $s9.0$ we consider the whole computational domain for our analysis.
+ The ECSNe-like models ($e8.8$ and $z9.6$) only mix a tiny amount of \nickel into the bottom of the H-envelope, whereas vigorous mixing in model $s9.0$ transports a significant amount of 
+ neutrino-heated ejecta to large mass coordinates.}
+ \label{fig:mass distribution sbo}
 \end{figure*}
 
-\iffalse
+In Figure~\ref{fig:mass distribution sbo} we display the mass distributions of free protons/hydrogen, helium, carbon, oxygen-neon-magnesium, nickel and the tracer nucleus for all our models at the time of shock breakout as functions of radial velocity as mass coordinate. 
+The distributions of the iron-rich ejecta of the ECSNe-like models ($e8.8$ and $z9.6$) have similar shapes in velocity and mass coordinate (apart from the differences that result from the different initial progenitor composition). 
 
-\subsection{Multi-dimensional evolution of the }
-\subsubsection{$z9.6$ Model}
-\label{sec:Long term evolution of the z9.6 model}
-% z9.6 1D
-The 1D simulation of the $z9.6$ was initialized using spherically averaged values obtained from the 3D model\footnote{The recombination of leftover neutrons and protons from the \vertex simulation produced a very small transient, which has no impact on further evolution.} at $\tpb\,\mathord{=}\,1.40\,\s$. At this time \NY{the}{} the forward shock $(R_{\text{s}}\,\mathord{=}\,3.84\times 10^4\, \km)$ \NY{just passed the former}{ leaves the} C/He interface \NY{beginning its journey through}{ behind, and starts propagating across} the He-core.
+They are characterized by a maximum centred around $0.25\mathord{\times}10^3\,\kms$ and have a high-velocity tail which extends to $\mathord{\sim}0.45\mathord{\times}10^3\,\kms$ (using $\Delta M_{\mathrm{i}}/ M_{\mathrm{i}}\mathord{=}4\mathord{\times}10^{-4}$ as a threshold value). The mixing in velocity space corresponds to mixing in mass coordinate to a maximum of $\mathord{\sim}1.4\,\solm$ in model $e8.8$ and $\mathord{\sim}2\,\solm$ in model $z9.6$ so only to the bottom of the respective hydrogen envelope. 
 
-During the next $10\, \s$, the dynamical evolution of the ejecta is dominated by the neutrino-driven wind, which accelerates material in the vicinity of the PNS to supersonic velocities. The fast \NY{}{moving} material eventually encounters the hot and dense matter behind the forward shock, and is strongly decelerated launching the so-called ``wind termination shock'' \citep{Wanajo2002,Arcones2007}. 
+Why is the mixing more efficient in model $z9.6$ in comparison to model $e8.8$ although the explosion energy and the integrated growth factors are larger in the latter? 
+The answer can be found in inspecting Figures~\ref{fig:mdp first mapping} and 
+\ref{fig:density profiles all times}. 
+Model $z9.6$ already shows more efficient mixing at the onset of explosion. 
+Additionally, the density profile of model $z9.6$ exhibits less extreme drops outside the Si/CO and CO/He interfaces than the sharp drop in density in the ECSN progenitor. 
+Thus, shock deceleration is less severe and the formation of the reverse shock is 
+delayed enabling more efficient mixing while the forward shock runs through the 
+helium-shell of model $z9.6$.
 
-\NY{When}{ As} the energy input by the neutrino-driven wind subsides, the wind termination shock \NY{falls back}{ withdraws back} and leaves the \NY{}{inner} grid \NY{at our inner}{} boundary at $\tpb\,\mathord{\approx}\,12\,\s$.
-Note that the strength of the neutrino driven wind, that is almost non-existent in the ECSN case, sets the maximum velocities the iron rich material can achieve and prevents strong deceleration of the forward shock in the envelope \citep{Wongwathanarat2015}. 
-
-Similar to the evolution of the forward shock in the hydrogen layer of the ECSN progenitor, continuous deceleration of the forward shock in the He layer causes the formation of a reverse shock fairly early at some $\tpb\mathord{\approx} 100\,\s$. Until $\tpb\mathord{\approx}\, 300\,\s$ forward and reverse shock travel with roughly equal velocity through the He-core, where $\mathrm{R_{revsh}\mathord{\sim 0.72}\,\times R_{sh}}$. 
-Again, the shocks clearly separate two different regimes in the ejecta. The inner neutrino heated ejecta bounded by the thin dense shell at the reverse shock and the lower density material between the shocks which is prone to the RTi (see Section~\ref{sec:Linear Stability Analysis}).
-%
-After $300\,\s$ after bounce, the between forward and reverse shock decreases until the reverse shock reaches the inner boundary at $t_{\mathrm{pb}}\sim 1.14\,\text{h}$. This is more than 4 hours earlier than in the $e8.8$ case. The passing of the reverse shock compresses the inner ejecta and leaves behind a low density bubble rather than a constant density profile as found in the electron-capture case.
-The interaction of the reflected reverse shock with the ejecta is also more dynamic as in the $e8.8$ model. Non-linear waves travel back and forth bounded by the inner computational boundary and high density neutrino-heated ejecta. From here, matter expands until the time of shock-breakout at $\tpb\approx\, 29\,\mathrm{h})$. %
-
-
-\subsubsection{$s9.0$ Model}
-\label{sec:Long term evolution of the s9.0 model}
-\COM{Not Final}
-Given that the $s9.0$ model is fairly asymmetric compared to the zero metallicity progenitor or the electron capture model, the angle averaged model for the 1D simulation shows a smoothed out density and velocity profile and thus a smoothed out shock. Thus results from this simulation are even more qualitative than for the other two cases.
-When the forward shock leaves the CO-core it accelerates to its maximum value of $0.8\times 10^{9}\mathrm{cm/s}$ . As it travels through the He4 shell it is decelerated piling up matter in a dense shell behind it. When it reaches the H/He4 interface ($\sim 200$ [s]) the drop in density sends a pressure wave back into the ejecta that steepens into a reverse shock. Note that this reverse shock begins to fall back relatively late at around 22 [h] and reaches the inner boundary as late as 37 [h]. The reflected shock wave runs back into the ejecta while at 90 [h] the forward shock breaches the surface of the star. Due to this the density structure looks quite different to the $z9.6$ model. The large cavity is less pronounced and confined by a dense shell at its lower boundary. 
-
-
-\subsection{ONeMg-core progenitor}
-%\subsubsection{$e8.8$ Model}
-\label{sec:Long-term evolution of the e8.8}
-
-In the lower right panel of Figure~\ref{fig:density all times} we show the forward and reverse shock trajectory of the $e8.8$.
-
-
-\subsection{Multi-dimensional long-term evolution of the $e8.8$}
-\label{sec:Multi-dimensional long-term evolution of the e8.8}
-\subsubsection{Shock propagation}
-\label{sec:shock propagation e8.8}
-We show in Figure~\ref{fig:density all times} the angle-averaged density distributions at representative epochs alongside with the forward and reverse shock trajectories of our three-dimensional simulations. Red markings in the density distribution indicate Rayleigh-Taylor unstable regions. In the lower two panels we show the ECSN case.
-
-The forward shock has long passed the He/H interface and is traveling through the H-envelope. It left the ONeMg-core with some $7.5\times 10^{9}\,\text{cm/s}$ and now travels at $5.8\times 10^{9}\mathrm{cm/s}$. The monotonic $\rho r^3$-profile of the $e8.8$ leads to an untroubled expansion of the shock.
-
-The early and strong deceleration of the forward shock at the edge of the ONeMg-core at $\tpb=0.17\,\text{s}$ has formed a high density shell, bounded by a reverse shock at its inner shoulder. It separates the post-shock material from the innermost ejecta as can be seen in the lower left panel of Figure~\ref{fig:density all times}, where we show the density stratification of our three-dimensional models at representative epochs. The formation of the dense shell or ``wall'' \cite{Kifonidis2006} has important consequences for the evolution of the metal rich ejecta as well as for the growth of Rayleigh-Taylor instabilities. 
-
-Continuous deceleration of the forward shock eventually causes the reverse shock to travel back in mass, starting at  $\tpb\mathord{\approx}\,1\text{h}$ (see lower right panel of \ref{fig:density all times}). It takes however additional $7\,\text{h}$ for the reverse shock to reach the inner boundary of our computational domain. 
-Unaffected by the processes in the interior, the forward shock travels through the hydrogen envelope converting almost 50\% of its kinetic energy into heating the hydrogen gas. Due to this and the huge size of the envelope ($R_{\mathrm{surf}}\mathord{\approx}8.8\times10^{13}\,\mathrm{cm}$) shock-breakout occurs between 3 and 5 days depending on the energy input by the central engine. At this time the shock travels with about $v_{\mathrm{sh}}\mathord{\approx} 5\times 10^{7}\, \mathrm{cm/s}$ accelerating to some $2.6\times 10^{8}\, \mathrm{cm/s}$ as it leaves the star.
-
-The high density shell, that formed during the enormous deceleration at the core/envelope interface, is visible in the lower left panel of Figure~\ref{fig:density all times} at $\tpb=2.5\,\s$ just behind the forward shock at $R_{\mathrm{sh}}=1.77\times10^{5}\,\km$. 
-Note that the region around this shell is unstable to the RTi but contains only very little mass.
-Continuous deceleration of the forward shock in the hydrogen envelope compresses and decelerates the post-shock material (see Figure~\ref{fig:density all times} from $\tpb\mathord{=}2.5\,\s$ until $\tpb\mathord{=}3092\,\s$). Consequently the reverse shock is pushed back in radius and mass coordinate as can be seen in the lower right panel of Figure~\ref{fig:density all times}. 
-Further evolution of the forward and reverse shock is identical to the spherically symmetric results presented in Section~\ref{sec:Long-term evolution of the e8.8}. 
-
-\subsubsection{Ejecta morphology}
-% self similar expansion
-As mentioned in Section~\ref{sec:Post-Bounce Evolution of the e8.8 Model}, the neutrino-heated ejecta basically freeze in their angular distribution starting from $\tpb\mathord{=}0.4\,\s$ and expand self-similar into the low density H-envelope (see lower panels of Figure~\ref{fig:e8 sto 4 times}). 
-
-A shell of \nickel, created by explosive burning behind the shock front \citep{Kifonidis2006}, propagates in front of the homogenous neutron/tracer rich inner core material. The boundary between \nickel/\tracer still carries imprints of the high entropy buoyant bubbles, which grew during strong neutrino heating, whereas the outer boundary of the \nickel shell traces the spherical shock expansion. In the two-dimensional simulations the plumes have angular sizes of some $30^{\circ}$, whereas they are more prolate and smaller in their angular extend in the three-dimensional simulation. 
-While the almost spherical shock will induce only tiny density perturbations on the post-shock layers, these plumes carry slightly larger density perturbations from which the RTi grows. Note, however, that these perturbations are still very small and the density profile shows only tiny differences to the one-dimensional simulation.
-
-In Figure~\ref{fig:e8 3d 4times} we show planar cuts of the density of the ECSN model at representative epochs. Indicated by the black contour line is the \nickel+\tracer=0.1 iso-surface. It traces the region of neutrino-heated material. The dashed white line indicates the $M(r)=M_{\mathrm{He/H}}$ mass shell.
-
-The first Rayleigh-Taylor plumes grow from the tiny perturbation that arose from the passage of the forward shock. These are barely visible in the density distribution, however. 
-When the self-similarly expanding plumes eventually catch up with the immediate post-shock matter at around $\tpb\mathord{=}30\,\s$, they induce high $\ell$-mode perturbations at the RT-unstable core/envelope interface (see orange discontinuity in the uper right panel of Figure~\ref{fig:e8 3d 4times} close to the core/envelope interface). 
-Subsequent growth of Rayleigh-Taylor plumes fully mix the thin \nickel rich shell into the surrounding layers. It looses any resemblance with its morphology at $\tpb\mathord{=}0.3\,\s$. 
-Over the following $\tpb\mathord{\sim}6.1\,\text{h}$ Rayleigh-Taylor plumes grow around the core/envelope interface. This is shown in the lower left panel of Figure~\ref{fig:e8 3d 4times}.
-Rayleigh-Taylor plumes are clearly visible at the \nickel+\tracer iso-surface.
-Note, that the tips of plumes are still close to the former core/envelope interface and amplification factors are almost saturated at this point in time (see Section~\ref{sec:Linear Stability Analysis}). Thus, almost no growth of the RTi is observable between $\tpb\mathord{\sim} 6.1\,\text{h}$ and  $\tpb\mathord{\sim} 25.5\,\text{h}$.
-The passage of the reverse shock, visible as the blue discontinuity in the lower left panel of Figure~\ref{fig:e8 3d 4times}, compresses the inner region and drags the lower boundary of the RT-plumes to smaller radii. Parasitic instabilities and non-linear waves that originate from the reflection of the reverse shock at the inner boundary fully obliterate the metal rich ejecta leaving no trace of the initial plume structure (see lower right panel of Figure~\ref{fig:e8 3d 4times}). 
-
-\subsubsection{Extend of mixing}
-\begin{figure*}% Figure e8.8 rho cuts
- \centering
- \includegraphics[width=\textwidth,trim=0.2cm 2cm 0cm 0cm,clip]{pic/e8_both_slices_4times.pdf} 
- \caption{Planar cuts through the $e8.8_{\mathrm{2D}}$ model at the indicated times showing the logarithm of the density (left half) and \nickel+\tracer mass fraction (right half). Note that the shock radius is outside the shown domain. Expansion happens self similarly over until first RT fingers grow at the He/H interface. These fingers grow to their maximal radial extent when the reverse shock, located at the lower end of the RT fingers in the lower left panel, travels back to the center of the star.}
- \label{fig:e8 3d 4times}
-\end{figure*}
-When the metal rich ejecta catch up with the forward shock, they also are decelerated by a huge amount.
-In Figure~\ref{fig:e8 massDis 4times} we show the distribution of elements in mass and velocity space at four representative times during our long-term simulation. The upper two rows represent the evolution until $300\,\text{s}$ when the nickel rich ejecta encounter the dense shell.
-The bulk of the \nickel/\iron surpasses the carbon and oxygen rich layers in velocity space at $t_{\mathrm{pb}}=300\,\text{s}$, when the inner ejecta are pushed against the dense shell and the first cusps mix \nickel outward in velocity space. The dense shell, however, hampers mixing in mass coordinate.
-The encounter of the neutrino-heated ejecta with the reverse shock causes an enormous deceleration. This is shown in the lower two rows in Figure~\ref{fig:e8 massDis 4times}. Where most of the iron rich material has velocities of $v_{\mathrm{Ni,X}}\approx 30\times10^3 \,\mathrm{km/s}$ at $t_{\mathrm{pb}}=300\,\text{s}$ these layers are decelerated to $v_{\mathrm{Ni,X}}\approx 2.5\times 10^3\,\mathrm{km/s}$ within some $5 \,\mathrm{h}$. The lower velocity tail of the iron group elements even has negative velocities. 
-Compression of the innermost ejecta by the reverse shock is also evident in the distribution over mass coordinate. Where a small fraction of the neutrino heated ejecta is mixed to $M(r)=1.4\,\mathrm{M_{\odot}}$ until $t_{\mathrm{pb}}=21.800\,\s$, the bulk resides still at  $M(r)=1.35\,\mathrm{M_{\odot}}$ clearly separated from the carbon and oxygen that extends to $M(r)=1.47\,\mathrm{M_{\odot}}$ and is evenly distributed over the whole post-shock region.
-
-% Figure e8.8 mass distribution
-\begin{figure*}
- \centering
- \includegraphics[width=\textwidth,trim=0cm 0.6cm 0cm 1cm, clip]{pic/e8_2d_10_massDis_mvr_mas_4times_paper.pdf}
- \caption{Mass distributions of elements in velocity and mass space  of the $e8.8^{\mathrm{2D}}_{10}$ model at the indicated post-bounce times. We cover the initial state as we start our long term simulation in the uppermost panel, over the time the reverse shock passes the ejecta (second and third panels) and the distribution at late times.}
- \label{fig:e8 massDis 4times}
-\end{figure*}
-
-\iffalse %UNCOMMENTED
-%post shock breakout
-After shock breakout the very first stage of the remnant evolution begins. As long as the ejecta mass is larger as the circumstellar - mass (CSM) swept up by the forward shock one speaks of the ejecta dominated (ED) phase. Various analytical studies regarding shock evolution and growth of instabilities have been focusing around this phase (see e.g. \cite{Truelove1999} for a general approach or focused around the crab \cite{Chevalier1984}).  It is also the phase where, after radioactive decay has powered the plateau phase of type II supernovae, the medium becomes optically thin and the remnant moves into the nebular phase. Here velocity distributions also of the heavy elements can be inferred by spectral analysis of the ejecta.
-\fi %UNCOMMENTED
-
-\subsection{Multi-dimensional long-term evolution of the $z9.6$}
-\label{sec:Multidimensional long term evolution of the z9.6}
-\subsubsection{Shock propagation}
-The propagation of the forward and reverse shock of the $z9.6$ model is shown in the upper right panel of Figure~\ref{fig:density all times}. The upper left panel shows the angle-averaged density distribution of the same model.
-Deceleration of the forward shock in the He-core of the $z9.6$ compresses the post-shock matter and creates a high density shell. The shell can be seen in the density distribution at $\tpb\mathord{\sim}40\,\s$. Similar to the ECSN model, the region in the vicinity of this shell is unstable to the RTi but only consists of little mass.
-As the forward shock continues to expand, a reverse shock forms at the lower edge of the dense shell between $\tpb\mathord{\sim}40\mathord{-}300\,\s$. 
-Before the He/H interface is reached by the forward shock, the reverse shock already travels back in mass coordinate and compresses the core material. 
-% Figure Z9.6 rho cuts
-\begin{figure*}
- \centering
- \includegraphics[width=\textwidth,trim=0cm 1.5cm 0cm 0cm,clip]{pic/z9_contour_both_4times.pdf}
- \caption{Same as Figure~\ref{fig:e8 3d 4times} but for the $z9.6_{\mathrm{3D}}$. The dashed line indicates the shock radius. Initially the \nickel+\tracer distribution is fairly spherical with small deformations in the south-western direction. These deformations are reduced as the material expands. First RT-cusps are visible at $t_{\mathrm{pb}}\approx 200\,\text{s}$, whilw the reverse shock, visible as the reddish discontinuity at $r\approx 2\times 10^{6}\,\mathrm{km}$ already travels back in radius.}
- \label{fig:z9 3d 4times}
-\end{figure*}
-
-\subsubsection{Ejecta morphology}
-In Figure~\ref{fig:z9 3d 4times} we show planar cuts of the density distribution of our three-dimensional simulation of the $z9.6$ similar to Figure~\ref{fig:e8 3d 4times}. Indicated by the dashed white line is the CO/He interface of the progenitor. The black line again shows the \nickel+\tracer=0.1 iso-surface, that carries the imprints of convective motions during the explosion.
-
-During the first $\sim 10\mathord{50}\,\s$, the ejecta expand self-similarly into the He-shell of the progenitor, closely resembling the evolution of the ECSN simulation.
-As can be seen in the upper right panel of ~\ref{fig:z9 3d 4times}, the self similar expansion is terminated at $t_{\mathrm{pb}}\approx 70\,\text{s}$.
-When fastest metal rich ejecta arrive at the dense shell, they are compressed and induce high $\ell$-mode density perturbations at the CO/He interface, from which the first small RT-plumes grow.
-Note that these initial fingers grow in a region confined between the forward shock and the dense shell that has formed due to the deceleration of the shock in the CO- and He-core. The bulk of the metal rich ejecta is located downstream of this dense wall.
-
-While the fingers grow during the next $300-400\,\s$, the continuous deceleration of the shock in the He-core sends pressure waves back into the post-shock material. Consequently, matter steepens into a reverse shock. The position of the reverse shock is visible as the color discontinuity in the lower left panel of Figure~\ref{fig:z9 3d 4times}. Since only small amounts of neutrino heated ejecta could be mixed outward before the reverse shock forms, the bulk of the iron group material is decelerated strongly.
-At around $\tpb=1500\,\s$ the reverse shock reaches our inner boundary and is reflected back into the core material.
-Consequently, non-linear waves perturb the innermost ejecta, distorting the Rayleigh-Taylor fingers that reached down to the inner boundary. Since the reflected wave cannot catch up with the fastest shrapnels that originated from the growth of RT plumes at the CO/He interface, it does not influence the high velocity iron rich ejecta.
-After these dynamic events the forward shock reaches the He/H interface at around $\tpb=2000\,\text{s}$. Since the core/envelope transition is very smooth and the post-shock density rather uniform, no additional growth of the RTi is to be expected. Accordingly the plumes that grew from the CO/He interface propagate unimpared with the background flow. 
-% Figure Z9.6 mass distribution
-\begin{figure*}
- \centering
- \includegraphics[width=\textwidth,trim=0cm 0.6cm 0cm 1cm,clip]{pic/z93_3d_massDis_mvr_mas_4times_paper.pdf}
- \caption{Same as Figure~\ref{fig:e8 massDis 4times} but for the $z9.6_{\mathrm{3D}}$. We cover the initial state as we start our long term simulation in the uppermost panel, over the time the reverse shock passes the ejecta (second and third panels) and the distribution in the hydrogen envelope as the ejecta expand self similarly.}
- \label{fig:z9 massDis}
-\end{figure*}
-
-%\subsubsection{Extend of Mixing}
-\subsubsection{Extent of mixing}
-As has been stated before, the early formation of the dense shell has important consequences for the velocities the metal rich ejecta can achieve and how far they can be mixed into the envelope.
-In Figure~\ref{fig:z9 massDis} we show the distribution of elements over mass and velocity space for the $z9.6$ model at the same snapshots as shown in Figure~\ref{fig:z9 3d  4times}, to illustrate the influence of the reverse shock and the dense shell onto the ejecta.
-
-Compression of the ejecta in velocity space and some mixing over mass coordinate can be observed during $t_{\mathrm{pb}}=0.65\,\text{s}$ and $t_{\mathrm{pb}}=78\,\s$. The compression is caused by the strong deceleration of the forward shock in the stellar material, reducing the initial maximal velocities from $v\approx 25\times10^3\,\mathrm{km/s}$ down to $v\approx 12.3\times10^3\,\mathrm{km/s}$, whereas the first plumes that rise from the CO/He interface mix a tiny amount of iron rich ejecta into the He-core. Note however that the reverse shock travels with $v_{\mathrm{rev}}\approx 7\times10^3\,\mathrm{km/s}$ at $t_{\mathrm{pb}}=400\s$ and the bulk of \nickel and \tracer travels with smaller velocities of $v\approx 4\times10^3\,\mathrm{km/s}$. The behaviour of the model is again similar but less extreme as found in the ECSN model.
-
-As the RT-plumes grow over the course of the following minutes, they continuously mix \nickel and \tracer into the He-core. This is shown in the third row left column of Figure~\ref{fig:z9 3d 4times}. At the same time the reverse shock forces the bulk of the metal rich ejecta to even lower velocities of  $v\approx 0.5\times10^3\,\mathrm{km/s}$. The passage of the reverse shock also marked the point in time where the integrates growth rates of the $z9.6$ saturate. As can be seen in the lowest panels of Figure~\ref{fig:z9 3d 4times}, during the time between  $7.7\times 10^3\;\s$ and $6.4 \times 10^4\,\s$ neutrino-heated material experiences almost no additional upwards mixing in mass and is only further compressed in velocity space. 
-
-\subsection{Multi-dimensional long-term evolution of the $s9.0$}
-\label{sec:Multi-dimensional long-term simulations of the s9.0-model}
-\COM{
-\begin{itemize}
-    \item Growth of RTi at He/H
-    \item Initial perturbations growing from passage of O interfaces
-\end{itemize}
-}
-\fi % MULTI - D EVOLUTION
+In contrast, heavy elements are mixed to large mass coordinates and velocities in model $s9.0$.
+This is facilitated by the large initial asymmetries at the onset of explosion.
+Fast metal-rich plumes escape the deceleration at the CO/He interface and reverse shock formation in the H-envelope thereby transporting a significant amount of the total $\nickel\mathord{+}\tracer$ mass to large mass coordinates.
+Mixing of intermediate mass elements is driven by the growth of the RTI which causes a fragmentation of the dense shells which form after the forward shock crosses the CO/He and He/H interfaces.
+Most importantly, the large plume is able to transport $\nickel\mathord{+}\tracer$-rich matter to large velocities and mass coordinates. We find around $4\%$ of the
+$\nickel\mathord{+}\tracer$-rich material travels with more than $1,000\,\kms$ and thus ahead of the bulk of metal-rich matter.
 
 \subsection{Dependence on the explosion energy}
 \label{sec:Dependence on the explosion energy}
-% e8.8
-\iffalse
-\begin{figure*}
+
+\begin{figure*}% e8.8 2d mass dis sbo
  \centering
- \includegraphics[width=0.95\textwidth]{pic/massDis_mvr_mas_minmax_2d_time_200d_paper.pdf}
- \caption{Mass and velocity distributions of elements at 200 days after bounce for the two dimensional models $e8.8_{3}$ and $e8.8_{15}$. We used 100 bins evenly distributed from $0-4\times 10^3\,\mathrm{km/s}$ and 30 bins in mass coordinate. The $e8.8_{3}$ calibration is the model with least efficient mixing, whereas the $e8.8_{15}$ is the model with most efficient mixing within our set of simulations of the $e8.8$. Thus, there is a small but noticeable dependence of the efficiency of mixing on the explosion energy. }
- \label{fig:e8 massDis 200 d}
+ \includegraphics[width=0.95\textwidth]{pic/e8_2d_all_sbo_massdis_velocity.pdf}
+ \caption{Mass distribution of the 2D simulations of model $e8.8$ using the calibrations as listed in Table~\ref{table:e8param} at the time of shock-breakout. Maximum velocities, and thus also the velocities of the bulk of \nickel and \tracer, scale with $\sqrt{E_{\mathrm{exp}}}$ leading to slightly enhanced mixing for more energetic models. }
+ \label{fig:e8 2d massDis sbo}
 \end{figure*}
-\fi
-Although the explosion energies for the e8.8 model cover almost one order of magnitude, differences in mixing of species in radius and velocity are minor. At $t_{\mathrm{pb}}\sim 2.5 \,\text{s}$ the velocity distribution of elements is almost identical. Small differences are visible in the maximum velocities achieved and are higher for higher explosion energy. Mixing in mass coordinate follows a similar pattern, with slightly more \nickel mixed into the neutron rich material for more energetic explosions. 
-Inspecting later times ($t_{\mathrm{pb}}\sim 8 \,\mathrm{h}$) the findings still show similar behaviour. \nickel is mixed over a slightly larger fraction of the total ejected mass for the higher explosion energies. Differences in the velocity distribution are only visible in the lower tail with negative velocities. 
-At 200 days after core bounce the velocity distributions are, besides the maximum velocities, basically identical.
+In Figure~\ref{fig:e8 2d massDis sbo} we show the mass distributions as a function of radial velocity for the 2D simulations of model $e8.8$, using the calibrations as listed in Table~\ref{table:e8param}, at the time of shock-breakout. 
+
+Comparing the distributions of model $e8.8_{10}^{\mathrm{2D}}$ with the 3D simulation, the efficiency of mixing in model $e8.8$ does not seem to be significantly dependent on the chosen dimensionality. This thus enables us to investigate the influence of the explosion energy on the efficiency of mixing in our 2D simulations of model $e8.8$.
+ 
+Inspecting Figure~\ref{fig:e8 2d massDis sbo}, we find that the bulk of \nickel resides at low velocities of $\mathord{\sim}0.17\mathord{-}0.40\mathord{\times}10^3\,\kms$ increasing with explosion energy as $v_{r}\mathord{\sim}\sqrt{E_{\mathrm{exp}}}$. 
+For larger explosion energies the downward mixing (to smaller velocities) of lighter elements also seem to be more efficient, but the effect is small and affects only $\mathord{<}1\%$ of the respective elements. 
+
+The mixing in velocity space corresponds to a distribution of \nickel and \tracer to a maximum mass coordinate of $1.37\mathord{-}1.436\,\solm$ also increasing with explosion energy, again using $\Delta M/M\mathord{=}4\mathord{\times}10^{-4}$ as a threshold value. Note that the 4.49 \solm hydrogen envelope of the progenitor initially extended from 1.34 \solm to 5.83 \solm, thus mixing only affects the innermost part of the envelope.
+
 % iron-cores
-As the ion core progenitors are exploded self consistently their explosion energy is fixed within our framework. Drawing direct connections between the amount of mixing and the explosion energy can therefore not be done. Comparing the $z9.6$ model with electron-capture model, that have similar explosion energies, hints that the influence is, however, minor. Decisive for the amount of nickel mixing is the progenitor structure and initial perturbations after shock revival. This view is supported by the strong mixing apparent in the $s9.0$ model that has comparable explosion energy as well. The initial density perturbations combined with the strong de- and acceleration of the forward shock in the envelope of the progenitor yields high growth-rates over a larger space in mass coordinate. 
-\COM{Effect of expl. energy, if iron rich material can be accelerated more efficient to escape the formation of the reverse shock. -> Interdependence of the strength of the wind and prog. structure. }
+As the ion core progenitors are exploded self consistently their explosion energy is fixed within our framework. Drawing direct connections between the amount of mixing and the explosion energy can therefore not be done. Comparing the $z9.6$ model with electron-capture model, that have similar explosion energies, hints that the influence is, however, minor. Decisive for the amount of nickel mixing is the progenitor structure and initial perturbations after shock revival. This view is supported by the strong mixing apparent in model $s9.0$ that has comparable explosion energy as well. The initial density perturbations combined with the strong de- and acceleration of the forward shock in the envelope of the progenitor yields high growth-rates over a larger space in mass coordinate. 
 
-\subsection{Dependence on progenitor structure and initial morphology}
-\COM{
-\begin{itemize}
-    \item Correlation fastes Ni plumes at \tpb=0 and \tpb= breakout?
-    \item progenitor: early deceleration in ECSN like prog. s9.0 reverse shock only at He/H interface. 
-\end{itemize}
-}
-In the previous sections we revealed the vast differences of the propagation of the forward shock and of the neutrino heated material between the three progenitors. 
-Dependent on the core structure, the morphology of the ejecta at the moment of shock revival gradually changes from  almost spherical, as in the $e8.8$ model, to large scale anisotropies, as the $s9.0$ model.
-The subsequent evolution depends strongly on the time the reverse shock forms and on the density gradient at the composition interfaces.
-Early formation of the reverse shock at the core/envelope boundary in the $e8.8$ model suppresses efficient outward mixing of metal rich ejecta. When the reverse shock falls back, the inner material is compressed loosing every resemblance with its morphology at $\tpb=2.5\,\s$.
-In the $z9.6$ model the situation is similar, although not as severe. A more gradual change in the $\rho r^3$ profile enables some outward mixing of \nickel, while the forward shock runs through the He core. Still, the back propagation of the reverse shock affects most of the neutrino heated material. Only a few shrapnels of \nickel and \tracer manage to escape the large deceleration. These shrapnels seem to originate from the largest plumes observed at the time of shock revival. This is no surprise as they most efficiently seed density perturbations necessary for the RTi to grow \citep{Wongwathanarat2015}.
 
-\COM{$S9.0$ Details}
-
-Summarizing it can be stated, that the progenitor features which enable fast explosions in our ECSNe like models, also prevents efficient mixing of core material. The forward shock is decelerated early on, causing a formation of a dense shell and a reverse shock that. In the $e8.8$ model no individual \nickel/\tracer shrapnels can escape deceleration of the reverse shock. In the $z9.6$ model very few shrapnels survive. 
 \section{Comparison to previous studies}
 \label{sec:Comparison to previous studies}
 
-Previous studies like the ones of \cite{Hammer2010}, \cite{Joggerst2010}, \citet{Wongwathanarat2015}, \citet{Kifonidis2006} also performed simulations of the long term evolution of CCSNe after shock revival. These studies employed RSG and BSG progenitors as a proxy for Sanduleak -69 202, the progenitor of SN1987A. \citet{Hammer2010} used a 15 \solm blue supergiant, while \citet{Joggerst2010} used three different 15 \solm progenitors with different metallicities. Also the study by
-\citet{Wongwathanarat2015} (Wo15) deployed various models from 15 - 20 \solm. 
-Since these progenitors are more massive than the ones presented in this study, their structure is fairly different. E.g. the lightest CO-core of Wo15, their model B15, has a mass of $1.7\solm$ whereas our heaviest CO-core, our $s9.0$ model has a mass of $1.4\solm$. Additionally density gradients at the interfaces seem to be more pronounced especially at the He/H transition. Only our $s9.0$ model shows a noteworthy density variation at this interface.
+Previous studies like the ones of \cite{Hammer2010}, \citet{Wongwathanarat2015}, \citet{Kifonidis2006} also performed simulations of the long-term evolution of CCSNe after shock-revival based on 2D/3D initial data. These studies employed RSG and BSG progenitors as a proxy for Sanduleak -69 202, the progenitor of SN1987A. \citet{Hammer2010} used a 15 \solm blue supergiant, while \citet{Wongwathanarat2015}  deployed various models from 15-20 \solm. 
+These more massive progenitors differ strongly in their $\rho r^3$-profiles when compared to our ECSNe-like models. However, model $s9.0$ exhibits similar structural features (e.g. a significant variation of the density at the He/H interface) as the RSG models of Wo15.
 
-However the total growth rates of the RTi seem to be unaffected as shown in Figure ~\ref{fig:growth rates}. The $s9.0$ model exhibits similar amplification factors as the models presented Wo15. Especially regions affected by the passage of the reverse shock show considerable growth factors. This is not mentioned in Wo15 and contributes to the total amount of mixing in the $s9.0$ model. Consequently neutrino heated material can be mixed far into the hydrogen envelope. 
-Since the amplification factors of the ECSN like models are large but confined into a small region close to their core, these models are distinct from all other RSGs. Similar to the models presented in \citet{Joggerst2010} metal rich ejecta can be mixed only to a mass coordinate of around 15-20\% of the progenitors ZAMS mass.
+The structural differences and similarities are reflected in the evaluation of the linear growth-rates of the RTI as shown in Figure~\ref{fig:growth rates}. While the ECSNe-like models show only small regions of possible RTI growth, model $s9.0$ exhibits similar amplitudes of the amplification factors and similar size of the affected regions as the models presented Wo15. Additionally, when the reverse shock in model $s9.0$ falls back, the fragmentation of the neutrino-heated matter in the He-core of the star already mixed \nickel-rich shrapnels into the hydrogen envelope, which thereby escape the strong deceleration. 
+Consequently, neutrino-heated material can be mixed deep into the hydrogen envelope. 
+Du to the specific structure of the ECSNe-like models, mixing is very inefficient, making the explosion of these progenitors almost spherical events. Thus, these models are distinct from the explosion of other RSGs reported in the literature. 
+
+\section{Conclusions and Outlook}
+In this study we presented the results of two- and three-dimensional
+ simulations of CCSNe connecting the seconds after bounce, shock 
+ revival and shock breakout. We used three low-mass progenitors, 
+ two RSGs that formed an iron-core at the end of their life 
+ ($z9.6$, $s9.0$) and a newly explored ECSN progenitor ($e8.8$). 
+
+\begin{figure*}% Figure models final visit
+ \centering
+ \includegraphics[width=\textwidth,trim=0cm 0.0cm 0cm 0cm,clip]{pic/visit_models.png}
+ \caption{3D renderings of our models showing the $\nickel\mathord{+}\tracer\mathord{=}0.03$ iso-surface color-coded with the radial velocity at the time of shock breakout. Model $e8.8$ remains almost perfectly spherical with only a few slightly extended RT fingers (9 o'clock and 3 o'clock directions in the left panel). Model $z9.6$ indeed shows numerous small RT fingers and a slightly stronger fragmentation of the ejecta than model $e8.8$, the overall morphology, however, remains nearly spherical. In contrast to the ECSNe-like models, model $s9.0$ shows strong deformations and large distinct RT fingers. 
+ }
+ \label{fig:all 3d models visit}
+\end{figure*}% Figure VISIT
+
+The explosion of the $e8.8$ in one-, two- and three dimensions 
+was initiated by imposing suitable values for neutrino luminosities 
+and mean energies at the inner grid boundary located at a finite, 
+time-dependent radius. Neutrino transport and neutrino-matter interactions 
+were treated by the RbR gray neutrino transport scheme of \citet{Scheck2006}, 
+including a improvement of the prescription for neutrino source 
+terms as presented in the appendix. We confirmed the common behavior of 
+ECSNe already presented in e.g. \citet{Kitaura2006,Gessner2018}. 
+Early decline of the mass accretion rate leads to early explosions and 
+fast shock expansion at the edge of the ONeMg core even in one-dimension. 
+Shock trajectories are fairly independent of the chosen geometry, 
+while the almost spherical expansion produces only small neutron 
+star kicks of the order of a few \kms. Additionally convective 
+motions in the multi-dimensional simulations are too weak and 
+short-lasting to enable efficient mixing of neutrino-heated matter early on.
+
+The immediate post bounce evolution of the iron-core models was 
+simulated with \vertex employing a fully self consistent neutrino 
+transport scheme. A detailed analysis of the first second of 
+evolution of model $z9.6$ is given in \citet{Melson2015a}, 
+while simulations of model $s9.0$ as firstly presented in \citet{Melson2019}. 
+In addition to these studies we showed the 
+hydrodynamic neutron star kicks of these 
+CCSN and investigated the morphology of the ejecta some 
+hundred milliseconds after shock revival. 
+
+When mass accretion subsides in all models and 
+explosion energies and kick velocities begin to saturate 
+we map the final state of our explosion simulations into \prom. 
+This is achieved by excising the inner almost spherically symmetric 
+regions of the previous simulations and replacing them by a 
+suitable point mass. By incorporating the neutrino-driven wind
+and setting the radius of the inner boundary below the sonic 
+point we guarantee a seamless transition between the codes.
+
+At the time when we continue the simulations of the explosions 
+the forward shocks of all three dimensional models traveled 
+already more than $10^4\;\mathrm{km}$. 
+In order to aid us understand the formation of reverse shocks and
+growth of RTI in the multi-dimensional models we appealed to spherically
+symmetric simulations with the same setup starting from angle-averaged initial data
+of the 3D post-bounce simulations.
+
+The extremely steep density gradient at the core/envelope boundary
+in model $e8.8$ leads to rapid expansion 
+of the shock until it crosses the He/H interface.
+Thereafter, a featureless $\rho r^3$-profile leads to an untroubled 
+propagation of the shock which is continuously decelerated.
+The strong deceleration of the forward shock leads to the formation of a 
+dense shell, below which a reverse shock forms already at $\tpb\mathord{\sim}1\,\s$.
+In model $z9.6$ we observe the formation of a reverse shock also fairly early at
+$\tpb\mathord{\sim}100\,\s$ after the shock crossed the CO/He interface.
+The successive expansion of the shock, however, is untroubled due to the 
+monotonic $\rho r^3$-profile.
+The shock propagation in model $s9.0$ is characterized by two phases of
+deceleration and acceleration at the CO/He and He/H interfaces.
+After the supernova shock crosses the He/H interface we observe the
+formation of a strong reverse shock.
+
+Every time the shock decelerates it sends pressure waves back into
+the ejecta creating the necessary crossing signs of the
+pressure and density gradients to facilitate the growth of the RTI. 
+Using a linear stability analysis we estimate the amplification
+factors of some initial perturbations.
+
+In the ECSNe-like models we find large amplification factors close to the CO/He 
+interfaces where the density gradient within the progenitor is steepest. 
+However, the RT unstable regions occupy only a small mass range.
+In contrast, model $s9.0$ shows a more typical position and amplitude of the 
+amplification factors when compared to other RSGs reported in the literature.
+We find the largest amplification factors around the He/H 
+interface and minor contributions at the CO/He interface.
+
+In 3D we observe the complicated propagation of the neutrino-heated ejecta, 
+their interaction with dense shells and reverse shocks and their
+fragmentation due to the growth of instabilities.
+In the case of the ECSN-like progenitors the dense shells form 
+early during the evolution. 
+In the extreme case of the $e8.8$ the 
+extreme deceleration of the shock at the core/envelope boundary compresses 
+the post shock material already at $170 \, \ms$. The resulting dense wall 
+is almost impermeable for the neutrino heated ejecta. When they catch
+up with the dense shell they are strongly decelerated and only small
+fragments of \nickel- and \tracer- rich material can penetrate the wall.
+The growing RTI between the forward and reverse shock is able to mix some
+of this material to larger mass coordinates.
+However, the bulk of the neutrino-heated ejecta remain below the mass 
+coordinate where the reverse shock formed and are even more compressed
+and decelerated as the reverse shock propagates to the center of the numerical
+grid.
+
+In the $z9.6$ model the forward shock has not passed the He/H interface 
+before a strong reverse shock forms. Although some metal rich ejecta can 
+penetrate through the previously formed dense shell, most of the neutrino 
+heated material remains within the radius of reverse shock formation as well.
+
+The $s9.0$ model shows a different behavior caused by the different structure 
+of the star. Similar to the RSGs presented in \cite{Wongwathanarat2015} reverse 
+shock formation happens after passage of the He/H interface while the Rayleigh-Taylor 
+instabilities have enough time to grow to considerable size. 
+In particular, we observe the growth of one very large and two to three smaller 
+metal rich clumps which correlate with the positions of largest initial shock
+deformation.
+Therefore, more neutrino-heated material can be transported from the core 
+to larger mass coordinates. 
+In this study we identify two distinct morphologies as shown in Figure~\ref{fig:all 3d models visit}.
+The ECSNe-like progenitors show only small derivations from sphericity 
+during their whole evolution after bounce.
+
+The $e8.8$ model in particular does not produce large scale RTi fingers 
+that are able to mix neutrino-heated material into the envelope. This is 
+due to the very small initial perturbations set by convective overturn 
+during the first roughly 200 ms after bounce and the monotonic shock 
+propagation in its hydrogen envelope. 
+
+The $z9.6$ model yields a very similar distribution of elements in mass 
+and angular domain. Although mixing seems the be slightly more efficient
+in the explosion of this progenitor, the overall morphology of the neutrino-heated
+ejecta remains basically spherical.
+
+The $9\solm$ model occupies a different regime in our results. 
+A highly variable shock propagation and large initial asymmetries
+enable efficient mixing of neutrino-heated matter to large
+mass coordinates and velocities. The mass distribution of elements
+shows striking similarities with the results presented in e.g.
+\cite{Wongwathanarat2015}. 
+Most strikingly, we find a asymmetric shock breakout and a large
+$\nickel$-rich plume traveling ahead of the average shock. 
+This will certainly have an impact on observational properties,
+such as $\gamma$-ray emission.
+
+By comparing the results of our long-term simulations of the $e8.8$ 
+with different parameters of the central engine, we showed that, 
+at least for ECSN, the amount of mixing is only insignificantly 
+influenced by the explosion energy. 
+More important for sufficient mixing is the compactness of the core, 
+the density profile of the envelope which determines the place and 
+time where a dense shell or reverse shock forms and the initial 
+asymmetries set by neutrino-driven convection.
+Early formation of a dense shell confines the metal rich ejecta to 
+low-mass coordinates as it is observed in the ECSNe-like models. 
+Late formation of the dense shell and the accompanying reverse shock, 
+as it is the case in the $s9.0$, leaves enough time for the RTI to grow. 
+Therefore, less neutrino-heated material is affected (decelerated)
+by passage of the reverse shock.
+For the $z9.6$ and $s9.0$ one can correlate the largest RTI plumes at 
+the time of shock breakout with the largest plumes at the time of shock-revival. 
+Due to the early deceleration of the ejecta in the $e8.8$ and the subsequent 
+strong compression of the matter at the dense shell, there is no such correlation. 
+
+The results presented clearly indicate that the evolution of 
+core-collapse supernovae from low-mass progenitors proceeds in a large variety. 
+
+
 \COM{
 \begin{itemize}
-    \item Conclude: Our models show that there is a transition from ECSNe like and low metallicities to low mass iron-cores (solar metallicity) to higher mass models
-    \item Extrapolations and correlations ?
+    \item Are there relevant observations ?
+    \item Influence of \cite{Jones2019} ??
 \end{itemize}
 }
 
-\section{Conclusions and Outlook}
-In the present paper we presented the results of two- and three-dimensional simulations of CCSNe connecting the seconds after bounce, shock revival and shock breakout. We used three low-mass progenitors, two RSGs that produced an iron-core at the end of their life ($z9.6$, $s9.0$) and a newly explored ECSN progenitor ($e8.8$). 
-
-The explosion of the $e8.8$ in one-, two- and three dimensions was initiated by imposing suitable values for neutrino luminosities and mean energies at the inner grid boundary located at a finite, time-dependent radius. Neutrino transport and neutrino-matter interactions were treated by the RbR gray neutrino transport scheme of \citet{Scheck2006}, including a improvement of the prescription for neutrino source terms as presented in the appendix. We confirmed the common behavior of ECSNe already presented in e.g. \citet{Kitaura2006,Gessner2018}. Early decline of the mass accretion rate leads to early explosions and fast shock expansion at the edge of the ONeMg-core even in one-dimension. Shock trajectories are fairly independent of the chosen geometry, while the almost spherical expansion produces only small PNS kicks of the order of a few \kms. Additionally convective motions in the multi-dimensional simulations are too weak and short-lasting to enable efficient mixing of neutrino-heated matter early on.
-
-The immediate post-bounce evolution of the iron-core models was simulated with \vertex employing a fully self consistent neutrino transport scheme. A detailed analysis of the first second of evolution of the $z9.6$ is given in \citet{Melson2015a}, while the $s9.0$ as firstly presented in \citet{Melson2019}. 
-In addition to these studies we showed the hydrodynamic PNS kicks of these CCSN and investigated the morphology of the ejecta some hundred milliseconds after shock revival. 
-
-When mass accretion subsides in all models and explosion energies and kick velocities begin to saturate we map the final state of our explosion simulations into \prom. This is achieved by excising the inner almost spherically symmetric regions of the previous simulations and replacing them by a suitable point mass. By incorporating the neutrino-driven wind and setting the radius of the inner boundary below the sonic point we guarantee a seamless transition between the codes.
-
-At the time when we continue the simulations of the explosions the forward shocks of all three dimensional models traveled already more than $10^9\,\mathrm{cm}$. 
-In order to aid us understand the growth of Rayleigh-Taylor instabilities in the multi-dimensional models we ran spherically symmetric simulations with the same setup starting from angle-averaged initial states. As expected amplification factors are large at the composition interfaces where the shock speed is non-monotonic. Not reported by previous three-dimensional studies is the additional amplification in region between the interfaces that is revealed using the compressible estimation of $\Sigma_{\mathrm{RT}}$.
-
-As mentioned by \citet{Wongwathanarat2015} the evolution of the forward shock and neutrino-heated ejecta is very complex. De- and acceleration of the shock at the composition interfaces causes pressure inversions in the post-shock material that provide the ground for the growth of Rayleigh-Taylor instabilities, while the pile-up of matter behind the shock leads to the formation of dense shells and a reverse shock. 
-In the case of the ECSN like progenitors the dense shells form early during the evolution. In the extreme case of the $e8.8$ the extreme deceleration of the shock at the ONeMg-core boundary compresses the post-shock material already at 170 ms. The resulting dense wall is almost impermeable for the neutrino heated ejecta. When they catch up with the dense shell they are strongly decelerated and only imprint small scale low amplitude perturbations there. 
-In the $z9.6$ model the forward shock has not passed the He/H interface before a strong reverse shock forms. Although some metal rich ejecta can penetrate through the previously formed dense shell most of the neutrino heated material remains within the radius of reverse shock formation.
-The $s9.0$ model shows a different behaviour caused by the different structure structure of the star. Similar to the RSGs presented in Wo15 reverse shock formation happens after passage of the He/H interface while the Rayleigh-Taylor instabilities have enough time to grow to considerable size. Thus more neutrino heated material can be transported from the core to larger mass coordinates. 
-In this study we identify three different morphologies.
-The ECSNe like progenitors show only small derivations from sphericity duing their whole evolution after bounce.
-
-The $e8.8$ model in particular does not produce large scale RTi fingers that are able to mix neutrino-heated material into the envelope. This is due to the very small initial perturbations set by convective overturn during the first roughly 200 ms after bounce and the monotonic shock propagation in its hydrogen envelope. 
-
-The $z9.6$ model yields a very similar distribution of elements in mass and angular domain. Different to the ECSN progenitor however some metal rich shrapnels are able to escape the formation of the reverse shock and propagate unimpared behind the forward shock front. These shrapnels are correlated with the biggest initial plumes that originated from the evolution during the first second. The model thus represents a transition between two extremes. The completely spherical ECNS model and the $s9.0$ model.
-
-The $s9.0$ model occupies a different regime in our results. A long accretion phase in combination with strong convective motions during the first second set large scale initial perturbations for the RTi to grow. The very late formation and fallback of the reverse shock guarantees the survival of large Rayleigh-Taylor fingers that mix neutrino-heated material outwards. 
-
-
-\begin{itemize}
-    \item \COM{These differences should be detectable in light-curve measurements of IIP transients. [Sashas Paper]}
-    \item \COM{Correlation between rt fingers and initial plumes?}
-    \item \COM{Distinction in nickel velocities?}
-    \item \COM{Effect of $\beta$ decay}
-    \item \COM{Effect of pre-collapse perturbations}
-\end{itemize}
-
 \section*{Acknowledgements}
-\begin{itemize}
-    \item Computational resources
-    \item Financial Support
-    \item Tools: NumPy, Matplotlib
-    \item Naveen for input
-\end{itemize}
+The author wants too thank Naveen Yadav and Ninoy Rahman for fruitful discussions and comments on the paper. This project was supported by the European Research Council through grant ERC-AdG No.341157-COCO2CASA and by the Deutsche Forschungsgemeinschaft through Sonderforschungbereich SFB 1258 "Neutrinos and Dark Matter in Astro- and Particle Physics" (NDM) and the Excellence Cluster Universe (EXC 153; http://www.universe-cluster.de/). Computer resources for this project have been provided by  the Max Planck Computing and DataFacility (MPCDF) on the HPC system Cobra and Draco.
+
+\textit{Software:} Numpy and SciPy \citet{Jones2001}, IPython \citet{Perez2007}, Matplotlib \citet{Hunter2007}, VisIt \citet{Childs2012}.
 
 %-----------
 % BIB
@@ -1019,13 +1280,16 @@ Q^{\mathrm{abs}}_{\nu \mathrm{N}} = \frac{1}{4} \mathcal{C}_{\mathrm{N}} \mathca
 \langle \epsilon^4 \rangle \frac{L_{e,\nu}}{4\pi r^2 f_{\nu}\langle \epsilon \rangle}.
 \end{equation}
 
-%% TODO
-%% TEST FIGURES
+In Figure~\ref{fig:s15.3 trans} we show the $\nu_{e}$ and $\bar{\nu}_{e}$ (solid and dashed lines respectively) energy and number luminosity (left panes) and  the $\nu_{x}$ and $\bar{\nu}_{x}$ energy and number luminosity (right panes) measured at 400 km for a 15.3 \solm model of \cite{Ertl2016} including the aforementioned corrections ($s15.3_{\mathrm{nns}}$), Bremsstrahlung ($s15.3_{\mathrm{nns,Q_{b}}}$, see next Section) and the standard case of S06 ($s15.3_{\mathrm{std}}$).
+The parameters for the central engine are chosen such that the model does not explode and are not physically motivated. This enables us to show the effect of the corrections on the transport. 
+In the standard case the number and energy luminosities ($L_{n,e}$) of all flavours remain constant starting from $\mathord{\sim}1.4\,\s$. These constant luminosities are caused by spurious oscillations of the neutrino source-terms which create artificial neutrino flux. Including the correction removes the oscillations and leads to a physical cooling curve of the PNS. 
+When Bremsstrahlung is included, the luminosities of the heavy flavour neutrinos increase by a factor of two in comparison to the simulation only including the corrections. 
+
 \begin{figure*}
 \centering
-\includegraphics[width=0.8\textwidth]{./pic/s21_9_trans_tests.pdf}
-\caption{Neutrino energy and number luminosities for a $21.9\,\mathrm{M_{\odot}}$ star using the transport of S06 ($s21.9_{\mathrm{std}}$), the corrected transport ($s21.9_{\mathrm{nns}}$) and including Bremsstrahlung ($s21.9_{\mathrm{std,Q_b}}$). \textit{Upper left panel}: Electron neutrino (solid lines) and electron anti-neutrino energy-luminosity at $400\,\mathrm{km}$. \textit{Lower left panel}: Electron neutrino (solid lines) and electron anti-neutrino number-luminosity at $400\,\mathrm{km}$. The left column of panels shows the same quantities for the heavy neutrinos ($\nu_{\mathrm{x}}$). Including the corrections presented here reduces the overall luminosities for this model. Adding Bremsstrahlung somewhat balances the reduction of $L_{\mathrm{e,n},\nu}$}
-\label{fig:s21.9_tras}
+\includegraphics[width=0.8\textwidth]{./pic/s15_3_trans_tests.pdf}
+\caption{Neutrino energy and number luminosities for a $15.3\,\mathrm{M_{\odot}}$ star using the transport of S06 ($s15.3_{\mathrm{std}}$), the corrected transport ($s15.3_{\mathrm{nns}}$) and including Bremsstrahlung ($s15.3_{\mathrm{std,Q_b}}$). \textit{Upper left panel}: Electron neutrino (solid lines) and electron anti-neutrino energy-luminosity at $400\,\mathrm{km}$. \textit{Lower left panel}: Electron neutrino (solid lines) and electron anti-neutrino number-luminosity at $400\,\mathrm{km}$. The left column of panels shows the same quantities for the heavy neutrinos ($\nu_{\mathrm{x}}$). Including the corrections presented here reduces the overall luminosities for this model. Adding Bremsstrahlung somewhat balances the reduction of $L_{\mathrm{e,n},\nu}$}
+\label{fig:s15.3 trans}
 \end{figure*}
 
 \subsection{Bremsstrahlung}
@@ -1067,8 +1331,7 @@ Here $\mathrm{F}_2$ is the Fermi-Dirac integral defined in Equation (D.23) in \c
 %% pair production should cool the material!
 
 \section{Neutron star kicks and spin}
-\label{Appendix:neutron star}
-\subsection{Equations}
+\label{Appendix:Neutron Star Properties}
 Acceleration of neutron stars are caused by two mechanisms. 
 Asphericities developing during the explosion exert gravitational forces on the PNS which accelerate the PNS in the direction opposite of the direction of the explosion. This mechanism is also known as the ``gravitational tug-boat mechanism'' \citep{Wongwathanarat2013}. For a thorough discussion of this mechanism the reader is referred to \citet{Scheck2006,Wongwathanarat2013,Janka2017,Gessner2018,Mueller2019}.
 Secondly, anisotropic emission of neutrinos, specifically the anisotropic neutrino energy flux density $F_{\mathrm{\nu}}^{\mathrm{e}}$ across the surface of the PNS, exerts a force onto the PNS in the direction opposite to the stronger neutrino emission.
@@ -1150,6 +1413,116 @@ In the above equation the gravitational mass $M_{\mathrm{g}}$ can be estimated f
 where $\beta=\frac{GM_{\mathrm{g}}}{R_{\mathrm{NS}}c^2}$ and
 $M_{\text{b},\solm}$ is the baryonic mass of the NS.
 
+\section{Scaling relations for $Q_{\nu}$ in \vertexprom}
+\label{appendix:scaling relations}
+
+In the following the scaled Source Terms used for extending the simulations in \vertexprom are presented. The general procedure is to use the angle averaged source term for neutrino heating and cooling from the last output where the full neutrino transport was enabled. By scaling these to the contraction of the neutron star and the gain radius the relations following in the next paragraphs are derived. They are also tested and scaled against 1D simulations of the respective runs with the full neutrino transport.
+\subsection{Scaling relations}
+For scaling the evolution of the source terms over time the following factors are defined
+
+\begin{align}
+    g(t) &= \frac{L_{\nu_e}(t) +          L_{\bar{\nu}_e}(t)}{L_{\nu_e}(t_0) +
+    L_{\bar{\nu}_e}(t_0)} \\
+    h(t) &= \left(\frac{E_{\nu_e}(t) + E_{\bar{\nu}_e}(t)}{E_{\nu_e}(t_0) +
+    E_{\bar{\nu}_e}(t_0)}\right)^2,
+\end{align}
+where $L_{\mathrm{\nu_e}}, \;L_{\mathrm{\bar{\nu}_e}}$ are the electron neutrino and anti-neutrino luminosities at time $t$ and initial time $t_0$. $E_{\mathrm{\nu_e}}, \;E_{\mathrm{\bar{\nu}_e}}$ are the neutrino energies. With these we define
+
+\begin{align}
+    F_\mathrm{gain}(t) &=
+    \left(\frac{R_\mathrm{gain}(t_0)}{R_\mathrm{gain}(t)}\right)^2 \\
+    F_\mathrm{E}(t) &= h(t)
+    \left(\frac{M_\mathrm{NS}(t)}{M_\mathrm{NS}(t_0)}\right)^2 \\
+    \Gamma(t) &= \frac{M_\mathrm{NS}(t) \,\dot{M}(t)
+    \,R_\mathrm{NS}(t_0)}{M_\mathrm{NS}(t_0) \,\dot{M}(t_0) \,R_\mathrm{NS}(t)} \\
+    F_{\dot{M}}(t) &= \frac{\frac{1}{2} L_{\nu_x}^\mathrm{tot}(t_0) \,g(t) + \left[
+    L_{\nu_e+\bar{\nu}_e}(t_0) - \frac{1}{2} L_{\nu_x}^\mathrm{tot}(t_0)
+    \right] \Gamma(t)}{L_{\nu_e+\bar{\nu}_e}(t_0)}.
+\end{align}
+
+In order to calculate the mass accretion rate $\dot{M}$, we only integrate fluid elements with $v_r < 0$ at $r = 100$~km.
+For the low mass iron cores models $z9.6$ and $s9.0$ we set
+
+\begin{align}
+    L_{\nu_e+\bar{\nu}_e}(t_0) &= \frac{1}{2} L_{\nu_x}^\mathrm{tot}(t_0) \\
+    \Rightarrow F_{\dot{M}}(t) &\equiv g(t)
+\end{align}
+
+In order to incorporate the contraction of the gain radius we define
+\begin{align}
+    x &= \frac{r(t)}{R_\mathrm{gain}(t)} \\
+    \Rightarrow r(t) &= r(t_0) \frac{R_\mathrm{gain}(t)}{R_\mathrm{gain}(t_0)}
+\end{align}
+where $R_{\mathrm{gain}}(t)$ is defined later on.
+
+
+
+Outside the neutron star we apply the heating terms for energy and lepton number as
+
+\begin{align}
+    Q_\mathrm{erg}(r) &= \frac{Q_\mathrm{erg}^0}{\rho_0}(x) \,\rho (r)
+    \,F_{\dot{M}} \,F_\mathrm{E} \,F_\mathrm{gain} \\
+    Q_\mathrm{lep}(r) &= \frac{Q_\mathrm{lep}^0}{\rho_0}(x) \,\rho (r)
+    \,F_{\dot{M}} \,F_\mathrm{E} \,F_\mathrm{gain} \,\mathrm{sign}(v_r)
+\end{align}
+The corresponding cooling terms over the whole domain are defined as 
+
+\begin{align}
+    Q_\mathrm{erg}(r) &= \frac{Q_\mathrm{erg}^0}{\rho_0}(x) \,\rho (r)
+    \,\left[\frac{T(r)}{T_0(r)}\right]^6 \\
+    Q_\mathrm{lep}(r) &= \frac{Q_\mathrm{lep}^0}{\rho_0}(x) \,\rho (r)
+    \,\left[\frac{T(r)}{T_0(r)}\right]^5 \, \mathrm{max}\left\{0, \frac{Y_e(r) -
+    0.01}{Y_e^0(r) - 0.01}\right\} %\\
+\end{align}
+
+Note that heating applies only if $r > R_\mathrm{NS}$ and $Q_\mathrm{erg/lep}^0 (x) > 0$, whereas cooling is applied within the neutron star and if $Q_\mathrm{erg/lep}^0 (x) < 0$.
+
+For the $z9.6$ and $s9.0$ we set
+\begin{align}
+    Q_\mathrm{erg}(r) &= \frac{Q_\mathrm{erg}^0}{\rho_0^2}(x) \,\rho^2 (r)
+    \,\left[\frac{T(r)}{T_0(r)}\right]^6 \\
+    Q_\mathrm{lep}(r) &= \frac{Q_\mathrm{lep}^0}{\rho_0^2}(x) \,\rho^2 (r)
+    \,\left[\frac{T(r)}{T_0(r)}\right]^5 \, \mathrm{max}\left\{0, \frac{Y_e(r) -
+    0.01}{Y_e^0(r) - 0.01}\right\} \\
+\end{align}
+
+
+When the initial mass accretion rate as defined earlier is greater than zero the gain radius scales as
+
+\begin{align}
+    C_0 &= \frac{R_\mathrm{gain}(t_0)}{R_\mathrm{NS}(t_0)} \\
+    b &= \mathrm{min} \left\{1.01, C_0 \right\} \\
+    R_\mathrm{gain}(t) &= \left[ \left( C_0 - b \right)
+    \frac{\dot{M}(t)}{\dot{M}(t_0)} + b \right] \,R_\mathrm{NS}(t)
+    \label{eq:1}
+\end{align}
+
+Should there be no accretion and to avoid dividing by zero in Eq.~(\ref{eq:1}),  we use
+
+\begin{equation}
+    R_\mathrm{gain}(t) = b \, R_\mathrm{NS}(t).
+\end{equation}
+
+\subsection{Neutrino pressure correction}
+
+Since switching off the neutrino transport also turns off the calculation of the supporting neutrino pressure we use the analytic formula
+
+\begin{equation}
+    p_{\nu} = \frac{4 \pi (k T)^4}{3 (h c)^3} \left[ \frac{21
+    \pi^4}{60} + \frac{1}{2} \eta^2 \left( \pi^2 + \frac{1}{2} \eta^2 \right)
+    \right]
+\end{equation}
+
+The neutrino pressure correction  term $p_{\nu} \cdot F_p(\rho)$ is added to the gas pressure in the equation of state and to the general-relativistic gravitational potential.
+
+In the above equations we use
+\begin{align}
+    \eta &= \frac{\mu_{\nu} - (m_n - m_p) c^2}{k T} \\
+    F_p(\rho) &= \frac{p_\mathrm{vertex}(\rho,t_0)}{p_{\nu}(\rho,t_0)} \mathrm{min}\left\{ 1, \frac{\rho}{10^{13}\,\mathrm{g/cm^3}} \right\} \\
+    p_\mathrm{vertex} &= \frac{4\pi}{c} \sum_{\nu} \int \mathrm{d}\epsilon \,
+    J(\nu,\epsilon) \, \mathrm{max}\left\{ \frac{1}{3},  f_K(\nu,\epsilon) \right\}
+\end{align}
+where $\mu_{\nu}$ is the neutrino chemical potential and $p_{\mathrm{vertex}}$ the numerical neutrino pressure term of \vertexprom.
 
 \newpage
 
@@ -1157,97 +1530,3 @@ $M_{\text{b},\solm}$ is the baryonic mass of the NS.
 \end{document}
 % end of file template.tex
 
-%% THRASH ->
-\iffalse
-% COMMENTED OUT
-\subsection{Collapse}
-\label{sec:Collapse}
-The collapse of the iron-core progenitors was computed using the \vertex code and the collapse of the  electron-capture model was computed using the \prom code. While \vertex code uses its full neutrino transport during collapse,
-
-\subsection{Post-Bounce Simulations}
-\subsubsection{Iron-core progenitors}
-The post-bounce modelling for the iron-core progenitors is done using \vertexprom, which is a finite-volume hydrodynamics code with three-flavor, energy-dependent, ray-by-ray-plus (RbR+) neutrino transport including the full set of neutrino reactions and microphysics as detailed in \cite{Rampp2002}. We use an axis-free YinYang-Grid \cite{Kageyama2004} implemented in \vertexprom by \cite{Melson2015a}. It  helps in relaxing the CFL time constraint caused by smaller cell size along the poles in a spherical polar grid. 
-
-At densities above $10^{11}\,\gcc$ ($\rho_{\text{hd}}$) \vertex uses  the Equation of State (EOS) of \cite{Lattimer1991} with a nuclear incompressibility of $K=220\, \text{MeV}$. Below $\rho_{\text{hd}}$ \vertexprom uses the low-density EOS of \cite{Janka1999}. Above  temperatures greater than $5\times10^{9}$ ($T_{\text{NSE}}$ hereafter) nuclear statistical equilibrium (NSE) is assumed, whereas below $T_{\text{NSE}}$ a simple flashing scheme is used. The gravitational potential is computed in the monopole approximation, with appropriate general-relativistic corrections \citet{Marek2006}.
-
-The region inside $10\,\text{km}$ is convectively stable, and is therefore simulated in 1D. \vertex preserves hydrostatic balance to machine precision, therefore in order to break the symmetry we impose random density perturbations with amplitude $10^{-3}$ at initial time. 
-\subsubsection{ONeMg core progenitor}
-The post-bounce evolution of the electron-capture progenitor is simulated using the \prom code (for details see \citealt{Wongwathanarat2012,Wongwathanarat2013}) For sake of completeness, we describe some features of the code and microphysics below.
-\begin{itemize}
-\item The code uses a grey (energy independent) neutrino-transport scheme, which is valid at low neutrino-opacities. In this scheme, the $\nu_{\mathrm{e,x}}$-fluxes are calculated by an analytic solution of the zeroth order moment of the Boltzmann equation as described in \citet{Scheck2006}\footnote{Improvements and corrections to the neutrino transport scheme \citep{Scheck2006} are given in the Appendix \ref{Appendix:Neutrino}.}. The most important details of this scheme are described in the next section.
-% Gravity
-\item The code uses a 3D gravitational potential with general relativistic corrections \citep{Marek2006}, which is achieved by using a multipole expansion of the integral form of Poisson's equation.
-%nuclear reactions
-\item A 17-species $\alpha$ reaction network keeps track of the nucleosynthesis up to $\mathrm{Ni}^{56}$. In order to capture the evolution of neutron rich matter ($Y_e\,\mathord{<}\,0.49$), we add a tracer species ($X$) to the network. Energy release by  nuclear burning is calculated, and added as a source term in the the energy conservation equation. 
-Further, we use a flashing scheme to treat the recombination of free neutrons and protons leading to \helium production.
-%Radioactive decay of Nickel
-\item After shock-breakout the $\beta^{+}$-decay of radioactive \nickel becomes a dominant source of energy. 
-%EOS
-\item Similar to \vertex the high density EoS by \citet{Lattimer1991}  is used during the early stages of the explosion.For $\rho\,\mathord{<}\,\rho_{\mathrm{hd}}$, we use a slightly modified version of the Helmholtz-EoS \citep[includes Coloumb corrections due to electron-positron interactions]{Timmes1999}. Below the table boundaries of the standard Helmholtz-EoS ($\mathrm{\rho_{low}}\,\mathord{=}\,10^{-10}\, \gcc$, $T_{\mathrm{low}}\,\mathord{=}\,10^{4}\,\mathrm{K}$) we ignore the electron-positron interactions and the resulting EoS includes an effective Boltzmann gas and the radiation only. In the low density and low temperature regime, the pressure $p$, and the specific internal energy $e$ are given by
-\begin{eqnarray}
-    p &=& \frac{1}{3}aT^4 + \frac{\mathrm{k_b}}{\mu \mathrm{m_{H}}} \rho T, \\
-    e &=& \frac{aT^4}{\rho} + \frac{3\mathrm{k_b}}{2\mu \mathrm{m_{H}}} T,\label{equ:pressure-energy-boltzmann-radiation}
-\end{eqnarray}
-where $a$, $\mathrm{k_b}$, $\rho$, $T$,$\mathrm{m_{H}}$, $\mu$ are the radiation constant, Boltzmann constant, density temperature, atomic mass unit and mean molecular weight respectively. Note that this approach assumes full ionization  and radiation pressure dominates in the shocked region \NY{}{CHECK THIS STATEMENT}.
-\end{itemize}
-%\subsubsection{Parametrization in Prometheus-HotB}
-\subsubsection{Proto-Neutron Star (PNS) Contraction}\label{subsec:pnscontr}
-
-After core bounce, the inner $0.5\, \solm$ of the core is excised, and replaced by a fixed boundary with hydrostatic boundary condition as in \citet{Ertl2016}. We impose constant neutrino luminosity until the forward shock reaches $1.25\, \solm$ in mass coordinates. This phase lasts for a few milliseconds after bounce. Thereafter, the PNS, which is the region inside $1.1\, \solm$ is  excised and replaced by a moving inner boundary. We impose hydrostatic boundary condition with respect to the moving inner boundary, and use a time dependent Lagrangian formulation on the computational grid outside $1.1\, \solm$. The kinematic evolution of the inner boundary radius is given by
-\begin{equation}
-    R_{\text{ib}}(t) = R_{\text{ib,f}} + (R_{\text{ib,i}} - R_{\text{ib,f}})\, \exp\left(-\frac{t}{t_0}\right),
-\end{equation}
-where $R_{\text{ib,i}}$ and $R_{\text{ib,f}}$ are the initial and the final radius of the excised $1.1\, \solm$ core, and $t_0$ \NY{the}{ is a} \NY{}{characteristic} timescale\NY{}{.} \NY{for the boundary movement.}{The value of $R_{\text{ib,i}}$ is obtained from simulation, whereas $R_{\text{ib,f}}$ and $t_0$ are treated as parameters.}
-\NY{}{The PNS cools by emitting neutrinos and thereby contracts with time.} \NY{To model the time dependent cooling of the neutron star and thus the time dependent neutrino luminosities,}{} \NY{we}{ We} use the analytic model of \cite{Ugliano2012} \NY{}{to model the cooling and subsequent contraction of the PNS. In this model the PNS neutrino luminosity is obtained by an application of the First law of thermodynamics.} \NY{}{The total energy $E_{\text{c}}$ of the PNS (sum of the gravitational energy $E_{\text{g}}$ and the internal energy $E_{\text{i}}$) changes as a result of neutrino cooling and pressure-volume work done on the its surface, which can be expressed as 
-\begin{equation}
-    \dot{E}_{\text{c}} = - L_{\mathrm{\nu,c}} - 4\pi P_{\text{s}}R_{\text{c}}^2\dot{R}_{\text{c}},
-\end{equation}
-where $L_{\mathrm{\nu}}$ is the neutrino luminosity, $P_{\text{s}}$ is the pressure on PNS surface, $R_{\text{c}}$ is the PNS radius, and  $\dot{R}_{\text{c}}$ is the PNS contraction rate. Using the Virial theorem the total energy of the PNS core can be expressed as
-\begin{equation}
-    E_{\text{c}}= -\frac{3\Gamma -4}{3(\Gamma -1)}E_{\text{g}} + 
-    \frac{4\pi R_{\text{c}}^3 P_{\text{s}}}{3(\Gamma -1)},
-\end{equation}
-Here $\Gamma = 3$ is the adiabatic index of the PNS core (assumed to be homogeneous).}\NY{By equating  neutrino losses and $PdV$ work on the neutron star surface with the time derivative of the total energy of the PNS the luminosity is found  to be}{The two equations described above can be combined to get the neutrino luminosity as}
-\begin{equation}
-\begin{split}
-\label{eqn:lib}
-    L_{\mathrm{\nu,tot}} = & - \frac{2}{5} \frac{3\Gamma - 4}{3(\Gamma - 1)} \frac{GM^2_{\mathrm{c}} R_{\mathrm{c}}}{R_{\mathrm{c}}^2} \\
-            &  - \frac{3\Gamma - 4} {3(\Gamma - 1)} \frac{aGM_{\mathrm{c}}\Delta m_{\mathrm{acc}}R_\mathrm{c}}{R^2_{\mathrm{c}}}  -\frac{aGM_{\mathrm{c}}\Delta m_{\mathrm{acc}}R_{\mathrm{c}}}{3(\Gamma - 1)R_{\mathrm{c}}}.
-\end{split}
-\end{equation}
-
-Here $\Gamma = 3$ \NY{the}{ is} the adiabatic index of the \NY{}{PNS} core \NY{}{(\NY{}{assumed to be homogeneous})} \NY{model}{}, $G$ \NY{}{is} the \NY{gravitational}{ Newton's Gravitational} constant, $M_{\mathrm{c}}$ \NY{}{is} the core mass, $a$ \NY{an efficiency}{ is a} parameter \NY{of}{ which characterizes} the accretion \NY{luminosity}{ layer,} and $\Delta m_{\mathrm{acc}}$ \NY{}{is} the mass contained between the PNS radius $R_\mathrm{c}$ and the radius at which the density falls below $10^{10}\gcc$. In the \NY{axissymmetric}{ axisymmetric} and 3D cases\NY{}{,} $\Delta m_{\mathrm{acc}}$ is determined from the angle averaged values.
-The time evolution of the \NY{core}{ PNS} radius follows a power-law 
-\begin{equation}
-    R_{\mathrm{c}}(t) =R_{\text{c,f}} + (R_{\mathrm{c,i}} - R_{\mathrm{c,f}}) \left(1+\frac{t}{t_{\text{L}}}  \right)^p,
-\end{equation}
-where $t_L = 1 \, \text{s}$ and $p < 0$ and  initially $R_{\mathrm{c,i}} = R_{\mathrm{ib}}$. Note that the \NY{core}{ PNS} radius \NY{does not necessarily}{ may not} coincide with \NY{our}{ the radius of the} inner boundary. In sum $p$, $R_{\mathrm{c,f}}$, $a$, $R_{\mathrm{ib,f}}$ and $t_0$ constitute our set of parameters to approximate the physics of the time evolution of the neutron star and to enable explosions also in spherical symmetry.
-The calibration of these parameters \NY{follows}{ was done using the method described in} \citet{Ertl2016}\NY{}{.} \NY{and was repeated for}{ We extend the calibration method to} the \NY{electron-capture}{ ESCN} progenitor \NY{used in this study}{} to cover a \NY{variety}{ wide range} of explosion energies.
-
-\subsection{Numerical Setup during the First Second}
-During the first second of evolution both the $z9.6$, and the $s9.0$ models were computed with an initial radial grid with 400 grid-points distributed logarithmically from $10\,\km$ up to $10^{3}\, \km$. It was was refined in steps up to 650 zones, during the simulation. The angular resolutions for the $z9.6$, and the $s9.0$ models are 2$^\circ$ and 1$^\circ$ respectively. 
-% resolution in HotB 
-In order to model the explosion of the ECSN progenitor one needs to account for the huge density drop outside its core. Thus we choose a logarithmic radial grid with 1400 zones extending from the surface of the 1.1\solm shell up to $R_{\mathrm{ob}}=1\times 10^{9}\,\mathrm{cm}$. We add cells outside $R_{\mathrm{ob}}$ when the forward shock draws close to the outer boundary.
-Similar to the iron-core progenitors we choose an angular resolution of $2^{\circ}$ and restrict the simulation to a 1D gravitational potential with general-relativistic corrections. Deviations from sphericity will by negligible for the considered progenitor.
-The central engine of \prom is calibrated explode the $e8.8$ with explosion energies ranging from $3\times 10^{49}\mathord{-}1.5\times 10^{50}\,\text{erg}$ as given in Table~\ref{table:e8param}. We choose the $e8.8_{10}$ calibration as our reference model for the multi-dimensional simulations. A detailed analysis of the post-bounce phase of all calibrations is given in Appendix~\ref{sec:explosion ecsn}.
-
-
-
-\subsection{Numerical and Physical Setup after Shock-Revival}
-After the shock revival, the hot PNS is surrounded by a low density bubble bounded by the forward shock. While the accretion of matter onto the surface of PNS subsides, the hot PNS continues to cool by neutrino emission thereby heating the surrounding medium. The energy deposited by neutrinos drives an outflow also known as the ``neutrino-driven wind''. 
-
-Due to the spherical nature of the wind, it is justified to move our inner grid boundary to higher radii, replacing the inner region by a point mass. The procedure is similar to the approach presented in \citet{Wongwathanarat2015,Mueller2018}. At the inner boundary we include the hydrodynamic effects of the neutrino-driven wind by injecting density, radial velocity and total energy density ($\rho,v_r,e$) trajectories. For the iron-core progenitors we use a long time PNS cooling simulation of the z9.6 model conducted in spherical symmetry by R. Bollig (private communication) with \vertex. This model was chosen since it explodes self-consistently in spherical symmetry and the properties of the neutron star do not strongly differ from the terminal values of the $s9.0$ model. In Figure ~\ref{fig:wind} we show the trajectories used for our long-term simulations.
-In the ECSN we use trajectories from spherically symmetric post-bounce simulations conducted with \prom. Details of these simulations are given in Section ~\ref{sec:explosion ecsn}
-
-The initial radius of the inner boundary ($R_{\text{ib}}$) is determined such that it is not in sonic contact with the ejecta. We stop the injection when velocities at $R_{\text{ib}}$ become negative of we reach the end of the available data.
-
-
-In order to simulate the shock breakout the progenitor is extended with an atmosphere in hydrostatic equilibrium with the stellar surface. A constant mass loss of $10^{-5}\,\mathrm{M_{\odot}/yr}$ is assumed. 
-
-
-For the long term simulations the radial grid is first extended to the surface of the respective star assuring a radial resolution of better than 1\% everywhere. When the forward shock comes close to this outer boundary the grid is extended to $10^{17}\,\mathrm{cm}$ using the stellar wind described in the last section. 
-
-The numerical setup for the iron-core progenitors is the same for the extended simulations where only the radius of the stellar surface differs. 
-
-% COMMENTED OUT
-\fi
