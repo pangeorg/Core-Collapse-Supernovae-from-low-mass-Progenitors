@@ -17,12 +17,19 @@
 \usepackage{xspace}
 \usepackage[abs]{overpic}
 \usepackage{pict2e}
+\hypersetup{draft}
 
 % ABBREVIATIONS
 \newcommand{\ud}{\ensuremath{\mathrm{d}}\xspace}
 \newcommand{\tpb}{\ensuremath{t_{\text{pb}}}}
 
+\newcommand{\hydrogen}{\ensuremath{\mathrm{H}}\xspace}
 \newcommand{\helium}{\ensuremath{\mathrm{^{4}He}}\xspace}
+\newcommand{\carbon}{\ensuremath{\mathrm{^{12}C}}\xspace}
+\newcommand{\oxygen}{\ensuremath{\mathrm{^{16}O}}\xspace}
+\newcommand{\neon}{\ensuremath{\mathrm{^{20}Ne}}\xspace}
+\newcommand{\magnesium}{\ensuremath{\mathrm{^{24}Mg}}\xspace}
+\newcommand{\silicon}{\ensuremath{\mathrm{^{28}Si}}\xspace}
 \newcommand{\nickel}{\ensuremath{\mathrm{^{56}Ni}}\xspace}
 \newcommand{\tracer}{\ensuremath{\mathrm{Tr}}\xspace}
 \newcommand{\ye}{\ensuremath{Y_{e}}\xspace}
@@ -38,6 +45,7 @@
 
 \newcommand{\kms}{\ensuremath{\mathrm{km\, s^{-1}}}}
 \newcommand{\km}{\ensuremath{\mathrm{km}}}
+\newcommand{\erg}{\ensuremath{\mathrm{erg}}}
 \newcommand{\s}{\ensuremath{\text{s}}}
 \newcommand{\ms}{\ensuremath{\text{ms}}}
 \newcommand{\gcc}{\text{g}\, \text{cm}^{-3}}
@@ -58,6 +66,22 @@
 \newcommand{\NY}[2]{{\color{blue}\sout{#1}#2}}
 \newcommand{\GEO}[1]{{\color{red}#1}}
 \newcommand{\COM}[1]{{\color{orange}#1}}
+
+\def\prl{Phys. Rev. Lett.}
+\def\prd{Phys. Rev. D}
+\def\cqg{Class. Quantum Grav.}
+\def\lrr{Living Rev. Relat.}
+\def\apj{Astrophys. J.}
+\def\apjs{Astrophys. J. Suppl.}
+\def\apjl{Astrophys. J. Lett.}
+\def\aap{Astronomy \& Astrophysics}
+\def\pr{Phys. Rev.}
+\def\ap{Ann. Phys.}
+\def\jmp{J. Math. Phys.}
+\def\pl{Phys. Lett.}
+\def\ptp{Prog. Theor. Phys.}
+\def\ptps{Prog. Theor. Phys. Suppl.}
+\def\mnras{Mon. Not. R. Astron. Soc.}
 
 \title{Three-dimensional Models of Core-collapse Supernovae From Low-mass Progenitors}
 
@@ -87,7 +111,7 @@ $^8$Max Planck Institute for Intelligent Systems, Max-Planck-Ring 4, D-72076 T\"
 
 % Enter the current year, for the copyright statements etc.
 \pubyear{2019}
-\hypersetup{draft}
+
 \begin{document}
 \label{firstpage}
 \pagerange{\pageref{firstpage}--\pageref{lastpage}}
@@ -144,9 +168,10 @@ instabilities such as the standing accretion shock instability (SASI)
 (\citealt{Blondin2003,Foglizzo2007}). The increase in computational 
 capabilities in the recent years along with new developments in 
 neutrino transport methods (see e.g. 
-\citealt{Buras2006,OConnor2018,Skinner2019,Glas2019} and references therein)
+\citealt{Buras2006,Takiwaki2012,OConnor2018,Skinner2019,Glas2019} and references therein)
 has enabled full 3D simulations (see e.g. 
-\citealt{Melson2015a,Summa2016,Mueller2017,Mueller2018,Vartanyan2018,Melson2019,Vartanyan2019}). 
+\citealt{Melson2015a,Summa2016,Mueller2017,Mueller2018,Vartanyan2018,Melson2019,Vartanyan2019,Burrows2019}). 
+
 Motivated by the historical SN1987A and its progenitor detection, a 
 variety of studies also investigated the propagation of the shock 
 wave from its initiation, firstly by artificial energy deposition 
@@ -189,7 +214,7 @@ are thought to occur (assuming a Salpeter initial mass function
 for CCSNe), to study the differences in their development of mixing 
 instabilities during the explosion. To this end we compare 
 electron-capture SNe (ECSNe) from ONeMg core progenitors and 
-CCSNe from iron care progenitors, all with around $9\,\solm$. 
+CCSNe from iron core progenitors, all with around $9\,\solm$. 
 
 The evolution of stars with masses $\mathord{\lesssim}\,12\, \solm$ 
 is very sensitive to the initial stellar mass and various 
@@ -215,7 +240,8 @@ adiabatic index of the electron-degeneracy dominated gas pressure.
 Continuous $e^-$-capture on $\mathrm{^{20}Ne}$, which further 
 reduces the pressure support, works against the now beginning 
 oxygen-burning as temperatures increase during the collapse. 
-Simulations in 1D (see e.g. \citealt{Kitaura2006,Janka2008,Fischer2010}) 
+Simulations in 1D (see e.g. \citealt{Kitaura2006,Janka2008,
+Fischer2010}) and 2D (see e.g. \citealt{Radice2017})
 suggest that the collapse proceeds despite the oxygen burning. 
 \cite{Jones2016} simulated the deflagration of oxygen in ONeMg 
 cores with different core densities. Below $\log_{10}\rho_c=10.3$ 
@@ -295,11 +321,11 @@ where we also show the $\rho r^3$-profiles, besides the electron fraction
 $Y_{\mathrm{e}}$ and temperature $T$ as functions of enclosed mass and radius. 
 The dash-dotted, dashed and dotted lines indicate the positions of the degenerate 
 core/CO, CO/He and He/H composition interfaces, respectively. 
-\GEO{We define the locations of the composition interfaces, similar to 
+We define the locations of the composition interfaces, similar to 
 \cite{Wongwathanarat2015}, as those positions at the bottom of the respective 
 layers of the star where the mass fractions $X_{i}$ drop below half of their 
 maximum values in the layer. The radial positions of the composition 
-interfaces are summarized in Table~\ref{tab:progenitors}.}
+interfaces are summarized in Table~\ref{tab:progenitors}.
 In the top panel of Figure~\ref{fig:composition_all} we present the 
 composition of model \onemg, where we combine all elements with mass 
 numbers greater than 28 into ``iron-group'' (IG) material or nuclei
@@ -309,18 +335,43 @@ The ONeMg-core is surrounded by very thin carbon and helium shells
 $M_{\rm He}\,\mathord{\sim}2.1\mathord{\times}\,10^{-6}\, \solm$) and a 
 hydrogen ($\mathrm{H}\mathrm{+}\mathrm{He}$) 
 envelope ($M_{\rm H}\,\mathord{\approx}\, 4.49\, \solm$).  
-
+The total masses of the different nuclei present in the pre-SN model
+are listed in Table~\ref{tab:progenitor total masses}.
 A previous version of the progenitor \citep{Nomoto1984,Nomoto1987,Nomoto2008}, 
 commonly termed \onemg in the literature and $\mathrm{e}8.8_{\mathrm{n}}$ 
-in this publication, has been used in various studies, including 
-nucleosynthesis \citep{Wanajo2018} and PNS kicks \citep{Gessner2018} and 
-is a reference case for supernova simulations of ECSNe. The previously used 
+in this publication, has been used in various studies, including explosion properties \citep{Kitaura2006}, 
+nucleosynthesis \citep{Janka2008,Wanajo2018}, effects of microphysics \citep{Huedepohl2010,Radice2017} and PNS kicks \citep{Gessner2018} and 
+is a reference case for supernova simulations of ECSNe. 
+The previously used 
 progenitor $\rm e8.8_{\mathrm{n}}$ has a more massive helium core with 
 a mass of $\mathord{\sim} 1.375 \,\solm$ (compared to $\mathord{\sim}1.34\solm$), 
 but a smaller hydrogen envelope (see Figure~\ref{fig:prog_tem_rho_ye_rhor}). 
 The collapse and post-bounce 
 evolution of the new progenitor are computed with \prom as detailed 
 in Section~\ref{sec:Collapse and post-bounce setup in prom}.
+
+\begin{table}
+    \centering
+    \caption{Total masses of elements $M_\mathrm{i}$ of the 
+    pre-collapse progenitor models as shown in Figure~\ref{fig:composition_all}}
+    \label{tab:progenitor total masses}
+    \begin{tabular}{l|c c c}
+        &
+        \multicolumn{3}{c}{$M_\mathrm{i}\,[\solm] $}  \\
+         Species &
+        \onemg &
+        \znine &
+        \snine \\
+         \hline 
+            $\mathrm{H}$               & $2.68$              & $5.10$              & $5.10$              \\
+            \helium                    & $1.78$              & $3.11$              & $2.68$              \\
+            \carbon                    & $2.71\times10^{-2}$ & $2.24\times10^{-2}$ & $3.35\times10^{-2}$ \\
+            $\oxygen\neon\magnesium$   & $0.93$              & 0.04                & 0.13                \\
+            \silicon                   & $3.98\times10^{-3}$ & $2.39\times10^{-2}$ & $1.30\times10^{-2}$ \\
+            Iron-group                 & $0.39$              & 1.32                & 1.35                \\
+    \end{tabular}
+\end{table}
+
 
 \subsection{Fe-core Progenitors}
 As a second progenitor we employ a zero-metallicity 
@@ -329,7 +380,7 @@ It was first used by \citet{Janka2012} and is also considered in other
 studies such as \citet{Mueller2013,Mueller2018}. This iron core 
 progenitor is structurally similar to the ECSN model. It also shows a 
 sharp decline of the density at the edge of its iron core, enabling low-energy 
-explosions in 1D \citep{Melson2015}. 
+explosions in 1D \citep{Melson2015,Radice2017}. 
 Evolved as an extension to \cite{Heger2010}, the pre-SN model develops an 
 iron core of about 1.30 \solm. The iron core is surrounded by a $0.061\,\solm$ 
 Si-layer, a $0.016\,\solm$ CO-layer, and has a helium layer of about 0.33
@@ -339,8 +390,8 @@ As the envelope is not enriched by metals, mass loss played only a negligible
 role during the star's evolution. This leaves the total mass of the star 
 almost unchanged (see Table~\ref{tab:progenitors}). 
 Due to its structure it was one of the first iron core progenitors that exploded 
-in fully self-consistent 3D simulations by \cite{Melson2015a} with \vertexprom. 
-This result provides the initial state for our investigation. 
+in fully self-consistent 3D simulations by \cite{Melson2015a} with \vertexprom and was also investigated by \cite{Radice2017,Mueller2019,Burrows2019}. 
+This result of \cite{Melson2015a} provides the initial state for our investigation. 
 
 Moreover, we investigate a solar-metallicity $M_{\text{ZAMS}} \mathord{=} 9.0 \,\solm$ 
 star, termed \snine, of \citet{Sukhbold2016}. Its 1.30 \solm iron core is 
@@ -350,8 +401,9 @@ The hydrogen envelope extends from 1.57 \solm up to 8.75 \solm
 ($\xi_{2.5}\mathord{=}3.83 \times 10^{-5}$, $\xi_{1.5}\mathord{=}5.25 \times 10^{-3}$).
 This progenitor was chosen to be representative for low-mass CCSNe 
 by \cite{Jerkstrand2018}, who focused on the late-time nebular spectra 
-of the supernova, and by \cite{Glas2019} focusing on the neutrino 
-emission during the explosion. The three-dimensional exploding model for 
+of the supernova, by \cite{Glas2019} focusing on the neutrino 
+emission during the explosion and by \cite{Burrows2019} in a large set of 
+3D simulations. The three-dimensional exploding model for 
 our investigation is provided by \citet{Melson2019} and has also been 
 modeled with \vertexprom. 
 
@@ -487,7 +539,7 @@ stages of the evolution.
 
 \subsection{\vertexprom code}
 \vertexprom is a hydrodynamics code based on an implementation of the 
-Piecewise Parabolic Method (PPM) of \cite{Colella1984}, coupled 
+Piecewise Parabolic Method (PPM) \newline of \cite{Colella1984}, coupled 
 with a three-flavor, energy-dependent, ray-by-ray-plus (RbR+) 
 neutrino transport scheme. It uses the full set of neutrino reactions and 
 microphysics presented in \cite{Buras2006} and the high-density equation 
@@ -500,8 +552,9 @@ and nonrelativistic nucleons and nuclei. The relative abundances of 23 nuclear
 species are determined by a nuclear statistical equilibrium (NSE) solver in 
 regions with temperatures above $T_{\mathrm{NSE}}$. Below $T_{\mathrm{NSE}}$ a 
 flashing scheme is used to approximately treat nuclear burning 
-(see \citealt{Rampp2002}) (values for $\rm T_{NSE}$ and 
-$\rho_{\mathrm{HD}}$ are given Section~\ref{sec:Collapse and post-bounce setup in vertexprom}). 
+(see \citealt{Rampp2002}). Values for $\rm T_{NSE}$ and 
+$\rho_{\mathrm{HD}}$ are given Section~\ref{sec:Collapse and post-bounce setup in vertexprom}.
+
 The simulations presented here were conducted with a 1D gravity potential 
 including general relativistic corrections \citep{Marek2006}. \vertexprom
 makes use of the axis-free Yin-Yang grid \citep{Kageyama2004} based on 
@@ -632,7 +685,7 @@ relativistic corrections due to the near-sphericity of the explosions.
 \begin{table}
 \centering
 \caption{Summary of the PNS core parameter values and resulting 
-explosion energies used for the \onemg model. The explosion energy 
+explosion energies used for the \onemg model from 1D simulations. The explosion energy 
 is essentially independent of dimensionality (1D, 2D, 3D)}
   \label{table:e8param}
    \begin{tabular}{l  c   c   c   c   c   c}
@@ -730,7 +783,7 @@ time step $\Delta t$ is given by
         \frac{\Delta E_{\mathrm{i}}}{\Delta M} =  \frac{\Delta X_{\mathrm{i}}}{m_{\mathrm{i}}}
         \left[ E_{\gamma} \left( 1 - e^{-\tau(r)} \right) + E_{\mathrm{kin,e^{+}}}\right],
 \end{equation}
-where $Delta X_{\mathrm{i}}=\left( 1 - e^{-\Delta t / t_{0,\mathrm{i}}} \right)$ is the change of $X_{\mathrm{i}}$ during $\Delta t$ with $t_{0,\mathrm{i}}$ being the life-time of species $i$, and $E_{\mathrm{kin,e^{+}}}$ is the kinetic energy of the positron in 
+where $\Delta X_{\mathrm{i}}\mathord{=}\left( 1 - e^{-\Delta t / t_{0,\mathrm{i}}} \right)$ is the change of $X_{\mathrm{i}}$ during $\Delta t$ with $t_{0,\mathrm{i}}$ being the life-time of species $i$, and $E_{\mathrm{kin,e^{+}}}$ is the kinetic energy of the positron in 
 the cobalt decay. The energy is deposited locally and thermodynamic 
 quantities are self-consistently updated.
 
@@ -745,18 +798,18 @@ For the 3D simulation of model \onemg we use the neutrino-wind results from the 
  and mapping times $t_\mathrm{map}$ in seconds 
  after bounce for our long-time simulations. }
 \label{tab:long term boundaries}
-\begin{tabular}{ccccc}
+\begin{tabular}{cccccc}
   \hline
- Model & $\mathrm{R_{ib}}$ & $\mathrm{R_{ob}\,}$ & $M_{\mathrm{map}}$ &  $t_{\mathrm{map}}\,$   \\
-       & [km] & [km] & $[\solm]$ & [s]  \\
+ Model & Dim. & $\mathrm{R_{ib}}$ & $\mathrm{R_{ob}\,}$ & $M_{\mathrm{map}}$ &  $t_{\mathrm{map}}\,$   \\
+       & & [km] & [km] & $[\solm]$ & [s]  \\
   \hline
- $e8.8^{\mathrm{2D}}_{3}$  & 1000 & $8.1\times10^{8}$ & 1.334 & 2.515 \\
- $e8.8^{\mathrm{2D}}_{6}$  & 1000 & $8.1\times10^{8}$ & 1.327 & 2.515 \\
- $e8.8^{\mathrm{2D}}_{10}$ & 1000 & $8.1\times10^{8}$ & 1.319 & 2.515 \\
- $e8.8^{\mathrm{2D}}_{15}$ & 1000 & $8.1\times10^{8}$ & 1.309 & 2.515 \\
- $e8.8^{\mathrm{3D}}$      & 500  & $8.1\times10^{8}$ & 1.326 & 0.470 \\
- $z9.6^{\mathrm{3D}}$      & 600  & $1.3\times10^{8}$ & 1.340 & 1.440 \\
- $s9.0^{\mathrm{3D}}$      & 1000  & $2.8\times10^{8}$ & 1.352 & 3.140 \\
+ $e8.8^{\mathrm{2D}}_{3}$  & 2D & 1000 & $8.1\times10^{8}$ & 1.334 & 2.515 \\
+ $e8.8^{\mathrm{2D}}_{6}$  & 2D & 1000 & $8.1\times10^{8}$ & 1.327 & 2.515 \\
+ $e8.8^{\mathrm{2D}}_{10}$ & 2D & 1000 & $8.1\times10^{8}$ & 1.319 & 2.515 \\
+ $e8.8^{\mathrm{2D}}_{15}$ & 2D & 1000 & $8.1\times10^{8}$ & 1.309 & 2.515 \\
+ $e8.8^{\mathrm{3D}}$      & 3D & 500  & $8.1\times10^{8}$ & 1.326 & 0.470 \\
+ $z9.6^{\mathrm{3D}}$      & 3D & 600  & $1.3\times10^{8}$ & 1.340 & 1.440 \\
+ $s9.0^{\mathrm{3D}}$      & 3D & 1000  & $2.8\times10^{8}$ & 1.352 & 3.140 \\
   \hline
 \end{tabular}
 \end{table} %  END TABLE SUMMARY LONG TERM
@@ -764,53 +817,92 @@ For the 3D simulation of model \onemg we use the neutrino-wind results from the 
 \label{fig:wind}
  \centering
  \includegraphics[width=0.50\textwidth,trim=0.2cm 1.1cm 0.2cm 0.2cm,clip]{./pic/wind_paper.pdf}
- \caption{Time-dependent behavior of neutrino-wind density $\rho$, radial velocity $v_{\mathrm{r}}$ and the total energy density $e$, normalized to their initial values at $t_{\mathrm{map}}\mathord{=}1.44\,\s$, which defines the start of the long-time simulation of model \znine. The data are extracted from a 1D simulation of the explosion of the $9.6\,\solm$ progenitor with \vertexprom (see \citealt{Mirizzi2016}), evaluated at a radius of 600 km. }
+ \caption{Time-dependent behavior of neutrino-wind density $\rho$, radial velocity $v_{\mathrm{r}}$ 
+ and the total energy density $e$, normalized to their initial values at 
+ $t_{\mathrm{map}}\mathord{=}1.44\,\s$, which defines the start of the long-time simulation 
+ of model \znine. The data are extracted from a 1D simulation of the explosion of the 
+ $9.6\,\solm$ progenitor with \vertexprom (see \citealt{Mirizzi2016}), evaluated at a radius of 600 km. }
 \end{figure}% END FIGURE WIND
 
 
 \section{Evolution during the first second}
 \label{sec:Evolution during the first second}
 \subsection{Shock propagation, energetics and neutron star properties}
-In the following we provide a short overview of the post-bounce phase. The reader is referred to \cite{Melson2015a} and \cite{Melson2019} for a detailed analysis of the post-bounce phase of the iron core progenitors. Generic features of the explosion of ECSNe are given in \cite{Kitaura2006,Janka2008,Gessner2018}. Since our results closely resemble these previous findings, we \GEO{summarize} the most important features in the following.
-In Figure~\ref{fig:eexp all} we show the evolution of the angle-averaged supernova shock and the diagnostic explosion energy of our three-dimensional simulations during the post-bounce phase. 
-The angle-averaged supernova shock is calculated as
+In the following we provide a brief overview of the post-bounce phase. The reader
+is referred to \cite{Melson2015a} and \cite{Melson2019} for a detailed analysis 
+of the post-bounce phase of the iron core progenitors in \vertexprom simulations. 
+Generic features of the 
+explosion of ECSNe are given in \cite{Kitaura2006,Janka2008,Gessner2018}. 
+Since our results closely resemble these previous findings, we summarize the most 
+important features in the following.
+In Figure~\ref{fig:eexp all} we show the evolution of the angle-averaged radius of the supernova 
+shock and the diagnostic explosion energy of our three-dimensional simulations during the post-bounce phase. 
+The angle-averaged shock radius is calculated as
 \begin{equation}
     \langle R_{\mathrm{sh}} \rangle =  \frac{1}{4\pi}\int R_{\mathrm{sh}}(\theta,\phi)\ud \Omega,
     \label{equ:avg rsh}
 \end{equation}
 where $\ud \Omega\mathord{=}\sin{\theta}\ud\theta\ud\phi$.
-The diagnostic explosion energy at any time is given by an integral of total (i.e. kinetic plus internal plus gravitational) specific post-shock binding energy, defined as $e_{\text{b}} = e_{\mathrm{int}} + e_{\mathrm{kin}} + \Phi_{\text{g}}$, over volume elements where it has a positive value 
+The diagnostic explosion energy at all times is given by the integral
+of the total (i.e. kinetic plus internal plus gravitational) energy density
+in the postshock region, defined as 
+$e_{\text{b}} = e_{\mathrm{int}} + e_{\mathrm{kin}} + e_{\text{grav}}$, 
+over volume elements where it has a positive value 
 \begin{equation}
-    \mathrm{E}_{\mathrm{exp}} = \int_{M} e_{\mathrm{b}} \, \mathrm{dm'},\quad e_{\mathrm{b}} > 0.
+    \mathrm{E}_{\mathrm{exp}} = \int_{V_{\mathrm{postshock}}}
+    \mathrm{dV}\, e_{\mathrm{b}} ,\quad e_{\mathrm{b}} > 0.
     \label{equ:ene exp}
 \end{equation}
 
-The sharp drop in density outside the ONeMg-core of model \onemg leads to an early and strong drop in the accretion rate and hence ram pressure at the shock.
-Consequently, the forward shock expands rapidly and reaches the core/envelope boundary ($R_{\mathrm{He/H}}\,\mathord{=}\,1210\,\text{km}$), at $0.18\,\s$ after core bounce.
-This is in sharp contrast to the typical core-collapse supernova, where the high ram pressure stalls the shock expansion significantly for several $100\,\text{ms}$. The explosion energy starts rising steeply as soon as the forward shock leaves the ONeMg core.
+The sharp drop in density outside the ONeMg-core of model \onemg 
+leads to an early and strong drop in the accretion rate and hence 
+ram pressure at the shock.
+Consequently, the forward shock expands rapidly and reaches the 
+core/envelope boundary ($R_{\mathrm{He/H}}\,\mathord{=}\,1210\,\text{km}$), 
+at $0.18\,\s$ after core bounce.
+This is in stark contrast to the typical core-collapse supernova, where the 
+high ram pressure stalls the shock expansion significantly for several 
+$100\,\text{ms}$. The explosion energy starts rising steeply as soon 
+as the forward shock leaves the ONeMg core.
 
 \begin{figure*}
  \centering
  \includegraphics[width=\textwidth,trim=0.1cm 2.1cm 0cm 2.3cm,clip]{./pic/eexp_shk_kick_all_paper.pdf}
- \caption{Shock radius (upper left panel), shock velocity (upper right panel) and diagnostic explosion energy (lower left panel) versus post-bounce time for all of our 3D models. We also show the total PNS kick velocities (thick lines) and hydrodynamic induced PNS kick velocities (thin lines) in the lower right panel. \GEO{The difference is associated with the PNS kicks caused by asymmetric neutrino emission due to the LESA phenomenon (see text for details). For the iron core progenitors we can track only hydrodynamic contributions to the kick as soon as the transport module of \vertexprom is switched off, while for the ONeMg case our simplified neutrino treatment with the excised core of the PNS does not allow us to monitor the LESA induced kick.}The kick of model \onemg is scaled by a factor of 5 for better visibility. }
+ \caption{Shock radius (upper left panel), shock velocity (upper right panel) and diagnostic 
+ explosion energy (lower left panel) versus post-bounce time for all of our 3D models. 
+ We also show the total PNS kick velocities (thick lines) and hydrodynamically induced PNS 
+ kick velocities (thin lines) in the lower right panel. The differences between both
+ velocities is associated 
+ with the PNS kicks caused by asymmetric neutrino emission due to the LESA phenomenon 
+ (see text for details). For the iron core progenitors we can track only hydrodynamic 
+ contributions to the kick after the transport module of \vertexprom is switched off at 
+ $\tpb\mathord{=}0.41\s$ and $\tpb\mathord{=}0.49\s$ for models \znine and \snine, respectively,  
+ while for the ONeMg case our simplified neutrino treatment with the excised core of the PNS 
+ does not allow us to monitor the LESA induced kick. The kick of model \onemg is scaled by a
+ factor of 5 for better visibility. }
 \label{fig:eexp all}
 \end{figure*}
 
-The acceleration of the shock at the core/envelope boundary is followed by a huge deceleration at the lower boundary of the H-envelope (see upper right panel of Figure~\ref{fig:eexp all}). This is caused by a sudden change of the density gradient at the core/envelope transition.  
-Consequently, strong pressure waves are sent upstream into the ejecta, compressing and decelerating the neutrino-heated material.
+The acceleration of the shock at the core/envelope boundary is followed by
+a huge deceleration at the lower boundary of the H-envelope 
+(see upper right panel of Figure~\ref{fig:eexp all}). This is caused 
+by a sudden change of the density gradient at the core/envelope transition.  
+Consequently, the neutrino-heated ejecta pile up in a dense, compressed and
+decelerated shell behind the SN shock.
 
 \begin{table*}
 \caption{Overview of PNS properties of our multi-dimensional models at $t_{\mathrm{map}}$.}
 \label{tab:neutron star}
-\begin{tabular}{cccccccccc||ccc}
+\begin{tabular}{ccccccccccc||ccc}
     \hline 
-            & $t_{\mathrm{map}}$ & 
+            & Dim. & 
+              $t_{\mathrm{map}}$ & 
             $v_{\mathrm{NS,tot}}$ & 
             $v_{\mathrm{NS}}^{\mathrm{hyd}}$ & 
             $v_{\mathrm{NS}}^{\nu}$ &
             $J_{\mathrm{NS}}$    & 
             $\alpha_{\mathrm{ej}}$&
-            $\alpha_{\mathrm{ej}}^{\nu}$&
+            $\alpha_{\nu}$&
             $M_{\mathrm{b}}$ &
             \rns &
             $M_{\mathrm{fin}}$ &
@@ -818,6 +910,7 @@ Consequently, strong pressure waves are sent upstream into the ejecta, compressi
             $P_{\mathrm{NS}}$ 
             \\
     Model &
+     &
     [s]   &
     [km/s] &
     [km/s] &
@@ -832,64 +925,208 @@ Consequently, strong pressure waves are sent upstream into the ejecta, compressi
     [s]     \\
     
     \hline
-    % model                    tmap    vtot    vhy   vneut      Jns    alhy   alnu    mns        rns      mfin     mfing    pns   
-    $e8.8_{3}^{\mathrm{2D}}$ & 2.515 & 1.55  & 1.55  & -     & 1.80  & 1.154 &  -     & 1.323 &  49.85 &  1.334 &  1.216 &  0.65 \\
-    $e8.8_{6}^{\mathrm{2D}}$ & 2.515 & 0.94  & 0.94  & -     & 2.70  & 0.041 &  -     & 1.316 &  50.22 &  1.327 &  1.210 &  0.43 \\
-    $e8.8_{10}^{\mathrm{2D}}$& 2.515 & 0.13  & 0.13  & -     & 4.19  & 0.004 &  -     & 1.308 &  50.57 &  1.319 &  1.203 &  0.27 \\
-    $e8.8_{15}^{\mathrm{2D}}$& 2.515 & 0.59  & 0.59  & -     & 1.66  & 0.011 &  -     & 1.299 &  50.86 &  1.309 &  1.195 &  0.69 \\
-    $e8.8_{10}^{\mathrm{3D}}$& 0.470 & 0.44  & 0.44  & -     & 0.69  & 0.004 &  -     & 1.307 &  50.57 &  1.326 &  1.209 &  1.68  \\
-    \znine                   & 3.140 & 19.28 & 10.16 & 24.89 & 1.73  & 4.623 & 1.354  & 1.340 &  20.98 &  1.340 &  1.221 &  0.68 \\
-    \snine                   & 1.440 & 36.32 & 29.65 & 26.22 & 7.60  & 10.02 & 1.178  & 1.299 &  19.58 &  1.299 &  1.128 &  0.15  \\
+    % model         tmap    vtot    vhy     vneut    Jns    alhy   alnu    mns        rns      mfin     mfing    pns   
+    $e8.8_{3}$ & 2D & 2.515 & 1.55  & 1.55  & -     & 1.80  & 1.154 &  -     & 1.323 &  49.85 &  1.334 &  1.216 &  0.65 \\
+    $e8.8_{6}$ & 2D & 2.515 & 0.94  & 0.94  & -     & 2.70  & 0.041 &  -     & 1.316 &  50.22 &  1.327 &  1.210 &  0.43 \\
+    $e8.8_{10}$& 2D & 2.515 & 0.13  & 0.13  & -     & 4.19  & 0.004 &  -     & 1.308 &  50.57 &  1.319 &  1.203 &  0.27 \\
+    $e8.8_{15}$& 2D & 2.515 & 0.59  & 0.59  & -     & 1.66  & 0.011 &  -     & 1.299 &  50.86 &  1.309 &  1.195 &  0.69 \\
+    $e8.8_{10}$& 3D & 0.470 & 0.44  & 0.44  & -     & 0.69  & 0.004 &  -     & 1.307 &  50.57 &  1.326 &  1.209 &  1.68  \\
+    \znine     & 3D & 1.440 & 19.28 & 4.31  & 24.89 & 1.73  & 4.623 & 1.354  & 1.340 &  20.98 &  1.340 &  1.221 &  0.68 \\
+    \snine     & 3D & 3.140 & 34.51 & 15.63 & 26.22 & 7.60  & 10.02 & 1.178  & 1.350 &  19.58 &  1.351 &  1.230 &  0.15  \\
     \hline
 \end{tabular}
 \flushleft
-\textit{Notes}: \GEO{All values are given at the end of our explosion simulation ($t_{\mathrm{map}}$). $v_{\mathrm{NS}}^{\mathrm{tot}}$ is the total NS kick resulting from the hydrodynamic ($v_{\mathrm{NS}}^{\mathrm{hyd}}$) plus the neutrino-induced ($v_{\mathrm{NS}}^{\mathrm{\nu}}$) contribution. $J_{\mathrm{NS}}$ is the total angular momentum transported to the PNS through a radius of 100 km \COM{I include inward and outward flux of angular-momentum}. $\alpha_{\mathrm{ej}}$ and $\alpha_{\mathrm{ej}}^{\nu}$ are the hydrodynamic and neutrino anisotropy-parameter, respectively (see Appendix~\ref{Appendix:Neutron Star Properties}). For the iron core progenitors we average $\alpha_{\mathrm{ej}}^{\nu}$ over the time the emission dipole is the largest until the end of the simulation. $M_{\mathrm{b}}$ is the baryonic PNS mass. $P_{\mathrm{NS}}$ is the PNS spin period at the end of our post-bounce simulations assuming a final PNS radius $R_{\mathrm{NS}}$ of 12 km, angular momentum conservation and a gravitational mass of $M_{\mathrm{g}}$. $M_{\mathrm{fin}}$ (see also Table~\ref{tab:long term boundaries}) is the mass contained within the excised region from which we calculate and gravitational mass $M_{\mathrm{g}}$ of the PNS. }
+\textit{Notes}: All values are given at the end of our explosion simulations with neutrino treatment ($t_{\mathrm{map}}$). $v_{\mathrm{NS}}^{\mathrm{tot}}$ is the total NS kick resulting from the hydrodynamic ($v_{\mathrm{NS}}^{\mathrm{hyd}}$) plus the neutrino-induced ($v_{\mathrm{NS}}^{\mathrm{\nu}}$) contributions. $J_{\mathrm{NS}}$ is the total angular momentum transported to the PNS through a radius of 100 km. $\alpha_{\mathrm{ej}}$ and $\alpha_{\nu}$ are the hydrodynamic and neutrino anisotropy-parameters, respectively (see Appendix~\ref{Appendix:Neutron Star Properties}). For the iron core progenitors we average $\alpha_{\mathrm{ej}}^{\nu}$ over the time the emission dipole is largest until the end of the simulation. $M_{\mathrm{b}}$ is the baryonic PNS mass. $P_{\mathrm{NS}}$ is the PNS spin period at the end of our post-bounce simulations, assuming a final PNS radius $R_{\mathrm{NS}}$ of 12 km, angular momentum conservation and a gravitational mass of $M_{\mathrm{g}}$. $M_{\mathrm{fin}}$ (see also Table~\ref{tab:long term boundaries}) is the central mass contained within the excised region, from which we calculate and gravitational mass $M_{\mathrm{g}}$ for a PNS radius of 12~km. 
 \end{table*}
 
 %z9.6
-The ECSNe-like structure of model \znine is reflected in the evolution of the forward shock and growth of the diagnostic explosion energy. Shock radii remain almost perfectly spherical \GEO{in both the \onemg and \znine}. Acceleration of the forward shock outside the iron core, however, is weaker in the \znine model than in model \onemg, due to the more gradual change in the density profile. Explosion energies also start to rise early and saturate just after $\tpb\mathord{\sim}1\,\s$.
+The ECSNe-like structure of model \znine is reflected in the 
+evolution of the forward shock and growth of the diagnostic explosion energy. 
+Shock radii remain almost perfectly spherical in both the \onemg and \znine models. 
+Acceleration of the forward shock outside the iron core, however, is weaker in the 
+\znine model than in model \onemg, because of the the more gradual change in the density profile. 
+In both cases the explosion energies also start to rise early and saturate just after $\tpb\mathord{\sim}1\,\s$.
 
 %s9.0
-In contrast to the \znine and \onemg models, the \snine is lacking the very steep density gradient outside the Fe-core, as can be seen in Figure~\ref{fig:prog_tem_rho_ye_rhor}
-The shock can expand initially up to $180\,\km$ at $\tpb\mathord{\sim}130\,\ms$ but then \GEO{enters a phase of recession}. The \GEO{arrival} of the Si/O interface at the shock and \GEO{the decreasing mass-accretion rate} within the oxygen shell, eventually lead to shock expansion at $\mathord{\sim}0.3\,\s$ after bounce. Shock expansion is aided by strong convection behind the shock front. Similar to the results presented in \cite{Glas2019}, who used the same progenitor, the model remains convection-dominated and does not indicate any signs of the standing-accretion shock instability (SASI) \citep{Blondin2003,Foglizzo2007}.
-However, although SASI does not develop in the simulation, the forward shock experiences \GEO{large-scale deformations with a dipole amplitude of $10\mathord{-}10\%$ (compared to the angle-averaged shock radius)}. These deformations are driven by large scale plumes that form in the post-shock layer. 
-Contrary to the ECSN-like models, strong non-radial motions persist \GEO{around the PNS} over several seconds after bounce. Continuous mass accretion on the PNS through small funnels delay the emergence of the spherical neutrino-driven wind, which is why we needed to continue the simulations over three seconds after bounce.
+In contrast to the \znine and \onemg models, model \snine lacks
+the very steep density gradient outside the Fe-core, as can be 
+seen in Figure~\ref{fig:prog_tem_rho_ye_rhor}.
+The shock can expand initially up to $180\,\km$ at $\tpb\mathord{\sim}130\,\ms$ but then 
+enters a phase of recession. The arrival of the Si/O interface at the shock and 
+the decreasing mass-accretion rate within the oxygen shell eventually lead to shock 
+expansion at $\mathord{\sim}0.3\,\s$ after bounce. Shock expansion is aided by strong 
+convection behind the shock front. Similar to the results presented in \cite{Glas2019}, 
+who used the same progenitor, the model remains convection-dominated and does not 
+exhibit any signs of the oscillatory growth of the standing-accretion 
+shock instability (SASI) \citep{Blondin2003,Foglizzo2007}.
+However, although SASI does not develop in the simulation, the forward shock experiences 
+large-scale deformation with a dipole amplitude of $\mathord{\sim}10\%$ 
+(compared to the angle-averaged shock radius). These deformations are driven by 
+large scale plumes that form in the post-shock layer. 
+Contrary to the ECSN-like models, strong non-radial motions 
+persist around the PNS over several seconds after bounce. Continuous mass accretion 
+on the PNS through narrow funnels delays the emergence of the spherical 
+neutrino-driven wind, which is why we needed to continue the simulations 
+over three seconds after bounce.
+Explosion energy and shock velocity in model \snine remain considerably lower
+than in the other two progenitors (\ref{fig:eexp all}).
 
 %% FIGURE Initial Ni+X all Progenitors
 \begin{figure*}
  \centering
  \includegraphics[width=0.95\textwidth,trim=0cm 1.8cm 0cm 3cm,clip]{pic/all_3d_sto_slices_time_0.pdf}
- \caption{Planar cuts of our 3D models showing the entropy color-coded at $t_{\mathrm{map}}$. The left panels display cuts which are aligned such that the point of largest shock deformation is included in the plane. Therefore the coordinate directions of the plots have no association with the computational-grid coordinates. The right panels include the smallest shock expansion in the plane. Note the largely spherical morphology of model \onemg and the deformed ejecta morphology of model \snine. For better visibility of the small scale structures of model \snine we chose a different color representation in this case.}
+ \caption{Planar cuts of our 3D models showing the entropy color-coded at 
+ $t_{\mathrm{map}}$. The left panels display cuts which are aligned such that 
+ the point of largest shock deformation is included in the plane. Therefore the 
+ coordinate directions of the plots have no association with the coordinates of the computational 
+ grid. The right panels show the plane of smallest shock expansion. 
+ Note the largely spherical morphology of model \onemg and the deformed ejecta morphology 
+ of model \snine. For better visibility of the small-scale structures of model \snine we 
+ chose a different color representation in this case.
+ The white dashed line marks the shock surface. It is missing in the top two panels because
+ in mode \onemg the shock is at more than 20000~km at this time already, far ahead of any
+ explosion asymmetries.}
  \label{fig:slices first mapping}
 \end{figure*}
-In order to compare the final state of the post-bounce simulations of our model set, we \GEO{present} in Figure~\ref{fig:slices first mapping} planar cuts showing the entropy at the times ($t_{\mathrm{map}}$) we start our long-time simulation. The left panels are chosen such that they include the plane of the largest shock deformation. The right panels include the plane of the smallest shock deformation.
-Note the \GEO{basically spherical shape of the shock and the mild post-shock asymmetries} in both the \onemg and \znine models.
-In strong contrast to the ECSNe-like models, the \snine shows a clear dipolar shock deformation and ejecta morphology. 
+In order to compare the final state of the post-bounce simulations of our model set, we 
+present in Figure~\ref{fig:slices first mapping} planar cuts showing the entropy at 
+the times $t_{\mathrm{map}}$ when we start our long-time simulations. The left panels are 
+chosen such that they include the plane of the largest shock deformation. The right 
+panels include the plane of the smallest shock deformation.
+Note the basically spherical shape of the shock and the mild post-shock asymmetries
+in both the \onemg and \znine models.
+In strong contrast to the ECSNe-like models, model \snine shows a clear 
+dipolar shock deformation and ejecta morphology. 
 
 The asymmetries that develop during the explosion also affect the kick of the PNS.
-In Table~\ref{tab:neutron star} we provide properties of the PNS resulting from our post-bounce simulations\footnote{We refer the reader to Appendix~\ref{Appendix:Neutron Star Properties} for the equations involved in the analysis presented in Table~\ref{tab:neutron star}.}. We list the PNS kick velocity ($v_{\mathrm{NS}}$), anisotropy parameter ($\alpha_{\mathrm{ej}}$), angular momentum ($J_{\mathrm{NS}}$) and spin period ($P_{\mathrm{NS}}$) along with the PNS radii (\rns) and baryonic PNS masses ($M_{\mathrm{b}}$) at the point in time we terminate the post-bounce simulations. The PNS radius $\rns$ is defined as the angle-dependent radius where the density drops below $10^{11}\,\mathrm{g/cm^3}$. The PNS mass $M_{\mathrm{b}}$ is the mass contained within $\rns$. $M_{\mathrm{fin}}$ is the mass contained within our inner boundary for the long-time simulations (see Table~\ref{tab:long term boundaries}) and $M_{\mathrm{g}}$ the respective gravitational mass.
+In Table~\ref{tab:neutron star} we provide properties of the PNS resulting 
+from our post-bounce simulations\footnote{We refer the reader to 
+Appendix~\ref{Appendix:Neutron Star Properties} for the equations involved in 
+the analysis underlying the results 
+presented in Table~\ref{tab:neutron star}.}. We list the PNS kick 
+velocity ($v_{\mathrm{NS}}$), anisotropy parameter ($\alpha_{\mathrm{ej}}$), angular 
+momentum ($J_{\mathrm{NS}}$) and spin period ($P_{\mathrm{NS}}$) along with the PNS 
+radius (\rns) and baryonic PNS mass ($M_{\mathrm{b}}$) at the 
+point in time when we terminate the post-bounce simulations which include neutrino transport
+or neutrino heating. The PNS radius $\rns$ 
+is defined as the angle-dependent radius where the density drops below 
+$10^{11}\,\mathrm{g/cm^3}$. The PNS mass $M_{\mathrm{b}}$ is the mass contained 
+interior to $\rns$. $M_{\mathrm{fin}}$ is the mass contained within our inner grid boundary,
+and thus removed from the hydrodynamic grid at the start of
+the long-time simulations (see Table~\ref{tab:long term boundaries}). 
+$M_{\mathrm{g}}$ the corresponding gravitational mass.
 The acceleration of the PNS is caused by two different mechanisms.
-\GEO{Firstly, aspherical ejection of matter leads to a gravitational ``tug'' which accelerates the PNS in the opposite hemisphere of maximum shock expansion and fastest ejecta. Second, anisotropic neutrino emission, due to the ``lepton-emission self-sustained asymmetry'' (LESA) \citep{Tamborra2014}, can accelerate the PNS opposite to the direction of the largest total neutrino-energy flux.
-The almost spherical explosions of the ECSNe-like progenitors yield low hydrodynamic kick velocities. Anisotropic neutrino emission does not play a role in the simulation of model \onemg, because of the spherical treatment of the central region. The contribution of anisotropic neutrino emission in models \znine and \snine, however, even exceeds the contribution due to aspherical ejection of matter. LESA manifests itself in a dominant and stable $\ell\mathord{=}1$ mode of the lepton-number emission and a corresponding energy-emission dipole of several percent amplitude compared to the monopole (see \citealt{Tamborra2014}). LESA is observed in both simulations conducted with \vertexprom. }
+Firstly, aspherical ejection of matter leads to a gravitational ``tug'' which 
+accelerates the PNS in the opposite hemisphere of the maximum shock expansion and fastest 
+ejecta. Second, anisotropic neutrino emission, due to the 
+``lepton-emission self-sustained asymmetry'' (LESA) \citep{Tamborra2014}, can 
+accelerate the PNS opposite to the direction of the largest total neutrino-energy flux.
+The almost spherical explosions of the ECSNe-like progenitors yield very low hydrodynamic 
+kick velocities. Anisotropic neutrino emission cannot be evaluated in the simulation 
+of model \onemg, because of the spherical treatment of the central PNS region. The 
+contribution of anisotropic neutrino emission in models \znine and \snine, however, 
+even exceeds the contribution due to aspherical ejection of matter. LESA manifests 
+itself in a dominant and stable $\ell\mathord{=}1$ mode of the lepton-number emission 
+and a corresponding energy-emission dipole of several percent amplitude compared to the
+monopole (see \citealt{Tamborra2014,Tamborra2014b}). LESA is observed in both simulations 
+conducted with \vertexprom.
 
-We show in Figure~\ref{fig:sto ye s9 z9 kick} planar slices of the electron fraction (left panels) and entropy (right panels) of the iron core progenitors. The black, blue and green arrows indicate the total, hydrodynamic and neutrino-induced directions of the PNS kick. In case of the \znine the hydrodynamic and neutrino-induced kicks are clearly aligned. This stems from the feedback mechanism which is associated with LESA. Increased heating in the direction opposite to the LESA dipole pushes the supernova shock to larger radii. The induced asymmetry of the post-shock ejecta feeds back into the hydrodynamic acceleration of the PNS. Due to the weak convection in the \znine model, the emission asymmetry is the dominant contribution to drive the PNS kick. 
-Where the gravitational tug can only account for  $v_{\mathrm{NS}}^{\mathrm{hyd}}\mathord{\sim}10\,\kms$, the asymmetric emission of neutrinos enables a kick velocity up to $v_{\mathrm{NS}}^{\mathrm{\nu}}\mathord{\sim}25\,\kms$. The total kick sums up to $v_{\mathrm{NS}}^{\mathrm{tot}}\mathord{=}19\,\kms$.
-The alignment of the neutrino-induced and hydrodynamic kick is less clear in model \snine. Although the neutrino emission is the largest contribution to the total PNS kick during the first 500 ms, strong non-radial motions in the post-shock region interfere with the LESA feedback mechanism and thus the LESA induced kick. 
-The hydrodynamically induced dipolar shock expansion of model \snine and contributions from the LESA dipole yield a total acceleration of the PNS to $v_{\mathrm{NS}}\mathrm{\sim}36.32\,\kms$.
-\COM{Question: What effect has the early disabling of neutrino transport? Neutrino-induced kick has not saturated. }
+We show in Figure~\ref{fig:sto ye s9 z9 kick} planar slices of the electron fraction 
+(left panels) and entropy per nucleon (right panels) of the iron core progenitors. The black, blue 
+and green arrows indicate the total, hydrodynamic and neutrino-induced directions of the 
+PNS kick. In case of model \znine the hydrodynamic and neutrino-induced kicks are clearly 
+aligned. This results from the anti-correlation of the LESA lepton-number emission
+dipole and the direction of the maximum $\nu_{\mathrm{e}}\mathord{+}\bar{\nu}_{\mathrm{e}}$ as
+well as total neutrino luminosity \citep{Tamborra2014}. Increased 
+heating by $\nu_{\mathrm{e}}\mathord{+}\bar{\nu}_{\mathrm{e}}$ absorption in the postshock region
+in the hemisphere opposite to the LESA dipole pushes the supernova shock to larger 
+radii. The induced asymmetry of the post-shock ejecta leads to the hydrodynamic 
+acceleration of the PNS in the opposite direction due to the gravitational pull
+of the slower ejecta. The neutrino-induced NS kick acts in the same direction, i.e.,
+nearly aligned with the LESA dipole, because of the maximum total neutrino luminosity
+in the anti-LESA direction.
+
+Due to the weak convection in model \znine, the neutrino emission 
+asymmetry is the dominant contribution to drive the PNS kick. 
+While the gravitational tug of the ejecta can only account for  $v_{\mathrm{NS}}^{\mathrm{hyd}}\mathord{\sim}10\,\kms$, 
+the asymmetric emission of neutrinos enables a kick velocity up to
+$v_{\mathrm{NS}}^{\mathrm{\nu}}\mathord{\sim}25\,\kms$. 
+The total kick sums up to $v_{\mathrm{NS}}^{\mathrm{tot}}\mathord{=}19\,\kms$.
+The alignment of the neutrino-induced and hydrodynamic kick is less clear in model 
+\snine. 
+The asymmetric neutrino energy emission is also responsible for a sizeable contribution to the PNS
+kick in this case, and even for the dominant contribution during the first 500~ms after bounce.
+However, the neutrino-induced kick is not closely aligned with the LESA kick as in
+model \znine, although also in \snine it is the same hemisphere as the LESA dipole direction.
+The hydrodynamic PNS kick, however, is in the opposite hemisphere, different from the case of model 
+\znine. Both this different orientation of the hydrodynamic kick relative to the LESA dipole, and the misalignment
+of LESA direction and neutrino-induced kick in model \snine are a consequence of the fact that hydrodynamic
+instabilities in the postshock layer are much more violent
+and corresponding asymmetries of the mass distribution much stronger than in model \znine.
+
+The neutrino heating asymmetry associated with LESA (with more heating in the anti-LESA direction) is not
+powerful enough to determine the morphology of the postshock flow in this model.
+The shock expansion and explosion are weaker in the anti-LESA direction, where convective 
+downdrafts towards the PNS are numerous and massive and thus determine the hydrodynamic PNS kick in this
+direction (blue arrows in the lower panels of Figure~\ref{fig:sto ye s9 z9 kick}). 
+Accretion-associated asymmetries of the total neutrino luminosity are also 
+the reason why the neutrino-induced kick is not well aligned with the LESA lepton-emission dipole.
+The luminosity maximum and the electron-number emission maximum are not anti-parallel in model \snine.
+The combined hydrodynamic and neutrino-induced kicks in model \snine lead to a PNS velocity of 
+$\mathord{\sim}36\,\kms$ at mapping time $t_{\mathrm{map}}$.
+It must be emphasized that in both models, \znine and \snine, the \vertex neutrino transport was switched 
+off at about 0.5~s after core bounce. At this time the neutrino-induced kicks have not reached
+their final values, which will be higher than the numbers presented in Table~\ref{tab:neutron star}.
 
 \begin{figure*}
  \centering
- \includegraphics[width=\textwidth,trim=0cm 1.3cm 0cm 2cm,clip]{pic/z9_s9_3d_ye_sto_kick_slices_paper.pdf}
- \caption{\GEO{Planar slices of the electron fraction $Y_{e}$ (left panels) and entropy (right panels) of models \znine and \snine. The planes are chosen such that the LESA dipole direction (white arrow) is pointing to the north and are not aligned with the global coordinate system. The arrows indicate the direction of the total kick (black), the hydrodynamic and neutrino kick (blue and green).}}
+ \includegraphics[width=\textwidth,trim=0cm 1.3cm 0cm 2cm,clip]
+ {pic/z9_s9_3d_ye_sto_kick_slices_paper.pdf}
+ \caption{Planar slices of the electron fraction $Y_{e}$ (left panels) 
+ and entropy per nucleon (right panels) of models \znine and \snine at 0.28~s and 0.49~s after bounce, 
+ respectively. The planes are chosen such that the LESA dipole direction (white arrow) 
+ is pointing to the north and are not aligned with the global coordinate system. 
+ The arrows indicate the directions of the total PNS kick (black), the hydrodynamic PNS and 
+ neutrino kick of the PNS (blue and green, respectively). The white dashed line marks the shock radius. Note that
+ in model \znine the blue and green arrows are nearly aligned, adding up to the black arrow.}
  \label{fig:sto ye s9 z9 kick}
 \end{figure*}
 
 \subsection{Extent of mixing at shock revival}
 \label{sec:Extent of mixing at shock revival}
 
-In order to access the strength of mixing during the first second in our 3D models, we present in Figure~\ref{fig:mdp first mapping} fractions of the total mass of selected elements as a function of velocity (top panels) and mass coordinate (lower panels). 
-For sampling the velocity space, we chose 50 bins between the maximal and minimal velocities within the considered region. We use 30 bins to sample the distribution in mass coordinate.
+In order to access the strength of mixing during the first second in our 3D models, we present in Figure~\ref{fig:mdp first mapping} fractions of the total mass of selected elements behind the shock radius 
+as a function of velocity (top panels) and mass coordinate (lower panels). 
+For sampling the velocity space, we chose 50 bins between the maximal and minimal velocities within the considered region. We use 30 bins to sample the distribution in mass coordinate. The total masses 
+on the grid at the time when we map our simulations onto the new computational grid
+are listed in Table~\ref{tab:composition tmap}.
+
+\begin{table*}
+    \centering
+    \caption{Total masses of elements $M_\mathrm{i}$ of our 3D simulations at mapping time $t_{\mathrm{map}}$}
+    \label{tab:composition tmap}
+    \begin{tabular}{l|ccc}
+        &
+        \multicolumn{3}{c}{$M_{\mathrm{i}}\,[\solm] $}  \\
+         Species &
+        \onemg &
+        \znine &
+        \snine \\
+         \hline 
+    $p$                    & -                                         &  $1.38\times10^{-1}$ ($1.38\times10^{-1}$) & $1.63\times10^{-1}$ ($1.63\times10^{-1}$) \\
+    \hydrogen              & 2.68                ($6.29\times10^{-3}$) & 5.10 (0) & 4.54 ($0$)                                \\
+    \helium                & 1.74                ($1.34\times10^{-2}$) & 3.09 ($1.00\times10^{-1}$)  & 2.66 ($4.28\times10^{-4}$)               \\
+    \carbon                & $2.18\times10^{-2}$ ($4.09\times10^{-5}$) &  $2.08\times10^{-2}$ ($7.63\times10^{-4}$)& $3.81\times10^{-2}$ ($4.69\times10^{-3}$) \\
+    \oxygen\neon\magnesium & $4.94\times10^{-2}$ ($9.99\times10^{-5}$) &  $6.61\times10^{-3}$ ($1.20\times10^{-3}$)& $1.93\times10^{-1}$ ($5.86\times10^{-3}$)\\
+    \nickel                & $3.28\times10^{-3}$ ($3.28\times10^{-3}$) &  $4.81\times10^{-4}$ ($4.81\times10^{-4}$)& $4.96\times10^{-3}$ ($4.96\times10^{-3}$)\\
+    \tracer                & $6.91\times10^{-3}$ ($6.91\times10^{-3}$) &  $8.73\times10^{-4}$ ($8.73\times10^{-4}$)& $1.28\times10^{-6}$ ($1.28\times10^{-6}$)\\
+    %---------------------------------------------------------------------------------------------
+    \end{tabular}
+\flushleft
+\textit{Notes:} We show the total masses of selected elements on the computational grid at $t_{\mathrm{map}}$. Values in brackets are the masses within the shock radius at the same time. $p$ labels free protons from the freeze-out of NSE whereas \hydrogen labels hydrogen from the envelope. Since 
+the onset of the explosion of model \onemg was simulated with \prom no free protons remain in the 
+ejecta.
+\end{table*}
 
 The spherical explosion of the \onemg manifests itself also in the distribution of elements over mass and velocity space, where the initial shell-like structure of the progenitor is maintained.
 The thin carbon-shell of the progenitor is traveling with $\sim 40\mathord{-}50\,\mathrm{1000\,km/s}$ in front of the outer mass-shells of the former ONeMg-core, which travel at $\sim 35\,\mathrm{1000\,km/s}$. Most of the newly synthesized iron-group and $\alpha$ nuclei travel at velocities below $\sim 35\,\mathrm{1000\,km/s}$.
@@ -1443,6 +1680,18 @@ In addition to these studies we showed the
 hydrodynamic neutron star kicks of these 
 CCSN and investigated the morphology of the ejecta some 
 hundred milliseconds after shock revival. 
+We observe rather low explosion energies of less than $10^{50}\,\erg$
+in all our simulations. Consequently, neutron stars tend to be
+more massive than reported in other studies concerning the same
+progenitors.
+For example \cite{Burrows2019} find model \snine to explode with 
+$\mathord{\sim} 10^{50}\,\erg$ which is around two times higher than found
+in this study. 
+\cite{Radice2017} reports explosion energies for model $\mathrm{e8.8_n}$ 
+of around $1.2\mathord{-}1.8 \mathord{\times} 10^{50}\,\erg$ which is 
+around 50\% larger than found in the studies by \cite{Kitaura2006,Huedepohl2009,Groote2014}.
+These discrepencies are hard to explain without a detailed
+comparison of the modeling approach. 
 
 When mass accretion subsides in all models and 
 explosion energies and kick velocities begin to saturate 
